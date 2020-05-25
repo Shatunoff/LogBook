@@ -132,8 +132,8 @@
             // mmBaseConnect
             // 
             this.mmBaseConnect.Name = "mmBaseConnect";
-            this.mmBaseConnect.Size = new System.Drawing.Size(294, 22);
-            this.mmBaseConnect.Text = "Подключиться/Обновить подключение";
+            this.mmBaseConnect.Size = new System.Drawing.Size(213, 22);
+            this.mmBaseConnect.Text = "Обновить данные";
             this.mmBaseConnect.Click += new System.EventHandler(this.mmBaseConnect_Click);
             // 
             // mmBaseSettings
@@ -170,7 +170,7 @@
             // mmContractsNew
             // 
             this.mmContractsNew.Name = "mmContractsNew";
-            this.mmContractsNew.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.mmContractsNew.ShortcutKeyDisplayString = "";
             this.mmContractsNew.Size = new System.Drawing.Size(217, 22);
             this.mmContractsNew.Text = "Новый договор";
             // 
@@ -621,7 +621,7 @@
             this.btnFNew.Name = "btnFNew";
             this.btnFNew.Size = new System.Drawing.Size(133, 27);
             this.btnFNew.TabIndex = 2;
-            this.btnFNew.Text = "F7 Новый договор";
+            this.btnFNew.Text = "F7 Создание";
             this.btnFNew.UseVisualStyleBackColor = true;
             // 
             // btnFExit
@@ -643,7 +643,7 @@
             this.btnFExport.Name = "btnFExport";
             this.btnFExport.Size = new System.Drawing.Size(133, 27);
             this.btnFExport.TabIndex = 2;
-            this.btnFExport.Text = "F6 Экспорт таблицы";
+            this.btnFExport.Text = "F6 Экспорт";
             this.btnFExport.UseVisualStyleBackColor = true;
             // 
             // btnFRefresh
@@ -654,7 +654,7 @@
             this.btnFRefresh.Name = "btnFRefresh";
             this.btnFRefresh.Size = new System.Drawing.Size(133, 27);
             this.btnFRefresh.TabIndex = 1;
-            this.btnFRefresh.Text = "F5 Сбросить фильтр";
+            this.btnFRefresh.Text = "F5 Обновление";
             this.btnFRefresh.UseVisualStyleBackColor = true;
             // 
             // btnFView
