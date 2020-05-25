@@ -49,14 +49,6 @@
             this.tctrlMainContracts = new System.Windows.Forms.TabControl();
             this.tpMainContractsOpenedAll = new System.Windows.Forms.TabPage();
             this.dgvContractsOpenedAll = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpMainContractsOpenedProsrok = new System.Windows.Forms.TabPage();
             this.dgvContractsOpenedProsrok = new System.Windows.Forms.DataGridView();
             this.tpMainContractsClosed = new System.Windows.Forms.TabPage();
@@ -142,6 +134,7 @@
             this.mmBaseConnect.Name = "mmBaseConnect";
             this.mmBaseConnect.Size = new System.Drawing.Size(294, 22);
             this.mmBaseConnect.Text = "Подключиться/Обновить подключение";
+            this.mmBaseConnect.Click += new System.EventHandler(this.mmBaseConnect_Click);
             // 
             // mmBaseSettings
             // 
@@ -197,6 +190,7 @@
             this.mmContractsNotReturnableItems.Name = "mmContractsNotReturnableItems";
             this.mmContractsNotReturnableItems.Size = new System.Drawing.Size(217, 22);
             this.mmContractsNotReturnableItems.Text = "Невозвратные предметы";
+            this.mmContractsNotReturnableItems.Click += new System.EventHandler(this.mmContractsNotReturnableItems_Click);
             // 
             // mmOrg
             // 
@@ -281,63 +275,18 @@
             // 
             // dgvContractsOpenedAll
             // 
+            this.dgvContractsOpenedAll.AllowUserToAddRows = false;
+            this.dgvContractsOpenedAll.AllowUserToDeleteRows = false;
+            this.dgvContractsOpenedAll.AllowUserToResizeRows = false;
+            this.dgvContractsOpenedAll.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsOpenedAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContractsOpenedAll.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8});
             this.dgvContractsOpenedAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvContractsOpenedAll.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsOpenedAll.Location = new System.Drawing.Point(3, 3);
             this.dgvContractsOpenedAll.Name = "dgvContractsOpenedAll";
             this.dgvContractsOpenedAll.RowHeadersVisible = false;
             this.dgvContractsOpenedAll.Size = new System.Drawing.Size(720, 364);
             this.dgvContractsOpenedAll.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Номер договора";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Код ОО";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Краткое наименование ОО";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Дата заключения";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Дата выдачи";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Дата возврата";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Ответственный";
-            this.Column8.Name = "Column8";
             // 
             // tpMainContractsOpenedProsrok
             // 
@@ -847,14 +796,6 @@
         private System.Windows.Forms.Button btnFRemove;
         private System.Windows.Forms.Button btnFNew;
         private System.Windows.Forms.DataGridView dgvContractsOpenedAll;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridView dgvContractsOpenedProsrok;
         private System.Windows.Forms.TabPage tpMainContractsClosed;
         private System.Windows.Forms.DataGridView dgvContractsClosed;

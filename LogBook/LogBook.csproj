@@ -43,13 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase.cs" />
+    <Compile Include="ContractForms\NotReturnableItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractForms\NotReturnableItemsForm.Designer.cs">
+      <DependentUpon>NotReturnableItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBEssences\Contracts.cs" />
     <Compile Include="DBConnectionSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBConnectionSettingForm.Designer.cs">
       <DependentUpon>DBConnectionSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBEssences\NotReturnableItems.cs" />
+    <Compile Include="DBEssences\ReturnableItems.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ContractForms\NotReturnableItemsForm.resx">
+      <DependentUpon>NotReturnableItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBConnectionSettingForm.resx">
       <DependentUpon>DBConnectionSettingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +95,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

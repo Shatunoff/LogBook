@@ -5,8 +5,8 @@ using System.Text;
 
 namespace LogBook
 {
-    public static class DataBase
+    public class ReturnableItems
     {
-        
+
     }
 }

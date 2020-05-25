@@ -11,6 +11,8 @@ namespace LogBook
 {
     public partial class MainForm : Form
     {
+        Contracts dbContracts = new Contracts();
+
         public MainForm()
         {
             InitializeComponent();
@@ -18,7 +20,9 @@ namespace LogBook
 
         public void ConnectionRefresh()
         {
-
+            dgvContractsOpenedAll.DataSource = dbContracts.GetOpenedAllDataTable();
+            dgvContractsOpenedProsrok.DataSource = dbContracts.GetOpenedProsrokDataTable();
+            dgvContractsClosed.DataSource = dbContracts.GetClosedAllDataTable();
         }
 
         private void mmBaseSettings_Click(object sender, EventArgs e)
@@ -30,6 +34,17 @@ namespace LogBook
         private void mmBaseExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void mmBaseConnect_Click(object sender, EventArgs e)
+        {
+            ConnectionRefresh();
+        }
+
+        private void mmContractsNotReturnableItems_Click(object sender, EventArgs e)
+        {
+            NotReturnableItemsForm nri = new NotReturnableItemsForm();
+            nri.ShowDialog();
         }
     }
 }
