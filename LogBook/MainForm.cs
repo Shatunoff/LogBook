@@ -15,5 +15,21 @@ namespace LogBook
         {
             InitializeComponent();
         }
+
+        public void ConnectionRefresh()
+        {
+
+        }
+
+        private void mmBaseSettings_Click(object sender, EventArgs e)
+        {
+            DBConnectionSettingForm conSettings = new DBConnectionSettingForm();
+            conSettings.ShowDialog();
+        }
+
+        private void mmBaseExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

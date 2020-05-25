@@ -1,7 +1,24 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LogBook.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="dbServerName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OPI8\SQLExpress</Value>
+    </Setting>
+    <Setting Name="dbInitialCatalog" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GIA_LogBook</Value>
+    </Setting>
+    <Setting Name="dbCheckMode" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="dbLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="dbPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">gfhfuhfa</Value>
+    </Setting>
+    <Setting Name="dbConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source = OPI8\SQLExpress; Initial Catalog = GIA_LogBook; Persist Security Info = True; User ID = sa; Password = gfhfuhfa</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

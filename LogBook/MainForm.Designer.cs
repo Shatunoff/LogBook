@@ -148,6 +148,7 @@
             this.mmBaseSettings.Name = "mmBaseSettings";
             this.mmBaseSettings.Size = new System.Drawing.Size(294, 22);
             this.mmBaseSettings.Text = "Настройки подключения";
+            this.mmBaseSettings.Click += new System.EventHandler(this.mmBaseSettings_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -159,6 +160,7 @@
             this.mmBaseExit.Name = "mmBaseExit";
             this.mmBaseExit.Size = new System.Drawing.Size(294, 22);
             this.mmBaseExit.Text = "Выход";
+            this.mmBaseExit.Click += new System.EventHandler(this.mmBaseExit_Click);
             // 
             // mmContracts
             // 
