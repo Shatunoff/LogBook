@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnItemAdd = new System.Windows.Forms.Button();
             this.btnItemEdit = new System.Windows.Forms.Button();
             this.dgvNotReturnableItems = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnItemRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotReturnableItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,19 +80,21 @@
             this.dgvNotReturnableItems.AllowUserToAddRows = false;
             this.dgvNotReturnableItems.AllowUserToDeleteRows = false;
             this.dgvNotReturnableItems.AllowUserToOrderColumns = true;
+            this.dgvNotReturnableItems.AllowUserToResizeColumns = false;
+            this.dgvNotReturnableItems.AllowUserToResizeRows = false;
             this.dgvNotReturnableItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNotReturnableItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvNotReturnableItems.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvNotReturnableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNotReturnableItems.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotReturnableItems.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotReturnableItems.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNotReturnableItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvNotReturnableItems.Location = new System.Drawing.Point(12, 67);
             this.dgvNotReturnableItems.MultiSelect = false;
@@ -112,11 +115,22 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnItemRemove
+            // 
+            this.btnItemRemove.Location = new System.Drawing.Point(12, 227);
+            this.btnItemRemove.Name = "btnItemRemove";
+            this.btnItemRemove.Size = new System.Drawing.Size(130, 23);
+            this.btnItemRemove.TabIndex = 9;
+            this.btnItemRemove.Text = "Удалить выбранный";
+            this.btnItemRemove.UseVisualStyleBackColor = true;
+            this.btnItemRemove.Click += new System.EventHandler(this.btnItemDelete_Click);
+            // 
             // NotReturnableItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(291, 262);
+            this.Controls.Add(this.btnItemRemove);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvNotReturnableItems);
             this.Controls.Add(this.btnItemEdit);
@@ -144,5 +158,6 @@
         private System.Windows.Forms.Button btnItemEdit;
         private System.Windows.Forms.DataGridView dgvNotReturnableItems;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnItemRemove;
     }
 }

@@ -132,6 +132,7 @@
             // mmBaseConnect
             // 
             this.mmBaseConnect.Name = "mmBaseConnect";
+            this.mmBaseConnect.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.mmBaseConnect.Size = new System.Drawing.Size(213, 22);
             this.mmBaseConnect.Text = "Обновить данные";
             this.mmBaseConnect.Click += new System.EventHandler(this.mmBaseConnect_Click);
