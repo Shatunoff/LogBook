@@ -39,6 +39,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.mmContractsReturnableItems = new System.Windows.Forms.ToolStripMenuItem();
             this.mmContractsNotReturnableItems = new System.Windows.Forms.ToolStripMenuItem();
+            this.mmContractsResponsibles = new System.Windows.Forms.ToolStripMenuItem();
             this.mmOrg = new System.Windows.Forms.ToolStripMenuItem();
             this.mmOrgNew = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -79,6 +80,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbContractsFilterCodeOO = new System.Windows.Forms.TextBox();
             this.tpMainOrg = new System.Windows.Forms.TabPage();
+            this.tpMainStatistic = new System.Windows.Forms.TabPage();
             this.panelMainForButtonsF = new System.Windows.Forms.Panel();
             this.tlpForButtonsF = new System.Windows.Forms.TableLayoutPanel();
             this.btnFNew = new System.Windows.Forms.Button();
@@ -88,8 +90,6 @@
             this.btnFView = new System.Windows.Forms.Button();
             this.btnFEdit = new System.Windows.Forms.Button();
             this.btnFRemove = new System.Windows.Forms.Button();
-            this.mmContractsResponsibles = new System.Windows.Forms.ToolStripMenuItem();
-            this.tpMainStatistic = new System.Windows.Forms.TabPage();
             this.mainMenu.SuspendLayout();
             this.tctrlMain.SuspendLayout();
             this.tpMainContracts.SuspendLayout();
@@ -140,19 +140,19 @@
             // mmBaseSettings
             // 
             this.mmBaseSettings.Name = "mmBaseSettings";
-            this.mmBaseSettings.Size = new System.Drawing.Size(294, 22);
+            this.mmBaseSettings.Size = new System.Drawing.Size(213, 22);
             this.mmBaseSettings.Text = "Настройки подключения";
             this.mmBaseSettings.Click += new System.EventHandler(this.mmBaseSettings_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(291, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(210, 6);
             // 
             // mmBaseExit
             // 
             this.mmBaseExit.Name = "mmBaseExit";
-            this.mmBaseExit.Size = new System.Drawing.Size(294, 22);
+            this.mmBaseExit.Size = new System.Drawing.Size(213, 22);
             this.mmBaseExit.Text = "Выход";
             this.mmBaseExit.Click += new System.EventHandler(this.mmBaseExit_Click);
             // 
@@ -185,6 +185,7 @@
             this.mmContractsReturnableItems.Name = "mmContractsReturnableItems";
             this.mmContractsReturnableItems.Size = new System.Drawing.Size(217, 22);
             this.mmContractsReturnableItems.Text = "Возвращаемые предметы";
+            this.mmContractsReturnableItems.Click += new System.EventHandler(this.mmContractsReturnableItems_Click);
             // 
             // mmContractsNotReturnableItems
             // 
@@ -192,6 +193,12 @@
             this.mmContractsNotReturnableItems.Size = new System.Drawing.Size(217, 22);
             this.mmContractsNotReturnableItems.Text = "Невозвратные предметы";
             this.mmContractsNotReturnableItems.Click += new System.EventHandler(this.mmContractsNotReturnableItems_Click);
+            // 
+            // mmContractsResponsibles
+            // 
+            this.mmContractsResponsibles.Name = "mmContractsResponsibles";
+            this.mmContractsResponsibles.Size = new System.Drawing.Size(217, 22);
+            this.mmContractsResponsibles.Text = "Ответственные лица";
             // 
             // mmOrg
             // 
@@ -576,6 +583,15 @@
             this.tpMainOrg.Text = "Организации";
             this.tpMainOrg.UseVisualStyleBackColor = true;
             // 
+            // tpMainStatistic
+            // 
+            this.tpMainStatistic.Location = new System.Drawing.Point(4, 22);
+            this.tpMainStatistic.Name = "tpMainStatistic";
+            this.tpMainStatistic.Size = new System.Drawing.Size(971, 402);
+            this.tpMainStatistic.TabIndex = 2;
+            this.tpMainStatistic.Text = "Статистика";
+            this.tpMainStatistic.UseVisualStyleBackColor = true;
+            // 
             // panelMainForButtonsF
             // 
             this.panelMainForButtonsF.Controls.Add(this.tlpForButtonsF);
@@ -690,21 +706,6 @@
             this.btnFRemove.TabIndex = 2;
             this.btnFRemove.Text = "F8 Удаление";
             this.btnFRemove.UseVisualStyleBackColor = true;
-            // 
-            // mmContractsResponsibles
-            // 
-            this.mmContractsResponsibles.Name = "mmContractsResponsibles";
-            this.mmContractsResponsibles.Size = new System.Drawing.Size(217, 22);
-            this.mmContractsResponsibles.Text = "Ответственные лица";
-            // 
-            // tpMainStatistic
-            // 
-            this.tpMainStatistic.Location = new System.Drawing.Point(4, 22);
-            this.tpMainStatistic.Name = "tpMainStatistic";
-            this.tpMainStatistic.Size = new System.Drawing.Size(971, 402);
-            this.tpMainStatistic.TabIndex = 2;
-            this.tpMainStatistic.Text = "Статистика";
-            this.tpMainStatistic.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

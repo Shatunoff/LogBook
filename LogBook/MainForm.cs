@@ -46,5 +46,11 @@ namespace LogBook
             NotReturnableItemsForm nri = new NotReturnableItemsForm();
             nri.ShowDialog();
         }
+
+        private void mmContractsReturnableItems_Click(object sender, EventArgs e)
+        {
+            ReturnableItemsForm ri = new ReturnableItemsForm();
+            ri.ShowDialog();
+        }
     }
 }

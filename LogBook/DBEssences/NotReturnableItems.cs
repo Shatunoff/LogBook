@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LogBook
 {
@@ -49,28 +50,49 @@ namespace LogBook
         // Добавить невозвращаемый предмет
         public void ItemAdd(string name)
         {
-            DataRow newRow = dataTable.NewRow();
-            newRow["Name"] = name;
-            dataTable.Rows.Add(newRow);
-            ADAPTER.Update(dataTable);
+            try
+            {
+                DataRow newRow = dataTable.NewRow();
+                newRow["Name"] = name;
+                dataTable.Rows.Add(newRow);
+                ADAPTER.Update(dataTable);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         // Изменить невозвращаемый предмет
         public void ItemEdit(int id, string newName)
         {
-            DataRow dr = dataTable.Rows[id];
-            dr.BeginEdit();
-            dr["Name"] = newName;
-            dr.EndEdit();
-            ADAPTER.Update(dataTable);
+            try
+            {
+                DataRow dr = dataTable.Rows[id];
+                dr.BeginEdit();
+                dr["Name"] = newName;
+                dr.EndEdit();
+                ADAPTER.Update(dataTable);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         // Удалить невозвращаемый предмет
         public void ItemRemove(int id)
         {
-            DataRow dr = dataTable.Rows[id];
-            dr.Delete();
-            ADAPTER.Update(dataTable);
+            try
+            {
+                DataRow dr = dataTable.Rows[id];
+                dr.Delete();
+                ADAPTER.Update(dataTable);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }
