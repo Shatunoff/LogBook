@@ -57,6 +57,7 @@
       <DependentUpon>DBConnectionSettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DBEssences\NotReturnableItems.cs" />
+    <Compile Include="DBEssences\Responsibles.cs" />
     <Compile Include="DBEssences\ReturnableItems.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -72,8 +73,17 @@
     <Compile Include="ContractForms\ReturnableItemsForm.Designer.cs">
       <DependentUpon>ReturnableItemsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContractForms\ResponsiblesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractForms\ResponsiblesForm.Designer.cs">
+      <DependentUpon>ResponsiblesForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ContractForms\NotReturnableItemsForm.resx">
       <DependentUpon>NotReturnableItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContractForms\ResponsiblesForm.resx">
+      <DependentUpon>ResponsiblesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContractForms\ReturnableItemsForm.resx">
       <DependentUpon>ReturnableItemsForm.cs</DependentUpon>

@@ -23,6 +23,7 @@ namespace LogBook
             dgvContractsOpenedAll.DataSource = dbContracts.GetOpenedAllDataTable();
             dgvContractsOpenedProsrok.DataSource = dbContracts.GetOpenedProsrokDataTable();
             dgvContractsClosed.DataSource = dbContracts.GetClosedAllDataTable();
+            comboContractsFilterResponsible.DataSource = dbContracts.GetResponsiblesAsList();
         }
 
         private void mmBaseSettings_Click(object sender, EventArgs e)
@@ -51,6 +52,12 @@ namespace LogBook
         {
             ReturnableItemsForm ri = new ReturnableItemsForm();
             ri.ShowDialog();
+        }
+
+        private void mmContractsResponsibles_Click(object sender, EventArgs e)
+        {
+            ResponsiblesForm rf = new ResponsiblesForm();
+            rf.ShowDialog();
         }
     }
 }

@@ -44,5 +44,20 @@ namespace LogBook
                 return dt;
             }
         }
+
+        public List<string> GetResponsiblesAsList()
+        {
+            List<string> list = new List<string>();
+            list.Add("");
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
+            {
+                DataTable dt = new DataTable();
+                SqlDataAdapter ad = new SqlDataAdapter("SELECT Name From dbo.Responsibles", connection);
+                ad.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++) list.Add(dt.Rows[i][0].ToString());
+            }
+
+            return list;
+        }
     }
 }

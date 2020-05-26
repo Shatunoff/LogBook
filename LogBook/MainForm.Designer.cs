@@ -199,6 +199,7 @@
             this.mmContractsResponsibles.Name = "mmContractsResponsibles";
             this.mmContractsResponsibles.Size = new System.Drawing.Size(217, 22);
             this.mmContractsResponsibles.Text = "Ответственные лица";
+            this.mmContractsResponsibles.Click += new System.EventHandler(this.mmContractsResponsibles_Click);
             // 
             // mmOrg
             // 
