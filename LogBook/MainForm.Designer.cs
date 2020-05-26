@@ -228,6 +228,7 @@
             this.mmOrgATE.Name = "mmOrgATE";
             this.mmOrgATE.Size = new System.Drawing.Size(229, 22);
             this.mmOrgATE.Text = "Районы, городские округа...";
+            this.mmOrgATE.Click += new System.EventHandler(this.mmOrgATE_Click);
             // 
             // mmOrgMemberships
             // 

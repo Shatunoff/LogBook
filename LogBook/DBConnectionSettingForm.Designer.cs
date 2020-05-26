@@ -54,6 +54,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(320, 140);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -129,6 +130,7 @@
             // 
             this.tbPassword.Location = new System.Drawing.Point(176, 114);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(219, 20);
             this.tbPassword.TabIndex = 4;
             // 
@@ -150,8 +152,10 @@
             // 
             // DBConnectionSettingForm
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(407, 173);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbDBName);

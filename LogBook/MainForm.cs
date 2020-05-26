@@ -59,5 +59,11 @@ namespace LogBook
             ResponsiblesForm rf = new ResponsiblesForm();
             rf.ShowDialog();
         }
+
+        private void mmOrgATE_Click(object sender, EventArgs e)
+        {
+            AteForm ate = new AteForm();
+            ate.ShowDialog();
+        }
     }
 }
