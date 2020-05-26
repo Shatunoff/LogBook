@@ -15,18 +15,15 @@ namespace LogBook
         public NotReturnableItemsForm()
         {
             InitializeComponent();
-            dgvNotReturnableItems.DataSource = nri.GetAllDataTable();
+            dgvNotReturnableItems.DataSource = nri.dataTable;
             dgvNotReturnableItems.Columns[0].Visible = false;
             btnClose.NotifyDefault(true);
+            dgvNotReturnableItems.Focus();
         }
 
         private void btnItemAdd_Click(object sender, EventArgs e)
         {
-            if (tbName.Text.Length > 0)
-            {
-                nri.ItemAdd(tbName.Text);
-                dgvNotReturnableItems.DataSource = nri.GetAllDataTable();
-            }
+            if (tbName.Text.Length > 0) nri.ItemAdd(tbName.Text);
         }
 
         private void btnItemEdit_Click(object sender, EventArgs e)
@@ -35,8 +32,7 @@ namespace LogBook
             {
                 if (MessageBox.Show($"Вы уверены, что хотите изменить \"{dgvNotReturnableItems.SelectedRows[0].Cells["Name"].Value.ToString()}\" на \"{tbName.Text}\"?", "Изменение выбранного предмета", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    nri.ItemEdit((int)dgvNotReturnableItems.SelectedRows[0].Cells["Id"].Value, tbName.Text);
-                    dgvNotReturnableItems.DataSource = nri.GetAllDataTable();
+                    nri.ItemEdit(dgvNotReturnableItems.SelectedRows[0].Index, tbName.Text);
                 }
             }
         }
@@ -47,21 +43,26 @@ namespace LogBook
             {
                 if (MessageBox.Show($"Вы уверены, что хотите удалить предмет \"{dgvNotReturnableItems.SelectedRows[0].Cells["Name"].Value.ToString()}\" из базы данных?\nПредмет будет удален в том числе из всех договоров.", "Удаление выбранного предмета", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    nri.ItemRemove((int)dgvNotReturnableItems.SelectedRows[0].Cells["Id"].Value);
-                    dgvNotReturnableItems.DataSource = nri.GetAllDataTable();
+                    nri.ItemRemove(dgvNotReturnableItems.SelectedRows[0].Index);
                     tbName.Clear();
                 }
             }
         }
-
-        private void dgvNotReturnableItems_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            tbName.Text = dgvNotReturnableItems.SelectedRows[0].Cells["Name"].Value.ToString();
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvNotReturnableItems_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tbName.Text = dgvNotReturnableItems.SelectedRows[0].Cells["Name"].Value.ToString();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

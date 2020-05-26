@@ -103,7 +103,7 @@
             this.dgvNotReturnableItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotReturnableItems.Size = new System.Drawing.Size(267, 154);
             this.dgvNotReturnableItems.TabIndex = 7;
-            this.dgvNotReturnableItems.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNotReturnableItems_CellMouseClick);
+            this.dgvNotReturnableItems.SelectionChanged += new System.EventHandler(this.dgvNotReturnableItems_SelectionChanged);
             // 
             // btnClose
             // 
