@@ -12,6 +12,7 @@ namespace LogBook
     public partial class MainForm : Form
     {
         Contracts dbContracts = new Contracts();
+        Organizations dbOrg = new Organizations();
 
         public MainForm()
         {
@@ -24,6 +25,7 @@ namespace LogBook
             dgvContractsOpenedProsrok.DataSource = dbContracts.GetOpenedProsrokDataTable();
             dgvContractsClosed.DataSource = dbContracts.GetClosedAllDataTable();
             comboContractsFilterResponsible.DataSource = dbContracts.GetResponsiblesAsList();
+            dgvOrg.DataSource = dbOrg.GetOrganizations();
         }
 
         private void mmBaseSettings_Click(object sender, EventArgs e)

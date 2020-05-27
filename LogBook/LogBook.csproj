@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DBEssences\Ate.cs" />
     <Compile Include="DBEssences\Memberships.cs" />
+    <Compile Include="DBEssences\Organizations.cs" />
     <Compile Include="OrgForms\MembershipsForm.cs">
       <SubType>Form</SubType>
     </Compile>

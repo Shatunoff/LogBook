@@ -89,6 +89,23 @@
             this.btnFView = new System.Windows.Forms.Button();
             this.btnFEdit = new System.Windows.Forms.Button();
             this.btnFRemove = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dgvOrg = new System.Windows.Forms.DataGridView();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.mainMenu.SuspendLayout();
             this.tctrlMain.SuspendLayout();
             this.tpMainContracts.SuspendLayout();
@@ -101,8 +118,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsClosed)).BeginInit();
             this.panelContractsForFilter.SuspendLayout();
             this.gbContractsFilter.SuspendLayout();
+            this.tpMainOrg.SuspendLayout();
             this.panelMainForButtonsF.SuspendLayout();
             this.tlpForButtonsF.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -582,6 +603,8 @@
             // 
             // tpMainOrg
             // 
+            this.tpMainOrg.Controls.Add(this.dgvOrg);
+            this.tpMainOrg.Controls.Add(this.panel1);
             this.tpMainOrg.Location = new System.Drawing.Point(4, 22);
             this.tpMainOrg.Name = "tpMainOrg";
             this.tpMainOrg.Padding = new System.Windows.Forms.Padding(3);
@@ -705,6 +728,181 @@
             this.btnFRemove.Text = "F8 Удаление";
             this.btnFRemove.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(737, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panel1.Size = new System.Drawing.Size(231, 396);
+            this.panel1.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox4);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBox3);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(5, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(221, 396);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Фильтр";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(113, 362);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Сбросить";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 362);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(101, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Применить";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 110);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(209, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 94);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(131, 13);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Район, городской округ:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 55);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(48, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Код ОО:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(209, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 16);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(86, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Наименование:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(7, 71);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(208, 20);
+            this.textBox2.TabIndex = 2;
+            // 
+            // dgvOrg
+            // 
+            this.dgvOrg.AllowUserToAddRows = false;
+            this.dgvOrg.AllowUserToDeleteRows = false;
+            this.dgvOrg.AllowUserToResizeRows = false;
+            this.dgvOrg.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvOrg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrg.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvOrg.Location = new System.Drawing.Point(3, 3);
+            this.dgvOrg.Name = "dgvOrg";
+            this.dgvOrg.RowHeadersVisible = false;
+            this.dgvOrg.Size = new System.Drawing.Size(734, 396);
+            this.dgvOrg.TabIndex = 3;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 223);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(157, 17);
+            this.checkBox2.TabIndex = 16;
+            this.checkBox2.Text = "Является ППЭ (9 классы)";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(6, 246);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(163, 17);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "Является ППЭ (11 классы)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(6, 177);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(155, 17);
+            this.checkBox3.TabIndex = 11;
+            this.checkBox3.Text = "Есть открытые договоры";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 150);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(209, 21);
+            this.comboBox2.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Принадлежность:";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(6, 200);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(178, 17);
+            this.checkBox4.TabIndex = 26;
+            this.checkBox4.Text = "Есть просроченные договоры";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -730,8 +928,13 @@
             this.panelContractsForFilter.ResumeLayout(false);
             this.gbContractsFilter.ResumeLayout(false);
             this.gbContractsFilter.PerformLayout();
+            this.tpMainOrg.ResumeLayout(false);
             this.panelMainForButtonsF.ResumeLayout(false);
             this.tlpForButtonsF.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -800,6 +1003,23 @@
         private System.Windows.Forms.TabPage tpMainContractsClosed;
         private System.Windows.Forms.DataGridView dgvContractsClosed;
         private System.Windows.Forms.ToolStripMenuItem mmContractsResponsibles;
+        private System.Windows.Forms.DataGridView dgvOrg;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
