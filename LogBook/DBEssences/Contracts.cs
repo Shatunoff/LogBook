@@ -43,6 +43,42 @@ namespace LogBook
             }
         }
 
+        public void GetOpenedAllDataTable(string contractNumber, int idOO, string responsibleName, DateTime dateOfSigningOT, DateTime dateOfSigningDO, 
+            DateTime dateOfISsueOT, DateTime dateOfIssueDO, DateTime dateOfReturnOT, DateTime dateOfReturnDO)
+        {
+            bool checkContractNum = contractNumber != null;
+            bool checkIdOO = idOO > 0;
+            bool checkRespName = responsibleName != null;
+
+            DataTable dt = dtOpenedAll.Clone();
+            dt.Rows.Clear();
+
+            for (int i = 0; i < dtOpenedAll.Rows.Count; i++)
+            {
+                if (checkContractNum && dtOpenedAll.Rows[i][1].ToString().ToLower().Contains(contractNumber.ToLower()))
+                {
+                    if (checkIdOO && idOO == int.Parse(dtOpenedAll.Rows[i][2].ToString()))
+                    {
+                        if (checkRespName && responsibleName == dtOpenedAll.Rows[i][6].ToString())
+                        {
+                            if (DateTime.Parse(dtOpenedAll.Rows[i][4].ToString()) >= dateOfSigningOT && DateTime.Parse(dtOpenedAll.Rows[i][4].ToString()) <= dateOfSigningDO)
+                            {
+                                if (DateTime.Parse(dtOpenedAll.Rows[i][5].ToString()) >= dateOfISsueOT && DateTime.Parse(dtOpenedAll.Rows[i][5].ToString()) <= dateOfIssueDO)
+                                {
+                                    if (DateTime.Parse(dtOpenedAll.Rows[i][8].ToString()) >= dateOfReturnOT && DateTime.Parse(dtOpenedAll.Rows[i][8].ToString()) <= dateOfReturnDO)
+                                    {
+                                        dt.Rows.Add(dtOpenedAll.Rows[i]);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            //TODO: Проверь работу этого кода. Это пиздец какой-то, но я надеюсь сработает. Если срабатывает - расшаривай его для остальных datagridview.
+            dtOpenedAll = dt;
+        }
+
         // Представление "Открытые договоры (просрок)"
         public void GetOpenedProsrokDataTable()
         {
