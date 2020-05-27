@@ -91,21 +91,21 @@
             this.btnFRemove = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnOrgFilterReset = new System.Windows.Forms.Button();
+            this.btnOrgFilterApply = new System.Windows.Forms.Button();
+            this.comboOrgFilterATE = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbOrgFilterOOName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbOrgFilterOOCode = new System.Windows.Forms.TextBox();
             this.dgvOrg = new System.Windows.Forms.DataGridView();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.checkOrgFilterIsPPE9 = new System.Windows.Forms.CheckBox();
+            this.checkOrgFilterIsPPE11 = new System.Windows.Forms.CheckBox();
+            this.checkOrgFilterHasOpenedContracts = new System.Windows.Forms.CheckBox();
+            this.comboOrgFilterMemberships = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkOrgFilterHasOpenedProsrokContracts = new System.Windows.Forms.CheckBox();
             this.mainMenu.SuspendLayout();
             this.tctrlMain.SuspendLayout();
             this.tpMainContracts.SuspendLayout();
@@ -153,26 +153,26 @@
             // 
             this.mmBaseConnect.Name = "mmBaseConnect";
             this.mmBaseConnect.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.mmBaseConnect.Size = new System.Drawing.Size(213, 22);
+            this.mmBaseConnect.Size = new System.Drawing.Size(191, 22);
             this.mmBaseConnect.Text = "Обновить данные";
             this.mmBaseConnect.Click += new System.EventHandler(this.mmBaseConnect_Click);
             // 
             // mmBaseSettings
             // 
             this.mmBaseSettings.Name = "mmBaseSettings";
-            this.mmBaseSettings.Size = new System.Drawing.Size(213, 22);
-            this.mmBaseSettings.Text = "Настройки подключения";
+            this.mmBaseSettings.Size = new System.Drawing.Size(191, 22);
+            this.mmBaseSettings.Text = "Настройки";
             this.mmBaseSettings.Click += new System.EventHandler(this.mmBaseSettings_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(210, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(188, 6);
             // 
             // mmBaseExit
             // 
             this.mmBaseExit.Name = "mmBaseExit";
-            this.mmBaseExit.Size = new System.Drawing.Size(213, 22);
+            this.mmBaseExit.Size = new System.Drawing.Size(191, 22);
             this.mmBaseExit.Text = "Выход";
             this.mmBaseExit.Click += new System.EventHandler(this.mmBaseExit_Click);
             // 
@@ -432,15 +432,15 @@
             // dtpContractsFilterReturnDO
             // 
             this.dtpContractsFilterReturnDO.Enabled = false;
-            this.dtpContractsFilterReturnDO.Location = new System.Drawing.Point(34, 336);
+            this.dtpContractsFilterReturnDO.Location = new System.Drawing.Point(37, 336);
             this.dtpContractsFilterReturnDO.Name = "dtpContractsFilterReturnDO";
-            this.dtpContractsFilterReturnDO.Size = new System.Drawing.Size(178, 20);
+            this.dtpContractsFilterReturnDO.Size = new System.Drawing.Size(175, 20);
             this.dtpContractsFilterReturnDO.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 342);
+            this.label8.Location = new System.Drawing.Point(6, 342);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(25, 13);
             this.label8.TabIndex = 19;
@@ -449,15 +449,15 @@
             // dtpContractsFilterReturnOT
             // 
             this.dtpContractsFilterReturnOT.Enabled = false;
-            this.dtpContractsFilterReturnOT.Location = new System.Drawing.Point(32, 310);
+            this.dtpContractsFilterReturnOT.Location = new System.Drawing.Point(37, 310);
             this.dtpContractsFilterReturnOT.Name = "dtpContractsFilterReturnOT";
-            this.dtpContractsFilterReturnOT.Size = new System.Drawing.Size(180, 20);
+            this.dtpContractsFilterReturnOT.Size = new System.Drawing.Size(175, 20);
             this.dtpContractsFilterReturnOT.TabIndex = 18;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 316);
+            this.label9.Location = new System.Drawing.Point(6, 316);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(23, 13);
             this.label9.TabIndex = 17;
@@ -493,15 +493,15 @@
             // dtpContractsFilterIssueOT
             // 
             this.dtpContractsFilterIssueOT.Enabled = false;
-            this.dtpContractsFilterIssueOT.Location = new System.Drawing.Point(35, 235);
+            this.dtpContractsFilterIssueOT.Location = new System.Drawing.Point(37, 235);
             this.dtpContractsFilterIssueOT.Name = "dtpContractsFilterIssueOT";
-            this.dtpContractsFilterIssueOT.Size = new System.Drawing.Size(180, 20);
+            this.dtpContractsFilterIssueOT.Size = new System.Drawing.Size(178, 20);
             this.dtpContractsFilterIssueOT.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 241);
+            this.label7.Location = new System.Drawing.Point(6, 241);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 13);
             this.label7.TabIndex = 12;
@@ -546,15 +546,15 @@
             // dtpContractsFilterSingingOT
             // 
             this.dtpContractsFilterSingingOT.Enabled = false;
-            this.dtpContractsFilterSingingOT.Location = new System.Drawing.Point(35, 160);
+            this.dtpContractsFilterSingingOT.Location = new System.Drawing.Point(37, 160);
             this.dtpContractsFilterSingingOT.Name = "dtpContractsFilterSingingOT";
-            this.dtpContractsFilterSingingOT.Size = new System.Drawing.Size(180, 20);
+            this.dtpContractsFilterSingingOT.Size = new System.Drawing.Size(178, 20);
             this.dtpContractsFilterSingingOT.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 166);
+            this.label4.Location = new System.Drawing.Point(6, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 13);
             this.label4.TabIndex = 7;
@@ -740,20 +740,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.checkOrgFilterHasOpenedProsrokContracts);
+            this.groupBox1.Controls.Add(this.comboOrgFilterMemberships);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnOrgFilterReset);
+            this.groupBox1.Controls.Add(this.btnOrgFilterApply);
+            this.groupBox1.Controls.Add(this.checkOrgFilterIsPPE11);
+            this.groupBox1.Controls.Add(this.checkOrgFilterIsPPE9);
+            this.groupBox1.Controls.Add(this.checkOrgFilterHasOpenedContracts);
+            this.groupBox1.Controls.Add(this.comboOrgFilterATE);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbOrgFilterOOName);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbOrgFilterOOCode);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(5, 0);
             this.groupBox1.Name = "groupBox1";
@@ -762,32 +762,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтр";
             // 
-            // button1
+            // btnOrgFilterReset
             // 
-            this.button1.Location = new System.Drawing.Point(113, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Сбросить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOrgFilterReset.Location = new System.Drawing.Point(113, 269);
+            this.btnOrgFilterReset.Name = "btnOrgFilterReset";
+            this.btnOrgFilterReset.Size = new System.Drawing.Size(102, 23);
+            this.btnOrgFilterReset.TabIndex = 23;
+            this.btnOrgFilterReset.Text = "Сбросить";
+            this.btnOrgFilterReset.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnOrgFilterApply
             // 
-            this.button2.Location = new System.Drawing.Point(6, 362);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Применить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOrgFilterApply.Location = new System.Drawing.Point(6, 269);
+            this.btnOrgFilterApply.Name = "btnOrgFilterApply";
+            this.btnOrgFilterApply.Size = new System.Drawing.Size(101, 23);
+            this.btnOrgFilterApply.TabIndex = 22;
+            this.btnOrgFilterApply.Text = "Применить";
+            this.btnOrgFilterApply.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboOrgFilterATE
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 110);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 21);
-            this.comboBox1.TabIndex = 5;
+            this.comboOrgFilterATE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboOrgFilterATE.FormattingEnabled = true;
+            this.comboOrgFilterATE.Location = new System.Drawing.Point(6, 110);
+            this.comboOrgFilterATE.Name = "comboOrgFilterATE";
+            this.comboOrgFilterATE.Size = new System.Drawing.Size(209, 21);
+            this.comboOrgFilterATE.TabIndex = 5;
             // 
             // label16
             // 
@@ -807,12 +807,12 @@
             this.label17.TabIndex = 3;
             this.label17.Text = "Код ОО:";
             // 
-            // textBox1
+            // tbOrgFilterOOName
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbOrgFilterOOName.Location = new System.Drawing.Point(6, 32);
+            this.tbOrgFilterOOName.Name = "tbOrgFilterOOName";
+            this.tbOrgFilterOOName.Size = new System.Drawing.Size(209, 20);
+            this.tbOrgFilterOOName.TabIndex = 0;
             // 
             // label18
             // 
@@ -823,12 +823,12 @@
             this.label18.TabIndex = 1;
             this.label18.Text = "Наименование:";
             // 
-            // textBox2
+            // tbOrgFilterOOCode
             // 
-            this.textBox2.Location = new System.Drawing.Point(7, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 20);
-            this.textBox2.TabIndex = 2;
+            this.tbOrgFilterOOCode.Location = new System.Drawing.Point(7, 71);
+            this.tbOrgFilterOOCode.Name = "tbOrgFilterOOCode";
+            this.tbOrgFilterOOCode.Size = new System.Drawing.Size(208, 20);
+            this.tbOrgFilterOOCode.TabIndex = 2;
             // 
             // dgvOrg
             // 
@@ -845,44 +845,44 @@
             this.dgvOrg.Size = new System.Drawing.Size(734, 396);
             this.dgvOrg.TabIndex = 3;
             // 
-            // checkBox2
+            // checkOrgFilterIsPPE9
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 223);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(157, 17);
-            this.checkBox2.TabIndex = 16;
-            this.checkBox2.Text = "Является ППЭ (9 классы)";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkOrgFilterIsPPE9.AutoSize = true;
+            this.checkOrgFilterIsPPE9.Location = new System.Drawing.Point(6, 223);
+            this.checkOrgFilterIsPPE9.Name = "checkOrgFilterIsPPE9";
+            this.checkOrgFilterIsPPE9.Size = new System.Drawing.Size(157, 17);
+            this.checkOrgFilterIsPPE9.TabIndex = 16;
+            this.checkOrgFilterIsPPE9.Text = "Является ППЭ (9 классы)";
+            this.checkOrgFilterIsPPE9.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkOrgFilterIsPPE11
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 246);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(163, 17);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Является ППЭ (11 классы)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkOrgFilterIsPPE11.AutoSize = true;
+            this.checkOrgFilterIsPPE11.Location = new System.Drawing.Point(6, 246);
+            this.checkOrgFilterIsPPE11.Name = "checkOrgFilterIsPPE11";
+            this.checkOrgFilterIsPPE11.Size = new System.Drawing.Size(163, 17);
+            this.checkOrgFilterIsPPE11.TabIndex = 21;
+            this.checkOrgFilterIsPPE11.Text = "Является ППЭ (11 классы)";
+            this.checkOrgFilterIsPPE11.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkOrgFilterHasOpenedContracts
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 177);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(155, 17);
-            this.checkBox3.TabIndex = 11;
-            this.checkBox3.Text = "Есть открытые договоры";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkOrgFilterHasOpenedContracts.AutoSize = true;
+            this.checkOrgFilterHasOpenedContracts.Location = new System.Drawing.Point(6, 177);
+            this.checkOrgFilterHasOpenedContracts.Name = "checkOrgFilterHasOpenedContracts";
+            this.checkOrgFilterHasOpenedContracts.Size = new System.Drawing.Size(155, 17);
+            this.checkOrgFilterHasOpenedContracts.TabIndex = 11;
+            this.checkOrgFilterHasOpenedContracts.Text = "Есть открытые договоры";
+            this.checkOrgFilterHasOpenedContracts.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // comboOrgFilterMemberships
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(6, 150);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(209, 21);
-            this.comboBox2.TabIndex = 25;
+            this.comboOrgFilterMemberships.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboOrgFilterMemberships.FormattingEnabled = true;
+            this.comboOrgFilterMemberships.Location = new System.Drawing.Point(6, 150);
+            this.comboOrgFilterMemberships.Name = "comboOrgFilterMemberships";
+            this.comboOrgFilterMemberships.Size = new System.Drawing.Size(209, 21);
+            this.comboOrgFilterMemberships.TabIndex = 25;
             // 
             // label10
             // 
@@ -893,15 +893,15 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Принадлежность:";
             // 
-            // checkBox4
+            // checkOrgFilterHasOpenedProsrokContracts
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 200);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(178, 17);
-            this.checkBox4.TabIndex = 26;
-            this.checkBox4.Text = "Есть просроченные договоры";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkOrgFilterHasOpenedProsrokContracts.AutoSize = true;
+            this.checkOrgFilterHasOpenedProsrokContracts.Location = new System.Drawing.Point(6, 200);
+            this.checkOrgFilterHasOpenedProsrokContracts.Name = "checkOrgFilterHasOpenedProsrokContracts";
+            this.checkOrgFilterHasOpenedProsrokContracts.Size = new System.Drawing.Size(178, 17);
+            this.checkOrgFilterHasOpenedProsrokContracts.TabIndex = 26;
+            this.checkOrgFilterHasOpenedProsrokContracts.Text = "Есть просроченные договоры";
+            this.checkOrgFilterHasOpenedProsrokContracts.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -914,6 +914,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Name = "MainForm";
             this.Text = "Журнал учета";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.tctrlMain.ResumeLayout(false);
@@ -1006,20 +1007,20 @@
         private System.Windows.Forms.DataGridView dgvOrg;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.CheckBox checkOrgFilterHasOpenedProsrokContracts;
+        private System.Windows.Forms.ComboBox comboOrgFilterMemberships;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnOrgFilterReset;
+        private System.Windows.Forms.Button btnOrgFilterApply;
+        private System.Windows.Forms.CheckBox checkOrgFilterIsPPE11;
+        private System.Windows.Forms.CheckBox checkOrgFilterIsPPE9;
+        private System.Windows.Forms.CheckBox checkOrgFilterHasOpenedContracts;
+        private System.Windows.Forms.ComboBox comboOrgFilterATE;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbOrgFilterOOName;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbOrgFilterOOCode;
     }
 }
 

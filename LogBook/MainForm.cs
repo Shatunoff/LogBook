@@ -11,21 +11,115 @@ namespace LogBook
 {
     public partial class MainForm : Form
     {
-        Contracts dbContracts = new Contracts();
-        Organizations dbOrg = new Organizations();
+        Contracts dbContracts;
+        Organizations dbOrg;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        public void ConnectionRefresh()
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            dgvContractsOpenedAll.DataSource = dbContracts.GetOpenedAllDataTable();
-            dgvContractsOpenedProsrok.DataSource = dbContracts.GetOpenedProsrokDataTable();
-            dgvContractsClosed.DataSource = dbContracts.GetClosedAllDataTable();
-            comboContractsFilterResponsible.DataSource = dbContracts.GetResponsiblesAsList();
-            dgvOrg.DataSource = dbOrg.GetOrganizations();
+            Refresh_Connection();
+        }
+
+        public void Refresh_Connection()
+        {
+            try
+            {
+                dbContracts = new Contracts();
+                dbOrg = new Organizations();
+
+                dgvContractsOpenedAll.DataSource = dbContracts.dtOpenedAll;
+                dgvContractsOpenedProsrok.DataSource = dbContracts.dtOpenedProsrok;
+                dgvContractsClosed.DataSource = dbContracts.dtClosedAll;
+                comboContractsFilterResponsible.DataSource = dbContracts.listResponsibles;
+
+                dgvOrg.DataSource = dbOrg.dtAllOrg;
+                comboOrgFilterATE.DataSource = dbOrg.listATEs;
+                comboOrgFilterMemberships.DataSource = dbOrg.listMemberships;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка соединения с базой данных");
+            }
+        }
+
+        public void Refresh_AllDataGridView()
+        {
+            try
+            {
+                dbContracts.GetAllBoxes();
+                dbOrg.GetAllBoxes();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "Ошибка соединения с базой данных");
+            }
+        }
+
+        public void Refresh_ContractsDataGridView()
+        {
+            try
+            {
+                dbContracts.GetAllBoxes();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Ошибка соединения с базой данных");
+            }
+        }
+
+        public void Refresh_ContractsOpenedDataGridView()
+        {
+            try
+            {
+                dbContracts.GetOpenedAllDataTable();
+                dbContracts.GetResponsiblesAsList();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Ошибка соединения с базой данных");
+            }
+        }
+
+        public void Refresh_ContractsOpenedProsrokDataGridView()
+        {
+            try
+            {
+                dbContracts.GetOpenedProsrokDataTable();
+                dbContracts.GetResponsiblesAsList();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Ошибка соединения с базой данных");
+            }
+        }
+
+        public void Refresh_ContractsClosedDataGridView()
+        {
+            try
+            {
+                dbContracts.GetClosedAllDataTable();
+                dbContracts.GetResponsiblesAsList();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Ошибка соединения с базой данных");
+            }
+        }
+
+        public void Refresh_OrganizationsDataGridView()
+        {
+            try
+            {
+                dbOrg.GetAllBoxes();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Ошибка соединения с базой данных");
+            }
         }
 
         private void mmBaseSettings_Click(object sender, EventArgs e)
@@ -41,7 +135,7 @@ namespace LogBook
 
         private void mmBaseConnect_Click(object sender, EventArgs e)
         {
-            ConnectionRefresh();
+            Refresh_AllDataGridView();
         }
 
         private void mmContractsNotReturnableItems_Click(object sender, EventArgs e)

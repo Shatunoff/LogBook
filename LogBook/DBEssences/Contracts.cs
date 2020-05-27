@@ -9,55 +9,72 @@ namespace LogBook
 {
     public class Contracts
     {
+        public DataTable dtOpenedAll { get; private set; }
+        public DataTable dtOpenedProsrok { get; private set; }
+        public DataTable dtClosedAll { get; private set; }
+        public List<string> listResponsibles { get; private set; }
+
+        public Contracts()
+        {
+            dtOpenedAll = new DataTable();
+            dtOpenedProsrok = new DataTable();
+            dtClosedAll = new DataTable();
+            listResponsibles = new List<string>();
+
+            GetAllBoxes();
+        }
+
+        // Получить данные для всех хранилищ
+        public void GetAllBoxes()
+        {
+            GetOpenedAllDataTable();
+            GetOpenedProsrokDataTable();
+            GetClosedAllDataTable();
+            GetResponsiblesAsList();
+        }
+
         // Представление "Открытые договоры (все)"
-        public DataTable GetOpenedAllDataTable()
+        public void GetOpenedAllDataTable()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.ContractsOpenedAll", connection.ConnectionString);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                return dt;
+                adapter.Fill(dtOpenedAll);
             }
         }
 
         // Представление "Открытые договоры (просрок)"
-        public DataTable GetOpenedProsrokDataTable()
+        public void GetOpenedProsrokDataTable()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.ContractsOpenedProsrok", connection.ConnectionString);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                return dt;
+                adapter.Fill(dtOpenedProsrok);
             }
         }
 
         // Представление "Закрытые договоры"
-        public DataTable GetClosedAllDataTable()
+        public void GetClosedAllDataTable()
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.ContractsClosed", connection.ConnectionString);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                return dt;
+                adapter.Fill(dtClosedAll);
             }
         }
 
-        public List<string> GetResponsiblesAsList()
+        // Получить список ответственных для combobox
+        public void GetResponsiblesAsList()
         {
-            List<string> list = new List<string>();
-            list.Add("");
+            listResponsibles.Clear();
+            listResponsibles.Add("");
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
                 DataTable dt = new DataTable();
                 SqlDataAdapter ad = new SqlDataAdapter("SELECT Name From dbo.Responsibles", connection);
                 ad.Fill(dt);
-                for (int i = 0; i < dt.Rows.Count; i++) list.Add(dt.Rows[i][0].ToString());
+                for (int i = 0; i < dt.Rows.Count; i++) listResponsibles.Add(dt.Rows[i][0].ToString());
             }
-
-            return list;
         }
     }
 }
