@@ -167,5 +167,46 @@ namespace LogBook
             MembershipsForm member = new MembershipsForm();
             member.ShowDialog();
         }
+
+        private void btnContractsFilterApply_Click(object sender, EventArgs e)
+        {
+            //if ((checkDateCreate.Checked && dtpDateCreateOT.Value > dtpDateCreateDO.Value) || (checkDateToTrash.Checked && dtpDateToTrashOT.Value > dtpDateToTrashDO.Value))
+            //{
+            //    MessageBox.Show("Диапазон дат указан неверно!", "Ошибка",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //DateTime dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO;
+            //if (checkDateCreate.Checked)
+            //{
+            //    dtCreateOT = DateTime.Parse(dtpDateCreateOT.Value.ToShortDateString());
+            //    dtCreateDO = DateTime.Parse(dtpDateCreateDO.Value.ToShortDateString());
+            //}
+            //else
+            //{
+            //    dtCreateOT = DateTime.MinValue;
+            //    dtCreateDO = DateTime.MaxValue;
+            //}
+
+            //if (checkDateToTrash.Checked)
+            //{
+            //    dtTrashOT = DateTime.Parse(dtpDateToTrashOT.Value.ToShortDateString());
+            //    dtTrashDO = DateTime.Parse(dtpDateToTrashDO.Value.ToShortDateString());
+            //}
+            //else
+            //{
+            //    dtTrashOT = DateTime.MinValue;
+            //    dtTrashDO = DateTime.MaxValue;
+            //}
+            //dgvAll.DataSource = items.GetAllItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
+            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
+            //dgvIsOkay.DataSource = items.GetIsOkayItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
+            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
+            //dgvSoon.DataSource = items.GetIsSoonItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
+            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
+            //dgvOverdue.DataSource = items.GetIsOverdueItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
+            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
+            //butFilterReset.Enabled = true;
+        }
     }
 }

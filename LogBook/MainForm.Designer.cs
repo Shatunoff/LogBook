@@ -418,6 +418,7 @@
             this.btnContractsFilterApply.TabIndex = 22;
             this.btnContractsFilterApply.Text = "Применить";
             this.btnContractsFilterApply.UseVisualStyleBackColor = true;
+            this.btnContractsFilterApply.Click += new System.EventHandler(this.btnContractsFilterApply_Click);
             // 
             // checkContractsFilterDateOfReturn
             // 
