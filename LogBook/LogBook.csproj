@@ -44,6 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBEssences\Ate.cs" />
+    <Compile Include="DBEssences\Memberships.cs" />
+    <Compile Include="OrgForms\MembershipsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrgForms\MembershipsForm.Designer.cs">
+      <DependentUpon>MembershipsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrgForms\AteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrgForms\AteForm.resx">
       <DependentUpon>AteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrgForms\MembershipsForm.resx">
+      <DependentUpon>MembershipsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -65,5 +65,11 @@ namespace LogBook
             AteForm ate = new AteForm();
             ate.ShowDialog();
         }
+
+        private void mmOrgMemberships_Click(object sender, EventArgs e)
+        {
+            MembershipsForm member = new MembershipsForm();
+            member.ShowDialog();
+        }
     }
 }

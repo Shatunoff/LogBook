@@ -80,7 +80,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbContractsFilterCodeOO = new System.Windows.Forms.TextBox();
             this.tpMainOrg = new System.Windows.Forms.TabPage();
-            this.tpMainStatistic = new System.Windows.Forms.TabPage();
             this.panelMainForButtonsF = new System.Windows.Forms.Panel();
             this.tlpForButtonsF = new System.Windows.Forms.TableLayoutPanel();
             this.btnFNew = new System.Windows.Forms.Button();
@@ -126,7 +125,7 @@
             this.toolStripMenuItem2,
             this.mmBaseExit});
             this.mmBase.Name = "mmBase";
-            this.mmBase.Size = new System.Drawing.Size(86, 20);
+            this.mmBase.Size = new System.Drawing.Size(87, 20);
             this.mmBase.Text = "База данных";
             // 
             // mmBaseConnect
@@ -235,12 +234,12 @@
             this.mmOrgMemberships.Name = "mmOrgMemberships";
             this.mmOrgMemberships.Size = new System.Drawing.Size(229, 22);
             this.mmOrgMemberships.Text = "Принадлежности...";
+            this.mmOrgMemberships.Click += new System.EventHandler(this.mmOrgMemberships_Click);
             // 
             // tctrlMain
             // 
             this.tctrlMain.Controls.Add(this.tpMainContracts);
             this.tctrlMain.Controls.Add(this.tpMainOrg);
-            this.tctrlMain.Controls.Add(this.tpMainStatistic);
             this.tctrlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tctrlMain.Location = new System.Drawing.Point(0, 24);
             this.tctrlMain.Name = "tctrlMain";
@@ -411,6 +410,7 @@
             // 
             // dtpContractsFilterReturnDO
             // 
+            this.dtpContractsFilterReturnDO.Enabled = false;
             this.dtpContractsFilterReturnDO.Location = new System.Drawing.Point(34, 336);
             this.dtpContractsFilterReturnDO.Name = "dtpContractsFilterReturnDO";
             this.dtpContractsFilterReturnDO.Size = new System.Drawing.Size(178, 20);
@@ -427,6 +427,7 @@
             // 
             // dtpContractsFilterReturnOT
             // 
+            this.dtpContractsFilterReturnOT.Enabled = false;
             this.dtpContractsFilterReturnOT.Location = new System.Drawing.Point(32, 310);
             this.dtpContractsFilterReturnOT.Name = "dtpContractsFilterReturnOT";
             this.dtpContractsFilterReturnOT.Size = new System.Drawing.Size(180, 20);
@@ -453,6 +454,7 @@
             // 
             // dtpContractsFilterIssueDO
             // 
+            this.dtpContractsFilterIssueDO.Enabled = false;
             this.dtpContractsFilterIssueDO.Location = new System.Drawing.Point(37, 261);
             this.dtpContractsFilterIssueDO.Name = "dtpContractsFilterIssueDO";
             this.dtpContractsFilterIssueDO.Size = new System.Drawing.Size(178, 20);
@@ -469,6 +471,7 @@
             // 
             // dtpContractsFilterIssueOT
             // 
+            this.dtpContractsFilterIssueOT.Enabled = false;
             this.dtpContractsFilterIssueOT.Location = new System.Drawing.Point(35, 235);
             this.dtpContractsFilterIssueOT.Name = "dtpContractsFilterIssueOT";
             this.dtpContractsFilterIssueOT.Size = new System.Drawing.Size(180, 20);
@@ -495,6 +498,7 @@
             // 
             // dtpContractsFilterSingingDO
             // 
+            this.dtpContractsFilterSingingDO.Enabled = false;
             this.dtpContractsFilterSingingDO.Location = new System.Drawing.Point(37, 186);
             this.dtpContractsFilterSingingDO.Name = "dtpContractsFilterSingingDO";
             this.dtpContractsFilterSingingDO.Size = new System.Drawing.Size(178, 20);
@@ -520,6 +524,7 @@
             // 
             // dtpContractsFilterSingingOT
             // 
+            this.dtpContractsFilterSingingOT.Enabled = false;
             this.dtpContractsFilterSingingOT.Location = new System.Drawing.Point(35, 160);
             this.dtpContractsFilterSingingOT.Name = "dtpContractsFilterSingingOT";
             this.dtpContractsFilterSingingOT.Size = new System.Drawing.Size(180, 20);
@@ -584,15 +589,6 @@
             this.tpMainOrg.TabIndex = 1;
             this.tpMainOrg.Text = "Организации";
             this.tpMainOrg.UseVisualStyleBackColor = true;
-            // 
-            // tpMainStatistic
-            // 
-            this.tpMainStatistic.Location = new System.Drawing.Point(4, 22);
-            this.tpMainStatistic.Name = "tpMainStatistic";
-            this.tpMainStatistic.Size = new System.Drawing.Size(971, 402);
-            this.tpMainStatistic.TabIndex = 2;
-            this.tpMainStatistic.Text = "Статистика";
-            this.tpMainStatistic.UseVisualStyleBackColor = true;
             // 
             // panelMainForButtonsF
             // 
@@ -804,7 +800,6 @@
         private System.Windows.Forms.TabPage tpMainContractsClosed;
         private System.Windows.Forms.DataGridView dgvContractsClosed;
         private System.Windows.Forms.ToolStripMenuItem mmContractsResponsibles;
-        private System.Windows.Forms.TabPage tpMainStatistic;
     }
 }
 
