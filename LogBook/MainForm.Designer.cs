@@ -91,14 +91,12 @@
             this.dgvOrg = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkOrgFilterHasOpenedProsrokContracts = new System.Windows.Forms.CheckBox();
             this.comboOrgFilterMemberships = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnOrgFilterReset = new System.Windows.Forms.Button();
             this.btnOrgFilterApply = new System.Windows.Forms.Button();
             this.checkOrgFilterIsPPE11 = new System.Windows.Forms.CheckBox();
             this.checkOrgFilterIsPPE9 = new System.Windows.Forms.CheckBox();
-            this.checkOrgFilterHasOpenedContracts = new System.Windows.Forms.CheckBox();
             this.comboOrgFilterATE = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -357,7 +355,7 @@
             this.tpMainContractsOpenedProsrok.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsOpenedProsrok.Name = "tpMainContractsOpenedProsrok";
             this.tpMainContractsOpenedProsrok.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMainContractsOpenedProsrok.Size = new System.Drawing.Size(726, 370);
+            this.tpMainContractsOpenedProsrok.Size = new System.Drawing.Size(726, 403);
             this.tpMainContractsOpenedProsrok.TabIndex = 1;
             this.tpMainContractsOpenedProsrok.Text = "Открытые договоры (просрок)";
             this.tpMainContractsOpenedProsrok.UseVisualStyleBackColor = true;
@@ -386,7 +384,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvContractsOpenedProsrok.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 339);
+            this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsOpenedProsrok.TabIndex = 0;
             // 
             // tpMainContractsClosed
@@ -396,7 +394,7 @@
             this.tpMainContractsClosed.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsClosed.Name = "tpMainContractsClosed";
             this.tpMainContractsClosed.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMainContractsClosed.Size = new System.Drawing.Size(726, 370);
+            this.tpMainContractsClosed.Size = new System.Drawing.Size(726, 403);
             this.tpMainContractsClosed.TabIndex = 3;
             this.tpMainContractsClosed.Text = "Закрытые договоры";
             this.tpMainContractsClosed.UseVisualStyleBackColor = true;
@@ -425,7 +423,7 @@
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvContractsClosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContractsClosed.Size = new System.Drawing.Size(720, 339);
+            this.dgvContractsClosed.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsClosed.TabIndex = 0;
             // 
             // panelContractsForFilter
@@ -724,14 +722,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkOrgFilterHasOpenedProsrokContracts);
             this.groupBox1.Controls.Add(this.comboOrgFilterMemberships);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btnOrgFilterReset);
             this.groupBox1.Controls.Add(this.btnOrgFilterApply);
             this.groupBox1.Controls.Add(this.checkOrgFilterIsPPE11);
             this.groupBox1.Controls.Add(this.checkOrgFilterIsPPE9);
-            this.groupBox1.Controls.Add(this.checkOrgFilterHasOpenedContracts);
             this.groupBox1.Controls.Add(this.comboOrgFilterATE);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label17);
@@ -745,16 +741,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтр";
-            // 
-            // checkOrgFilterHasOpenedProsrokContracts
-            // 
-            this.checkOrgFilterHasOpenedProsrokContracts.AutoSize = true;
-            this.checkOrgFilterHasOpenedProsrokContracts.Location = new System.Drawing.Point(6, 200);
-            this.checkOrgFilterHasOpenedProsrokContracts.Name = "checkOrgFilterHasOpenedProsrokContracts";
-            this.checkOrgFilterHasOpenedProsrokContracts.Size = new System.Drawing.Size(178, 17);
-            this.checkOrgFilterHasOpenedProsrokContracts.TabIndex = 26;
-            this.checkOrgFilterHasOpenedProsrokContracts.Text = "Есть просроченные договоры";
-            this.checkOrgFilterHasOpenedProsrokContracts.UseVisualStyleBackColor = true;
             // 
             // comboOrgFilterMemberships
             // 
@@ -776,7 +762,7 @@
             // 
             // btnOrgFilterReset
             // 
-            this.btnOrgFilterReset.Location = new System.Drawing.Point(113, 269);
+            this.btnOrgFilterReset.Location = new System.Drawing.Point(113, 223);
             this.btnOrgFilterReset.Name = "btnOrgFilterReset";
             this.btnOrgFilterReset.Size = new System.Drawing.Size(102, 23);
             this.btnOrgFilterReset.TabIndex = 23;
@@ -785,7 +771,7 @@
             // 
             // btnOrgFilterApply
             // 
-            this.btnOrgFilterApply.Location = new System.Drawing.Point(6, 269);
+            this.btnOrgFilterApply.Location = new System.Drawing.Point(6, 223);
             this.btnOrgFilterApply.Name = "btnOrgFilterApply";
             this.btnOrgFilterApply.Size = new System.Drawing.Size(101, 23);
             this.btnOrgFilterApply.TabIndex = 22;
@@ -795,7 +781,7 @@
             // checkOrgFilterIsPPE11
             // 
             this.checkOrgFilterIsPPE11.AutoSize = true;
-            this.checkOrgFilterIsPPE11.Location = new System.Drawing.Point(6, 246);
+            this.checkOrgFilterIsPPE11.Location = new System.Drawing.Point(6, 200);
             this.checkOrgFilterIsPPE11.Name = "checkOrgFilterIsPPE11";
             this.checkOrgFilterIsPPE11.Size = new System.Drawing.Size(163, 17);
             this.checkOrgFilterIsPPE11.TabIndex = 21;
@@ -805,22 +791,12 @@
             // checkOrgFilterIsPPE9
             // 
             this.checkOrgFilterIsPPE9.AutoSize = true;
-            this.checkOrgFilterIsPPE9.Location = new System.Drawing.Point(6, 223);
+            this.checkOrgFilterIsPPE9.Location = new System.Drawing.Point(6, 177);
             this.checkOrgFilterIsPPE9.Name = "checkOrgFilterIsPPE9";
             this.checkOrgFilterIsPPE9.Size = new System.Drawing.Size(157, 17);
             this.checkOrgFilterIsPPE9.TabIndex = 16;
             this.checkOrgFilterIsPPE9.Text = "Является ППЭ (9 классы)";
             this.checkOrgFilterIsPPE9.UseVisualStyleBackColor = true;
-            // 
-            // checkOrgFilterHasOpenedContracts
-            // 
-            this.checkOrgFilterHasOpenedContracts.AutoSize = true;
-            this.checkOrgFilterHasOpenedContracts.Location = new System.Drawing.Point(6, 177);
-            this.checkOrgFilterHasOpenedContracts.Name = "checkOrgFilterHasOpenedContracts";
-            this.checkOrgFilterHasOpenedContracts.Size = new System.Drawing.Size(155, 17);
-            this.checkOrgFilterHasOpenedContracts.TabIndex = 11;
-            this.checkOrgFilterHasOpenedContracts.Text = "Есть открытые договоры";
-            this.checkOrgFilterHasOpenedContracts.UseVisualStyleBackColor = true;
             // 
             // comboOrgFilterATE
             // 
@@ -1208,14 +1184,12 @@
         private System.Windows.Forms.DataGridView dgvOrg;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkOrgFilterHasOpenedProsrokContracts;
         private System.Windows.Forms.ComboBox comboOrgFilterMemberships;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnOrgFilterReset;
         private System.Windows.Forms.Button btnOrgFilterApply;
         private System.Windows.Forms.CheckBox checkOrgFilterIsPPE11;
         private System.Windows.Forms.CheckBox checkOrgFilterIsPPE9;
-        private System.Windows.Forms.CheckBox checkOrgFilterHasOpenedContracts;
         private System.Windows.Forms.ComboBox comboOrgFilterATE;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
