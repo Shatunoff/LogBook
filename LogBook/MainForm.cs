@@ -79,9 +79,11 @@ namespace LogBook
             // Установка ширины столбцов таблицы организаций
             if (dgvOrg.ColumnCount > 0)
             {
+                for (int i = 0; i < dgvOrg.Columns.Count; i++) dgvOrg.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
                 dgvOrg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvOrg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 dgvOrg.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrg.Columns[1].MinimumWidth = 200;
                 dgvOrg.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvOrg.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvOrg.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -334,6 +336,52 @@ namespace LogBook
                 OrgMoreForm orgMore = new OrgMoreForm(idOO);
                 orgMore.ShowDialog();
             }
+        }
+
+        private void tsbtnOrgAdd_Click(object sender, EventArgs e)
+        {
+            OrgAddEditForm add = new OrgAddEditForm();
+            if (add.ShowDialog() == DialogResult.OK)
+                Refresh_OrganizationsDataGridView();
+        }
+
+        private void tsbtnOrgEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvOrg.SelectedRows.Count > 0)
+            {
+                int idOO = int.Parse(dgvOrg.SelectedRows[0].Cells[3].Value.ToString());
+                OrgAddEditForm edit = new OrgAddEditForm(idOO);
+                if (edit.ShowDialog() == DialogResult.OK)
+                    Refresh_OrganizationsDataGridView();
+            }
+        }
+
+        private void tsbtnOrgRemove_Click(object sender, EventArgs e)
+        {
+            if (dgvOrg.SelectedRows.Count > 0)
+            {
+                int idOO = int.Parse(dgvOrg.SelectedRows[0].Cells[3].Value.ToString());
+                if (MessageBox.Show("Вы уверены, что хотите удалить данную организацию? Все договоры с ее участием также будут удалены!", "Подтверждение удаления", 
+                    MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    OrgAddEdit.RemoveOO(idOO);
+                    Refresh_OrganizationsDataGridView();
+                }
+            }
+        }
+
+        private void tsbtnOrgRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh_OrganizationsDataGridView();
+        }
+
+        private void tsbtnOrgExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "CSV-Файлы |*.csv";
+            save.Title = "Экспорт таблицы организаций";
+            if (save.ShowDialog() == DialogResult.OK)
+                Export.ToCSV((DataTable)dgvOrg.DataSource, save.FileName);
         }
     }
 }

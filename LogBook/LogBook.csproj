@@ -44,9 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBEssences\Ate.cs" />
+    <Compile Include="DBEssences\Export.cs" />
     <Compile Include="DBEssences\Memberships.cs" />
+    <Compile Include="DBEssences\OrgAddEdit.cs" />
     <Compile Include="DBEssences\Organizations.cs" />
     <Compile Include="DBEssences\OrgMore.cs" />
+    <Compile Include="OrgForms\OrgAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrgForms\OrgAddEditForm.Designer.cs">
+      <DependentUpon>OrgAddEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrgForms\MembershipsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrgForms\MembershipsForm.resx">
       <DependentUpon>MembershipsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrgForms\OrgAddEditForm.resx">
+      <DependentUpon>OrgAddEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrgForms\OrgMoreForm.resx">
       <DependentUpon>OrgMoreForm.cs</DependentUpon>

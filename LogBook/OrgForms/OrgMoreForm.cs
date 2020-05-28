@@ -12,10 +12,12 @@ namespace LogBook
     public partial class OrgMoreForm : Form
     {
         OrgMore orgMore;
+        int idOO;
 
         public OrgMoreForm(int idOO)
         {
             InitializeComponent();
+            this.idOO = idOO;
             orgMore = new OrgMore(idOO);
         }
 
@@ -34,7 +36,7 @@ namespace LogBook
             tbPhone.Text = orgMore.Organization.Phone.ToString();
             tbAdress.Text = orgMore.Organization.Adress.ToString();
 
-            this.Text = orgMore.Organization.ooShortName + " — " + this.Text;
+            this.Text = orgMore.Organization.ooShortName + " — " + "Информация об образовательной организации";
 
             dgvContracts.DataSource = orgMore.ContractsOfOrganization;
             if(dgvContracts.Columns.Count > 0) dgvContracts.Columns[0].Visible = false;
@@ -49,6 +51,16 @@ namespace LogBook
         {
             if (sender is CheckBox)
                 ((CheckBox)sender).Checked = !((CheckBox)sender).Checked;
+        }
+
+        private void btnEditInfo_Click(object sender, EventArgs e)
+        {
+            OrgAddEditForm edit = new OrgAddEditForm(idOO);
+            if (edit.ShowDialog() == DialogResult.OK)
+            {
+                orgMore = new OrgMore(int.Parse(edit.tbOOCode.Text));
+                OrgMoreForm_Load(sender, e);
+            }
         }
     }
 }

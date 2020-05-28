@@ -34,8 +34,13 @@ namespace LogBook
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.OOSvod", connection.ConnectionString);
-                adapter.Fill(dtAllOrg);
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.OOSvod", connection);
+                dtAllOrg = new DataTable();
+                dtAllOrg.Load(cmd.ExecuteReader());
+
+                connection.Close();
             }
         }
 
@@ -45,10 +50,16 @@ namespace LogBook
             listMemberships.Add("");
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
+                connection.Open();
+
                 DataTable dt = new DataTable();
-                SqlDataAdapter ad = new SqlDataAdapter("SELECT Name From dbo.Memberships", connection);
-                ad.Fill(dt);
+                SqlCommand cmd = new SqlCommand("SELECT Name From dbo.Memberships", connection);
+                dt.Load(cmd.ExecuteReader());
+
+                connection.Close();
+
                 for (int i = 0; i < dt.Rows.Count; i++) listMemberships.Add(dt.Rows[i][0].ToString());
+
             }
         }
 
@@ -58,9 +69,13 @@ namespace LogBook
             listATEs.Add("");
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
+                connection.Open();
                 DataTable dt = new DataTable();
-                SqlDataAdapter ad = new SqlDataAdapter("SELECT Name From dbo.ATE", connection);
-                ad.Fill(dt);
+                SqlCommand cmd = new SqlCommand("SELECT Name From dbo.ATE", connection);
+                dt.Load(cmd.ExecuteReader());
+
+                connection.Close();
+
                 for (int i = 0; i < dt.Rows.Count; i++) listATEs.Add(dt.Rows[i][0].ToString());
             }
         }
