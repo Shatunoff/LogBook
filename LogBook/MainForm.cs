@@ -22,6 +22,76 @@ namespace LogBook
         private void MainForm_Load(object sender, EventArgs e)
         {
             Refresh_Connection();
+
+            // Установка ширины столбцов таблиц договоров
+            if (dgvContractsOpenedAll.ColumnCount > 0)
+            {
+                dgvContractsOpenedAll.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvContractsOpenedAll.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvContractsOpenedAll.Columns[0].Visible = false;
+                dgvContractsOpenedAll.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedAll.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedAll.Columns[3].MinimumWidth = 100;
+                dgvContractsOpenedAll.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvContractsOpenedAll.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedAll.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedAll.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedAll.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedAll.Columns[8].MinimumWidth = 100;
+                dgvContractsOpenedAll.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
+            if (dgvContractsOpenedProsrok.ColumnCount > 0)
+            {
+                dgvContractsOpenedProsrok.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvContractsOpenedProsrok.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvContractsOpenedProsrok.Columns[0].Visible = false;
+                dgvContractsOpenedProsrok.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedProsrok.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedProsrok.Columns[3].MinimumWidth = 100;
+                dgvContractsOpenedProsrok.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvContractsOpenedProsrok.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedProsrok.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedProsrok.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedProsrok.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsOpenedProsrok.Columns[8].MinimumWidth = 100;
+                dgvContractsOpenedProsrok.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
+            if (dgvContractsClosed.ColumnCount > 0)
+            {
+                dgvContractsClosed.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvContractsClosed.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvContractsClosed.Columns[0].Visible = false;
+                dgvContractsClosed.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsClosed.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsClosed.Columns[3].MinimumWidth = 100;
+                dgvContractsClosed.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvContractsClosed.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsClosed.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsClosed.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsClosed.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsClosed.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvContractsClosed.Columns[9].MinimumWidth = 100;
+                dgvContractsClosed.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
+            // Установка ширины столбцов таблицы организаций
+            if (dgvOrg.ColumnCount > 0)
+            {
+                dgvOrg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvOrg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dgvOrg.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrg.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrg.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrg.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrg.Columns[4].MinimumWidth = 200;
+                dgvOrg.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvOrg.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrg.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrg.Columns[7].MinimumWidth = 200;
+                dgvOrg.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
 
         public void Refresh_Connection()
@@ -52,6 +122,15 @@ namespace LogBook
             {
                 dbContracts.GetAllBoxes();
                 dbOrg.GetAllBoxes();
+
+                dgvContractsOpenedAll.DataSource = dbContracts.dtOpenedAll;
+                dgvContractsOpenedProsrok.DataSource = dbContracts.dtOpenedProsrok;
+                dgvContractsClosed.DataSource = dbContracts.dtClosedAll;
+                comboContractsFilterResponsible.DataSource = dbContracts.listResponsibles;
+
+                dgvOrg.DataSource = dbOrg.dtAllOrg;
+                comboOrgFilterATE.DataSource = dbOrg.listATEs;
+                comboOrgFilterMemberships.DataSource = dbOrg.listMemberships;
             }
             catch(Exception e)
             {
@@ -64,6 +143,11 @@ namespace LogBook
             try
             {
                 dbContracts.GetAllBoxes();
+
+                dgvContractsOpenedAll.DataSource = dbContracts.dtOpenedAll;
+                dgvContractsOpenedProsrok.DataSource = dbContracts.dtOpenedProsrok;
+                dgvContractsClosed.DataSource = dbContracts.dtClosedAll;
+                comboContractsFilterResponsible.DataSource = dbContracts.listResponsibles;
             }
             catch (Exception e)
             {
@@ -77,6 +161,9 @@ namespace LogBook
             {
                 dbContracts.GetOpenedAllDataTable();
                 dbContracts.GetResponsiblesAsList();
+
+                dgvContractsOpenedAll.DataSource = dbContracts.dtOpenedAll;
+                comboContractsFilterResponsible.DataSource = dbContracts.listResponsibles;
             }
             catch (Exception e)
             {
@@ -90,6 +177,9 @@ namespace LogBook
             {
                 dbContracts.GetOpenedProsrokDataTable();
                 dbContracts.GetResponsiblesAsList();
+
+                dgvContractsOpenedProsrok.DataSource = dbContracts.dtOpenedProsrok;
+                comboContractsFilterResponsible.DataSource = dbContracts.listResponsibles;
             }
             catch (Exception e)
             {
@@ -103,6 +193,9 @@ namespace LogBook
             {
                 dbContracts.GetClosedAllDataTable();
                 dbContracts.GetResponsiblesAsList();
+
+                dgvContractsClosed.DataSource = dbContracts.dtClosedAll;
+                comboContractsFilterResponsible.DataSource = dbContracts.listResponsibles;
             }
             catch (Exception e)
             {
@@ -115,6 +208,10 @@ namespace LogBook
             try
             {
                 dbOrg.GetAllBoxes();
+
+                dgvOrg.DataSource = dbOrg.dtAllOrg;
+                comboOrgFilterATE.DataSource = dbOrg.listATEs;
+                comboOrgFilterMemberships.DataSource = dbOrg.listMemberships;
             }
             catch (Exception e)
             {
@@ -170,43 +267,73 @@ namespace LogBook
 
         private void btnContractsFilterApply_Click(object sender, EventArgs e)
         {
-            //if ((checkDateCreate.Checked && dtpDateCreateOT.Value > dtpDateCreateDO.Value) || (checkDateToTrash.Checked && dtpDateToTrashOT.Value > dtpDateToTrashDO.Value))
-            //{
-            //    MessageBox.Show("Диапазон дат указан неверно!", "Ошибка",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            //DateTime dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO;
-            //if (checkDateCreate.Checked)
-            //{
-            //    dtCreateOT = DateTime.Parse(dtpDateCreateOT.Value.ToShortDateString());
-            //    dtCreateDO = DateTime.Parse(dtpDateCreateDO.Value.ToShortDateString());
-            //}
-            //else
-            //{
-            //    dtCreateOT = DateTime.MinValue;
-            //    dtCreateDO = DateTime.MaxValue;
-            //}
+            if ((checkContractsFilterDateOfSigning.Checked && dtpContractsFilterSingingOT.Value > dtpContractsFilterSingingDO.Value) || 
+                (checkContractsFilterDateOfIssue.Checked && dtpContractsFilterIssueOT.Value > dtpContractsFilterIssueDO.Value) ||
+                (checkContractsFilterDateOfReturn.Checked && dtpContractsFilterReturnOT.Value > dtpContractsFilterReturnDO.Value))
+            {
+                MessageBox.Show("Диапазон дат указан неверно!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            //if (checkDateToTrash.Checked)
-            //{
-            //    dtTrashOT = DateTime.Parse(dtpDateToTrashOT.Value.ToShortDateString());
-            //    dtTrashDO = DateTime.Parse(dtpDateToTrashDO.Value.ToShortDateString());
-            //}
-            //else
-            //{
-            //    dtTrashOT = DateTime.MinValue;
-            //    dtTrashDO = DateTime.MaxValue;
-            //}
-            //dgvAll.DataSource = items.GetAllItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
-            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
-            //dgvIsOkay.DataSource = items.GetIsOkayItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
-            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
-            //dgvSoon.DataSource = items.GetIsSoonItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
-            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
-            //dgvOverdue.DataSource = items.GetIsOverdueItemsAsDataTable(tbFilterName.Text, cbFilterCategory.Text,
-            //    tbFilterComment.Text, dtCreateOT, dtCreateDO, dtTrashOT, dtTrashDO);
-            //butFilterReset.Enabled = true;
+            DateTime dtSigningOT, dtSigningDO, dtIssueOT, dtIssueDO, dtReturnOT, dtReturnDO;
+            string contractNumber = tbContractsFilterNumber.TextLength > 0 ? tbContractsFilterNumber.Text : String.Empty;
+            int ooCode = 0;
+
+            if (tbContractsFilterCodeOO.TextLength > 0)
+            {
+                int code;
+                if (int.TryParse(tbContractsFilterCodeOO.Text, out code))
+                    ooCode = code;
+            }
+
+            string responsible = comboContractsFilterResponsible.Text.Length > 0 ? comboContractsFilterResponsible.Text : String.Empty;
+
+            if (checkContractsFilterDateOfSigning.Checked)
+            {
+                dtSigningOT = DateTime.Parse(dtpContractsFilterSingingOT.Value.ToShortDateString());
+                dtSigningDO = DateTime.Parse(dtpContractsFilterSingingDO.Value.ToShortDateString());
+            }
+            else
+            {
+                dtSigningOT = DateTime.Parse(DateTime.MinValue.ToShortDateString());
+                dtSigningDO = DateTime.Parse(DateTime.MaxValue.ToShortDateString());
+            }
+
+            if (checkContractsFilterDateOfIssue.Checked)
+            {
+                dtIssueOT = DateTime.Parse(dtpContractsFilterIssueOT.Value.ToShortDateString());
+                dtIssueDO = DateTime.Parse(dtpContractsFilterIssueDO.Value.ToShortDateString());
+            }
+            else
+            {
+                dtIssueOT = DateTime.Parse(DateTime.MinValue.ToShortDateString());
+                dtIssueDO = DateTime.Parse(DateTime.MaxValue.ToShortDateString());
+            }
+
+            if (checkContractsFilterDateOfReturn.Checked)
+            {
+                dtReturnOT = DateTime.Parse(dtpContractsFilterReturnOT.Value.ToShortDateString());
+                dtReturnDO = DateTime.Parse(dtpContractsFilterReturnDO.Value.ToShortDateString());
+            }
+            else
+            {
+                dtReturnOT = DateTime.Parse(DateTime.MinValue.ToShortDateString());
+                dtReturnDO = DateTime.Parse(DateTime.MaxValue.ToShortDateString());
+            }
+
+            dbContracts?.GetOpenedAllDataTable(contractNumber, ooCode, responsible, dtSigningOT, dtSigningDO, dtIssueOT, dtIssueDO, dtReturnOT, dtReturnDO);
+
+            btnContractsFilterReset.Enabled = true;
+        }
+
+        private void tsbtnOrgView_Click(object sender, EventArgs e)
+        {
+            if (dgvOrg.SelectedRows.Count > 0)
+            {
+                int idOO = int.Parse(dgvOrg.SelectedRows[0].Cells[3].Value.ToString());
+                OrgMoreForm orgMore = new OrgMoreForm(idOO);
+                orgMore.ShowDialog();
+            }
         }
     }
 }

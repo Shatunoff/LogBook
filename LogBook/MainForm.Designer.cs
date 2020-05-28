@@ -28,6 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.mmBase = new System.Windows.Forms.ToolStripMenuItem();
             this.mmBaseConnect = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,32 +88,45 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbContractsFilterCodeOO = new System.Windows.Forms.TextBox();
             this.tpMainOrg = new System.Windows.Forms.TabPage();
-            this.panelMainForButtonsF = new System.Windows.Forms.Panel();
-            this.tlpForButtonsF = new System.Windows.Forms.TableLayoutPanel();
-            this.btnFNew = new System.Windows.Forms.Button();
-            this.btnFExit = new System.Windows.Forms.Button();
-            this.btnFExport = new System.Windows.Forms.Button();
-            this.btnFRefresh = new System.Windows.Forms.Button();
-            this.btnFView = new System.Windows.Forms.Button();
-            this.btnFEdit = new System.Windows.Forms.Button();
-            this.btnFRemove = new System.Windows.Forms.Button();
+            this.dgvOrg = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkOrgFilterHasOpenedProsrokContracts = new System.Windows.Forms.CheckBox();
+            this.comboOrgFilterMemberships = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnOrgFilterReset = new System.Windows.Forms.Button();
             this.btnOrgFilterApply = new System.Windows.Forms.Button();
+            this.checkOrgFilterIsPPE11 = new System.Windows.Forms.CheckBox();
+            this.checkOrgFilterIsPPE9 = new System.Windows.Forms.CheckBox();
+            this.checkOrgFilterHasOpenedContracts = new System.Windows.Forms.CheckBox();
             this.comboOrgFilterATE = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tbOrgFilterOOName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbOrgFilterOOCode = new System.Windows.Forms.TextBox();
-            this.dgvOrg = new System.Windows.Forms.DataGridView();
-            this.checkOrgFilterIsPPE9 = new System.Windows.Forms.CheckBox();
-            this.checkOrgFilterIsPPE11 = new System.Windows.Forms.CheckBox();
-            this.checkOrgFilterHasOpenedContracts = new System.Windows.Forms.CheckBox();
-            this.comboOrgFilterMemberships = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.checkOrgFilterHasOpenedProsrokContracts = new System.Windows.Forms.CheckBox();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnOrgView = new System.Windows.Forms.ToolStripButton();
             this.mainMenu.SuspendLayout();
             this.tctrlMain.SuspendLayout();
             this.tpMainContracts.SuspendLayout();
@@ -119,11 +140,13 @@
             this.panelContractsForFilter.SuspendLayout();
             this.gbContractsFilter.SuspendLayout();
             this.tpMainOrg.SuspendLayout();
-            this.panelMainForButtonsF.SuspendLayout();
-            this.tlpForButtonsF.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).BeginInit();
+            this.toolStrip2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.toolStrip3.SuspendLayout();
+            this.toolStrip4.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -146,7 +169,7 @@
             this.toolStripMenuItem2,
             this.mmBaseExit});
             this.mmBase.Name = "mmBase";
-            this.mmBase.Size = new System.Drawing.Size(87, 20);
+            this.mmBase.Size = new System.Drawing.Size(86, 20);
             this.mmBase.Text = "База данных";
             // 
             // mmBaseConnect
@@ -192,33 +215,33 @@
             // 
             this.mmContractsNew.Name = "mmContractsNew";
             this.mmContractsNew.ShortcutKeyDisplayString = "";
-            this.mmContractsNew.Size = new System.Drawing.Size(217, 22);
+            this.mmContractsNew.Size = new System.Drawing.Size(226, 22);
             this.mmContractsNew.Text = "Новый договор";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(214, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(223, 6);
             // 
             // mmContractsReturnableItems
             // 
             this.mmContractsReturnableItems.Name = "mmContractsReturnableItems";
-            this.mmContractsReturnableItems.Size = new System.Drawing.Size(217, 22);
-            this.mmContractsReturnableItems.Text = "Возвращаемые предметы";
+            this.mmContractsReturnableItems.Size = new System.Drawing.Size(226, 22);
+            this.mmContractsReturnableItems.Text = "Возвращаемые предметы...";
             this.mmContractsReturnableItems.Click += new System.EventHandler(this.mmContractsReturnableItems_Click);
             // 
             // mmContractsNotReturnableItems
             // 
             this.mmContractsNotReturnableItems.Name = "mmContractsNotReturnableItems";
-            this.mmContractsNotReturnableItems.Size = new System.Drawing.Size(217, 22);
-            this.mmContractsNotReturnableItems.Text = "Невозвратные предметы";
+            this.mmContractsNotReturnableItems.Size = new System.Drawing.Size(226, 22);
+            this.mmContractsNotReturnableItems.Text = "Невозвратные предметы...";
             this.mmContractsNotReturnableItems.Click += new System.EventHandler(this.mmContractsNotReturnableItems_Click);
             // 
             // mmContractsResponsibles
             // 
             this.mmContractsResponsibles.Name = "mmContractsResponsibles";
-            this.mmContractsResponsibles.Size = new System.Drawing.Size(217, 22);
-            this.mmContractsResponsibles.Text = "Ответственные лица";
+            this.mmContractsResponsibles.Size = new System.Drawing.Size(226, 22);
+            this.mmContractsResponsibles.Text = "Ответственные лица...";
             this.mmContractsResponsibles.Click += new System.EventHandler(this.mmContractsResponsibles_Click);
             // 
             // mmOrg
@@ -265,7 +288,7 @@
             this.tctrlMain.Location = new System.Drawing.Point(0, 24);
             this.tctrlMain.Name = "tctrlMain";
             this.tctrlMain.SelectedIndex = 0;
-            this.tctrlMain.Size = new System.Drawing.Size(979, 428);
+            this.tctrlMain.Size = new System.Drawing.Size(979, 461);
             this.tctrlMain.TabIndex = 2;
             // 
             // tpMainContracts
@@ -275,7 +298,7 @@
             this.tpMainContracts.Location = new System.Drawing.Point(4, 22);
             this.tpMainContracts.Name = "tpMainContracts";
             this.tpMainContracts.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMainContracts.Size = new System.Drawing.Size(971, 402);
+            this.tpMainContracts.Size = new System.Drawing.Size(971, 435);
             this.tpMainContracts.TabIndex = 0;
             this.tpMainContracts.Text = "Договоры";
             this.tpMainContracts.UseVisualStyleBackColor = true;
@@ -289,16 +312,17 @@
             this.tctrlMainContracts.Location = new System.Drawing.Point(3, 3);
             this.tctrlMainContracts.Name = "tctrlMainContracts";
             this.tctrlMainContracts.SelectedIndex = 0;
-            this.tctrlMainContracts.Size = new System.Drawing.Size(734, 396);
+            this.tctrlMainContracts.Size = new System.Drawing.Size(734, 429);
             this.tctrlMainContracts.TabIndex = 0;
             // 
             // tpMainContractsOpenedAll
             // 
             this.tpMainContractsOpenedAll.Controls.Add(this.dgvContractsOpenedAll);
+            this.tpMainContractsOpenedAll.Controls.Add(this.toolStrip2);
             this.tpMainContractsOpenedAll.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsOpenedAll.Name = "tpMainContractsOpenedAll";
             this.tpMainContractsOpenedAll.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMainContractsOpenedAll.Size = new System.Drawing.Size(726, 370);
+            this.tpMainContractsOpenedAll.Size = new System.Drawing.Size(726, 403);
             this.tpMainContractsOpenedAll.TabIndex = 0;
             this.tpMainContractsOpenedAll.Text = "Открытые договоры (все)";
             this.tpMainContractsOpenedAll.UseVisualStyleBackColor = true;
@@ -312,15 +336,20 @@
             this.dgvContractsOpenedAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContractsOpenedAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsOpenedAll.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvContractsOpenedAll.Location = new System.Drawing.Point(3, 3);
+            this.dgvContractsOpenedAll.Location = new System.Drawing.Point(3, 28);
+            this.dgvContractsOpenedAll.MultiSelect = false;
             this.dgvContractsOpenedAll.Name = "dgvContractsOpenedAll";
             this.dgvContractsOpenedAll.RowHeadersVisible = false;
-            this.dgvContractsOpenedAll.Size = new System.Drawing.Size(720, 364);
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvContractsOpenedAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvContractsOpenedAll.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsOpenedAll.TabIndex = 0;
             // 
             // tpMainContractsOpenedProsrok
             // 
             this.tpMainContractsOpenedProsrok.Controls.Add(this.dgvContractsOpenedProsrok);
+            this.tpMainContractsOpenedProsrok.Controls.Add(this.toolStrip1);
             this.tpMainContractsOpenedProsrok.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsOpenedProsrok.Name = "tpMainContractsOpenedProsrok";
             this.tpMainContractsOpenedProsrok.Padding = new System.Windows.Forms.Padding(3);
@@ -331,16 +360,35 @@
             // 
             // dgvContractsOpenedProsrok
             // 
+            this.dgvContractsOpenedProsrok.AllowUserToAddRows = false;
+            this.dgvContractsOpenedProsrok.AllowUserToDeleteRows = false;
+            this.dgvContractsOpenedProsrok.AllowUserToResizeRows = false;
+            this.dgvContractsOpenedProsrok.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsOpenedProsrok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvContractsOpenedProsrok.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvContractsOpenedProsrok.Location = new System.Drawing.Point(3, 3);
+            this.dgvContractsOpenedProsrok.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvContractsOpenedProsrok.Location = new System.Drawing.Point(3, 28);
+            this.dgvContractsOpenedProsrok.MultiSelect = false;
             this.dgvContractsOpenedProsrok.Name = "dgvContractsOpenedProsrok";
-            this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 364);
+            this.dgvContractsOpenedProsrok.RowHeadersVisible = false;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvContractsOpenedProsrok.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 339);
             this.dgvContractsOpenedProsrok.TabIndex = 0;
             // 
             // tpMainContractsClosed
             // 
             this.tpMainContractsClosed.Controls.Add(this.dgvContractsClosed);
+            this.tpMainContractsClosed.Controls.Add(this.toolStrip3);
             this.tpMainContractsClosed.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsClosed.Name = "tpMainContractsClosed";
             this.tpMainContractsClosed.Padding = new System.Windows.Forms.Padding(3);
@@ -351,11 +399,29 @@
             // 
             // dgvContractsClosed
             // 
+            this.dgvContractsClosed.AllowUserToAddRows = false;
+            this.dgvContractsClosed.AllowUserToDeleteRows = false;
+            this.dgvContractsClosed.AllowUserToResizeRows = false;
+            this.dgvContractsClosed.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsClosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvContractsClosed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvContractsClosed.Location = new System.Drawing.Point(3, 3);
+            this.dgvContractsClosed.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvContractsClosed.Location = new System.Drawing.Point(3, 28);
+            this.dgvContractsClosed.MultiSelect = false;
             this.dgvContractsClosed.Name = "dgvContractsClosed";
-            this.dgvContractsClosed.Size = new System.Drawing.Size(720, 364);
+            this.dgvContractsClosed.RowHeadersVisible = false;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvContractsClosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvContractsClosed.Size = new System.Drawing.Size(720, 339);
             this.dgvContractsClosed.TabIndex = 0;
             // 
             // panelContractsForFilter
@@ -365,7 +431,7 @@
             this.panelContractsForFilter.Location = new System.Drawing.Point(737, 3);
             this.panelContractsForFilter.Name = "panelContractsForFilter";
             this.panelContractsForFilter.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelContractsForFilter.Size = new System.Drawing.Size(231, 396);
+            this.panelContractsForFilter.Size = new System.Drawing.Size(231, 429);
             this.panelContractsForFilter.TabIndex = 1;
             // 
             // gbContractsFilter
@@ -396,7 +462,7 @@
             this.gbContractsFilter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbContractsFilter.Location = new System.Drawing.Point(5, 0);
             this.gbContractsFilter.Name = "gbContractsFilter";
-            this.gbContractsFilter.Size = new System.Drawing.Size(221, 396);
+            this.gbContractsFilter.Size = new System.Drawing.Size(221, 429);
             this.gbContractsFilter.TabIndex = 0;
             this.gbContractsFilter.TabStop = false;
             this.gbContractsFilter.Text = "Фильтр";
@@ -605,129 +671,42 @@
             // tpMainOrg
             // 
             this.tpMainOrg.Controls.Add(this.dgvOrg);
+            this.tpMainOrg.Controls.Add(this.toolStrip4);
             this.tpMainOrg.Controls.Add(this.panel1);
             this.tpMainOrg.Location = new System.Drawing.Point(4, 22);
             this.tpMainOrg.Name = "tpMainOrg";
             this.tpMainOrg.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMainOrg.Size = new System.Drawing.Size(971, 402);
+            this.tpMainOrg.Size = new System.Drawing.Size(971, 435);
             this.tpMainOrg.TabIndex = 1;
             this.tpMainOrg.Text = "Организации";
             this.tpMainOrg.UseVisualStyleBackColor = true;
             // 
-            // panelMainForButtonsF
+            // dgvOrg
             // 
-            this.panelMainForButtonsF.Controls.Add(this.tlpForButtonsF);
-            this.panelMainForButtonsF.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMainForButtonsF.Location = new System.Drawing.Point(0, 452);
-            this.panelMainForButtonsF.Name = "panelMainForButtonsF";
-            this.panelMainForButtonsF.Size = new System.Drawing.Size(979, 33);
-            this.panelMainForButtonsF.TabIndex = 3;
-            // 
-            // tlpForButtonsF
-            // 
-            this.tlpForButtonsF.ColumnCount = 7;
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tlpForButtonsF.Controls.Add(this.btnFNew, 4, 0);
-            this.tlpForButtonsF.Controls.Add(this.btnFExit, 6, 0);
-            this.tlpForButtonsF.Controls.Add(this.btnFExport, 3, 0);
-            this.tlpForButtonsF.Controls.Add(this.btnFRefresh, 2, 0);
-            this.tlpForButtonsF.Controls.Add(this.btnFView, 0, 0);
-            this.tlpForButtonsF.Controls.Add(this.btnFEdit, 1, 0);
-            this.tlpForButtonsF.Controls.Add(this.btnFRemove, 5, 0);
-            this.tlpForButtonsF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpForButtonsF.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tlpForButtonsF.Location = new System.Drawing.Point(0, 0);
-            this.tlpForButtonsF.Name = "tlpForButtonsF";
-            this.tlpForButtonsF.RowCount = 1;
-            this.tlpForButtonsF.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpForButtonsF.Size = new System.Drawing.Size(979, 33);
-            this.tlpForButtonsF.TabIndex = 0;
-            // 
-            // btnFNew
-            // 
-            this.btnFNew.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFNew.Location = new System.Drawing.Point(559, 3);
-            this.btnFNew.Name = "btnFNew";
-            this.btnFNew.Size = new System.Drawing.Size(133, 27);
-            this.btnFNew.TabIndex = 2;
-            this.btnFNew.Text = "F7 Создание";
-            this.btnFNew.UseVisualStyleBackColor = true;
-            // 
-            // btnFExit
-            // 
-            this.btnFExit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFExit.Location = new System.Drawing.Point(837, 3);
-            this.btnFExit.Name = "btnFExit";
-            this.btnFExit.Size = new System.Drawing.Size(139, 27);
-            this.btnFExit.TabIndex = 2;
-            this.btnFExit.Text = "Alt+F4 Выход";
-            this.btnFExit.UseVisualStyleBackColor = true;
-            // 
-            // btnFExport
-            // 
-            this.btnFExport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFExport.Location = new System.Drawing.Point(420, 3);
-            this.btnFExport.Name = "btnFExport";
-            this.btnFExport.Size = new System.Drawing.Size(133, 27);
-            this.btnFExport.TabIndex = 2;
-            this.btnFExport.Text = "F6 Экспорт";
-            this.btnFExport.UseVisualStyleBackColor = true;
-            // 
-            // btnFRefresh
-            // 
-            this.btnFRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFRefresh.Location = new System.Drawing.Point(281, 3);
-            this.btnFRefresh.Name = "btnFRefresh";
-            this.btnFRefresh.Size = new System.Drawing.Size(133, 27);
-            this.btnFRefresh.TabIndex = 1;
-            this.btnFRefresh.Text = "F5 Обновление";
-            this.btnFRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btnFView
-            // 
-            this.btnFView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFView.Location = new System.Drawing.Point(3, 3);
-            this.btnFView.Name = "btnFView";
-            this.btnFView.Size = new System.Drawing.Size(133, 27);
-            this.btnFView.TabIndex = 0;
-            this.btnFView.Text = "F3 Просмотр";
-            this.btnFView.UseVisualStyleBackColor = true;
-            // 
-            // btnFEdit
-            // 
-            this.btnFEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFEdit.Location = new System.Drawing.Point(142, 3);
-            this.btnFEdit.Name = "btnFEdit";
-            this.btnFEdit.Size = new System.Drawing.Size(133, 27);
-            this.btnFEdit.TabIndex = 1;
-            this.btnFEdit.Text = "F4 Правка";
-            this.btnFEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnFRemove
-            // 
-            this.btnFRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFRemove.Location = new System.Drawing.Point(698, 3);
-            this.btnFRemove.Name = "btnFRemove";
-            this.btnFRemove.Size = new System.Drawing.Size(133, 27);
-            this.btnFRemove.TabIndex = 2;
-            this.btnFRemove.Text = "F8 Удаление";
-            this.btnFRemove.UseVisualStyleBackColor = true;
+            this.dgvOrg.AllowUserToAddRows = false;
+            this.dgvOrg.AllowUserToDeleteRows = false;
+            this.dgvOrg.AllowUserToResizeRows = false;
+            this.dgvOrg.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvOrg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvOrg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrg.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvOrg.Location = new System.Drawing.Point(3, 28);
+            this.dgvOrg.MultiSelect = false;
+            this.dgvOrg.Name = "dgvOrg";
+            this.dgvOrg.RowHeadersVisible = false;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvOrg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrg.Size = new System.Drawing.Size(734, 404);
+            this.dgvOrg.TabIndex = 3;
             // 
             // panel1
             // 
@@ -736,7 +715,7 @@
             this.panel1.Location = new System.Drawing.Point(737, 3);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panel1.Size = new System.Drawing.Size(231, 396);
+            this.panel1.Size = new System.Drawing.Size(231, 429);
             this.panel1.TabIndex = 2;
             // 
             // groupBox1
@@ -758,10 +737,38 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(5, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(221, 396);
+            this.groupBox1.Size = new System.Drawing.Size(221, 429);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтр";
+            // 
+            // checkOrgFilterHasOpenedProsrokContracts
+            // 
+            this.checkOrgFilterHasOpenedProsrokContracts.AutoSize = true;
+            this.checkOrgFilterHasOpenedProsrokContracts.Location = new System.Drawing.Point(6, 200);
+            this.checkOrgFilterHasOpenedProsrokContracts.Name = "checkOrgFilterHasOpenedProsrokContracts";
+            this.checkOrgFilterHasOpenedProsrokContracts.Size = new System.Drawing.Size(178, 17);
+            this.checkOrgFilterHasOpenedProsrokContracts.TabIndex = 26;
+            this.checkOrgFilterHasOpenedProsrokContracts.Text = "Есть просроченные договоры";
+            this.checkOrgFilterHasOpenedProsrokContracts.UseVisualStyleBackColor = true;
+            // 
+            // comboOrgFilterMemberships
+            // 
+            this.comboOrgFilterMemberships.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboOrgFilterMemberships.FormattingEnabled = true;
+            this.comboOrgFilterMemberships.Location = new System.Drawing.Point(6, 150);
+            this.comboOrgFilterMemberships.Name = "comboOrgFilterMemberships";
+            this.comboOrgFilterMemberships.Size = new System.Drawing.Size(209, 21);
+            this.comboOrgFilterMemberships.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Принадлежность:";
             // 
             // btnOrgFilterReset
             // 
@@ -780,6 +787,36 @@
             this.btnOrgFilterApply.TabIndex = 22;
             this.btnOrgFilterApply.Text = "Применить";
             this.btnOrgFilterApply.UseVisualStyleBackColor = true;
+            // 
+            // checkOrgFilterIsPPE11
+            // 
+            this.checkOrgFilterIsPPE11.AutoSize = true;
+            this.checkOrgFilterIsPPE11.Location = new System.Drawing.Point(6, 246);
+            this.checkOrgFilterIsPPE11.Name = "checkOrgFilterIsPPE11";
+            this.checkOrgFilterIsPPE11.Size = new System.Drawing.Size(163, 17);
+            this.checkOrgFilterIsPPE11.TabIndex = 21;
+            this.checkOrgFilterIsPPE11.Text = "Является ППЭ (11 классы)";
+            this.checkOrgFilterIsPPE11.UseVisualStyleBackColor = true;
+            // 
+            // checkOrgFilterIsPPE9
+            // 
+            this.checkOrgFilterIsPPE9.AutoSize = true;
+            this.checkOrgFilterIsPPE9.Location = new System.Drawing.Point(6, 223);
+            this.checkOrgFilterIsPPE9.Name = "checkOrgFilterIsPPE9";
+            this.checkOrgFilterIsPPE9.Size = new System.Drawing.Size(157, 17);
+            this.checkOrgFilterIsPPE9.TabIndex = 16;
+            this.checkOrgFilterIsPPE9.Text = "Является ППЭ (9 классы)";
+            this.checkOrgFilterIsPPE9.UseVisualStyleBackColor = true;
+            // 
+            // checkOrgFilterHasOpenedContracts
+            // 
+            this.checkOrgFilterHasOpenedContracts.AutoSize = true;
+            this.checkOrgFilterHasOpenedContracts.Location = new System.Drawing.Point(6, 177);
+            this.checkOrgFilterHasOpenedContracts.Name = "checkOrgFilterHasOpenedContracts";
+            this.checkOrgFilterHasOpenedContracts.Size = new System.Drawing.Size(155, 17);
+            this.checkOrgFilterHasOpenedContracts.TabIndex = 11;
+            this.checkOrgFilterHasOpenedContracts.Text = "Есть открытые договоры";
+            this.checkOrgFilterHasOpenedContracts.UseVisualStyleBackColor = true;
             // 
             // comboOrgFilterATE
             // 
@@ -831,78 +868,204 @@
             this.tbOrgFilterOOCode.Size = new System.Drawing.Size(208, 20);
             this.tbOrgFilterOOCode.TabIndex = 2;
             // 
-            // dgvOrg
+            // toolStrip2
             // 
-            this.dgvOrg.AllowUserToAddRows = false;
-            this.dgvOrg.AllowUserToDeleteRows = false;
-            this.dgvOrg.AllowUserToResizeRows = false;
-            this.dgvOrg.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvOrg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrg.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvOrg.Location = new System.Drawing.Point(3, 3);
-            this.dgvOrg.Name = "dgvOrg";
-            this.dgvOrg.RowHeadersVisible = false;
-            this.dgvOrg.Size = new System.Drawing.Size(734, 396);
-            this.dgvOrg.TabIndex = 3;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton6,
+            this.toolStripButton7,
+            this.toolStripButton8,
+            this.toolStripButton9,
+            this.toolStripButton10});
+            this.toolStrip2.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(720, 25);
+            this.toolStrip2.TabIndex = 3;
+            this.toolStrip2.Text = "toolStrip2";
             // 
-            // checkOrgFilterIsPPE9
+            // toolStripButton6
             // 
-            this.checkOrgFilterIsPPE9.AutoSize = true;
-            this.checkOrgFilterIsPPE9.Location = new System.Drawing.Point(6, 223);
-            this.checkOrgFilterIsPPE9.Name = "checkOrgFilterIsPPE9";
-            this.checkOrgFilterIsPPE9.Size = new System.Drawing.Size(157, 17);
-            this.checkOrgFilterIsPPE9.TabIndex = 16;
-            this.checkOrgFilterIsPPE9.Text = "Является ППЭ (9 классы)";
-            this.checkOrgFilterIsPPE9.UseVisualStyleBackColor = true;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(84, 22);
+            this.toolStripButton6.Text = "Просмотр";
             // 
-            // checkOrgFilterIsPPE11
+            // toolStripButton7
             // 
-            this.checkOrgFilterIsPPE11.AutoSize = true;
-            this.checkOrgFilterIsPPE11.Location = new System.Drawing.Point(6, 246);
-            this.checkOrgFilterIsPPE11.Name = "checkOrgFilterIsPPE11";
-            this.checkOrgFilterIsPPE11.Size = new System.Drawing.Size(163, 17);
-            this.checkOrgFilterIsPPE11.TabIndex = 21;
-            this.checkOrgFilterIsPPE11.Text = "Является ППЭ (11 классы)";
-            this.checkOrgFilterIsPPE11.UseVisualStyleBackColor = true;
+            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(67, 22);
+            this.toolStripButton7.Text = "Правка";
             // 
-            // checkOrgFilterHasOpenedContracts
+            // toolStripButton8
             // 
-            this.checkOrgFilterHasOpenedContracts.AutoSize = true;
-            this.checkOrgFilterHasOpenedContracts.Location = new System.Drawing.Point(6, 177);
-            this.checkOrgFilterHasOpenedContracts.Name = "checkOrgFilterHasOpenedContracts";
-            this.checkOrgFilterHasOpenedContracts.Size = new System.Drawing.Size(155, 17);
-            this.checkOrgFilterHasOpenedContracts.TabIndex = 11;
-            this.checkOrgFilterHasOpenedContracts.Text = "Есть открытые договоры";
-            this.checkOrgFilterHasOpenedContracts.UseVisualStyleBackColor = true;
+            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(189, 22);
+            this.toolStripButton8.Text = "Обновить / Сбросить фильтр";
             // 
-            // comboOrgFilterMemberships
+            // toolStripButton9
             // 
-            this.comboOrgFilterMemberships.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboOrgFilterMemberships.FormattingEnabled = true;
-            this.comboOrgFilterMemberships.Location = new System.Drawing.Point(6, 150);
-            this.comboOrgFilterMemberships.Name = "comboOrgFilterMemberships";
-            this.comboOrgFilterMemberships.Size = new System.Drawing.Size(209, 21);
-            this.comboOrgFilterMemberships.TabIndex = 25;
+            this.toolStripButton9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton9.Image")));
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(72, 22);
+            this.toolStripButton9.Text = "Экспорт";
             // 
-            // label10
+            // toolStripButton10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Принадлежность:";
+            this.toolStripButton10.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton10.Image")));
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(113, 22);
+            this.toolStripButton10.Text = "Новый договор";
             // 
-            // checkOrgFilterHasOpenedProsrokContracts
+            // toolStrip1
             // 
-            this.checkOrgFilterHasOpenedProsrokContracts.AutoSize = true;
-            this.checkOrgFilterHasOpenedProsrokContracts.Location = new System.Drawing.Point(6, 200);
-            this.checkOrgFilterHasOpenedProsrokContracts.Name = "checkOrgFilterHasOpenedProsrokContracts";
-            this.checkOrgFilterHasOpenedProsrokContracts.Size = new System.Drawing.Size(178, 17);
-            this.checkOrgFilterHasOpenedProsrokContracts.TabIndex = 26;
-            this.checkOrgFilterHasOpenedProsrokContracts.Text = "Есть просроченные договоры";
-            this.checkOrgFilterHasOpenedProsrokContracts.UseVisualStyleBackColor = true;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton5,
+            this.toolStripButton4});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(720, 25);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(84, 22);
+            this.toolStripButton1.Text = "Просмотр";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(67, 22);
+            this.toolStripButton2.Text = "Правка";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(189, 22);
+            this.toolStripButton3.Text = "Обновить / Сбросить фильтр";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(72, 22);
+            this.toolStripButton5.Text = "Экспорт";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(113, 22);
+            this.toolStripButton4.Text = "Новый договор";
+            // 
+            // toolStrip3
+            // 
+            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton11,
+            this.toolStripButton13,
+            this.toolStripButton14});
+            this.toolStrip3.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(720, 25);
+            this.toolStrip3.TabIndex = 3;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton11.Image")));
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(84, 22);
+            this.toolStripButton11.Text = "Просмотр";
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton13.Image")));
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(189, 22);
+            this.toolStripButton13.Text = "Обновить / Сбросить фильтр";
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton14.Image")));
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(72, 22);
+            this.toolStripButton14.Text = "Экспорт";
+            // 
+            // toolStrip4
+            // 
+            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbtnOrgView,
+            this.toolStripButton12,
+            this.toolStripButton18,
+            this.toolStripButton16,
+            this.toolStripButton17});
+            this.toolStrip4.Location = new System.Drawing.Point(3, 3);
+            this.toolStrip4.Name = "toolStrip4";
+            this.toolStrip4.Size = new System.Drawing.Size(734, 25);
+            this.toolStrip4.TabIndex = 4;
+            this.toolStrip4.Text = "toolStrip4";
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton12.Image")));
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(160, 22);
+            this.toolStripButton12.Text = "Изменить информацию";
+            // 
+            // toolStripButton16
+            // 
+            this.toolStripButton16.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton16.Image")));
+            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton16.Name = "toolStripButton16";
+            this.toolStripButton16.Size = new System.Drawing.Size(189, 22);
+            this.toolStripButton16.Text = "Обновить / Сбросить фильтр";
+            // 
+            // toolStripButton17
+            // 
+            this.toolStripButton17.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton17.Image")));
+            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton17.Name = "toolStripButton17";
+            this.toolStripButton17.Size = new System.Drawing.Size(72, 22);
+            this.toolStripButton17.Text = "Экспорт";
+            // 
+            // toolStripButton18
+            // 
+            this.toolStripButton18.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton18.Image")));
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(156, 22);
+            this.toolStripButton18.Text = "Добавить организацию";
+            // 
+            // tsbtnOrgView
+            // 
+            this.tsbtnOrgView.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgView.Image")));
+            this.tsbtnOrgView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOrgView.Name = "tsbtnOrgView";
+            this.tsbtnOrgView.Size = new System.Drawing.Size(84, 22);
+            this.tsbtnOrgView.Text = "Просмотр";
+            this.tsbtnOrgView.Click += new System.EventHandler(this.tsbtnOrgView_Click);
             // 
             // MainForm
             // 
@@ -910,8 +1073,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 485);
             this.Controls.Add(this.tctrlMain);
-            this.Controls.Add(this.panelMainForButtonsF);
             this.Controls.Add(this.mainMenu);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "MainForm";
             this.Text = "Журнал учета";
@@ -922,21 +1085,31 @@
             this.tpMainContracts.ResumeLayout(false);
             this.tctrlMainContracts.ResumeLayout(false);
             this.tpMainContractsOpenedAll.ResumeLayout(false);
+            this.tpMainContractsOpenedAll.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsOpenedAll)).EndInit();
             this.tpMainContractsOpenedProsrok.ResumeLayout(false);
+            this.tpMainContractsOpenedProsrok.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsOpenedProsrok)).EndInit();
             this.tpMainContractsClosed.ResumeLayout(false);
+            this.tpMainContractsClosed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsClosed)).EndInit();
             this.panelContractsForFilter.ResumeLayout(false);
             this.gbContractsFilter.ResumeLayout(false);
             this.gbContractsFilter.PerformLayout();
             this.tpMainOrg.ResumeLayout(false);
-            this.panelMainForButtonsF.ResumeLayout(false);
-            this.tlpForButtonsF.ResumeLayout(false);
+            this.tpMainOrg.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.toolStrip3.ResumeLayout(false);
+            this.toolStrip3.PerformLayout();
+            this.toolStrip4.ResumeLayout(false);
+            this.toolStrip4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -991,15 +1164,6 @@
         private System.Windows.Forms.DateTimePicker dtpContractsFilterSingingOT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panelMainForButtonsF;
-        private System.Windows.Forms.TableLayoutPanel tlpForButtonsF;
-        private System.Windows.Forms.Button btnFView;
-        private System.Windows.Forms.Button btnFEdit;
-        private System.Windows.Forms.Button btnFExport;
-        private System.Windows.Forms.Button btnFRefresh;
-        private System.Windows.Forms.Button btnFExit;
-        private System.Windows.Forms.Button btnFRemove;
-        private System.Windows.Forms.Button btnFNew;
         private System.Windows.Forms.DataGridView dgvContractsOpenedAll;
         private System.Windows.Forms.DataGridView dgvContractsOpenedProsrok;
         private System.Windows.Forms.TabPage tpMainContractsClosed;
@@ -1022,6 +1186,28 @@
         private System.Windows.Forms.TextBox tbOrgFilterOOName;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox tbOrgFilterOOCode;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStrip toolStrip3;
+        private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStrip toolStrip4;
+        private System.Windows.Forms.ToolStripButton tsbtnOrgView;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton18;
+        private System.Windows.Forms.ToolStripButton toolStripButton16;
+        private System.Windows.Forms.ToolStripButton toolStripButton17;
     }
 }
 

@@ -38,44 +38,59 @@ namespace LogBook
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.ContractsOpenedAll", connection.ConnectionString);
-                adapter.Fill(dtOpenedAll);
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM dbo.ContractsOpenedAll", connection);
+                dtOpenedAll = new DataTable();
+                dtOpenedAll.Load(command.ExecuteReader());
+
+                connection.Close();
             }
         }
 
-        public void GetOpenedAllDataTable(string contractNumber, int idOO, string responsibleName, DateTime dateOfSigningOT, DateTime dateOfSigningDO, 
-            DateTime dateOfISsueOT, DateTime dateOfIssueDO, DateTime dateOfReturnOT, DateTime dateOfReturnDO)
+        public void GetOpenedAllDataTable(string ContractNumber, int IdOO, string ResponsibleName, DateTime DateOfSigningOT, DateTime DateOfSigningDO, 
+            DateTime DateOfIssueOT, DateTime DateOfIssueDO, DateTime DateOfReturnOT, DateTime DateOfReturnDO)
         {
-            bool checkContractNum = contractNumber != null;
-            bool checkIdOO = idOO > 0;
-            bool checkRespName = responsibleName != null;
-
             DataTable dt = dtOpenedAll.Clone();
             dt.Rows.Clear();
 
-            for (int i = 0; i < dtOpenedAll.Rows.Count; i++)
+            if (dtOpenedAll.Rows.Count > 0)
             {
-                if (checkContractNum && dtOpenedAll.Rows[i][1].ToString().ToLower().Contains(contractNumber.ToLower()))
+                for (int i = 0; i < dtOpenedAll.Rows.Count; i++)
                 {
-                    if (checkIdOO && idOO == int.Parse(dtOpenedAll.Rows[i][2].ToString()))
+                    string contractCode = dtOpenedAll.Rows[i][1].ToString();
+                    int ooCode = int.Parse(dtOpenedAll.Rows[i][2].ToString());
+                    string responName = dtOpenedAll.Rows[i][6].ToString();
+                    DateTime dateOfSigning = DateTime.Parse(dtOpenedAll.Rows[i][4].ToString());
+                    DateTime dateOfIssue = DateTime.Parse(dtOpenedAll.Rows[i][5].ToString());
+                    DateTime dateOfReturn = DateTime.Parse(dtOpenedAll.Rows[i][8].ToString());
+
+                    if (contractCode.ToLower().Contains(ContractNumber.ToLower()) &&
+                        responName.ToLower().Contains(ResponsibleName.ToLower()) &&
+                        (dateOfSigning >= DateOfSigningOT && dateOfSigning <= DateOfSigningDO) &&
+                        (dateOfIssue >= DateOfIssueOT && dateOfIssue <= DateOfIssueDO) &&
+                        (dateOfReturn >= DateOfReturnOT && dateOfReturn <= DateOfReturnDO))
                     {
-                        if (checkRespName && responsibleName == dtOpenedAll.Rows[i][6].ToString())
+                        if (IdOO > 0)
                         {
-                            if (DateTime.Parse(dtOpenedAll.Rows[i][4].ToString()) >= dateOfSigningOT && DateTime.Parse(dtOpenedAll.Rows[i][4].ToString()) <= dateOfSigningDO)
+                            if (IdOO == ooCode)
                             {
-                                if (DateTime.Parse(dtOpenedAll.Rows[i][5].ToString()) >= dateOfISsueOT && DateTime.Parse(dtOpenedAll.Rows[i][5].ToString()) <= dateOfIssueDO)
-                                {
-                                    if (DateTime.Parse(dtOpenedAll.Rows[i][8].ToString()) >= dateOfReturnOT && DateTime.Parse(dtOpenedAll.Rows[i][8].ToString()) <= dateOfReturnDO)
-                                    {
-                                        dt.Rows.Add(dtOpenedAll.Rows[i]);
-                                    }
-                                }
+                                DataRow row = dt.NewRow();
+                                for (int j = 0; j < dtOpenedAll.Columns.Count; j++)
+                                    row[j] = dtOpenedAll.Rows[i][j];
+                                dt.Rows.Add(row);
                             }
+                        }
+                        else
+                        {
+                            DataRow row = dt.NewRow();
+                            for (int j = 0; j < dtOpenedAll.Columns.Count; j++)
+                                row[j] = dtOpenedAll.Rows[i][j];
+                            dt.Rows.Add(row);
                         }
                     }
                 }
             }
-            //TODO: Проверь работу этого кода. Это пиздец какой-то, но я надеюсь сработает. Если срабатывает - расшаривай его для остальных datagridview.
+            dtOpenedAll = new DataTable();
             dtOpenedAll = dt;
         }
 
@@ -84,8 +99,12 @@ namespace LogBook
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.ContractsOpenedProsrok", connection.ConnectionString);
-                adapter.Fill(dtOpenedProsrok);
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM dbo.ContractsOpenedProsrok", connection);
+                dtOpenedProsrok = new DataTable();
+                dtOpenedProsrok.Load(command.ExecuteReader());
+
+                connection.Close();
             }
         }
 
@@ -94,21 +113,28 @@ namespace LogBook
         {
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM dbo.ContractsClosed", connection.ConnectionString);
-                adapter.Fill(dtClosedAll);
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT * FROM dbo.ContractsClosed", connection);
+                dtClosedAll = new DataTable();
+                dtClosedAll.Load(command.ExecuteReader());
+
+                connection.Close();
             }
         }
 
         // Получить список ответственных для combobox
         public void GetResponsiblesAsList()
         {
-            listResponsibles.Clear();
+            listResponsibles = new List<string>();
             listResponsibles.Add("");
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
             {
                 DataTable dt = new DataTable();
-                SqlDataAdapter ad = new SqlDataAdapter("SELECT Name From dbo.Responsibles", connection);
-                ad.Fill(dt);
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT Name From dbo.Responsibles", connection);
+                dt.Load(command.ExecuteReader());
+
+                connection.Close();
                 for (int i = 0; i < dt.Rows.Count; i++) listResponsibles.Add(dt.Rows[i][0].ToString());
             }
         }
