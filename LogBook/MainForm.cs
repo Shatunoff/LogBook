@@ -417,20 +417,35 @@ namespace LogBook
 
         private void tsbtnConOpAllView_Click(object sender, EventArgs e)
         {
-            int idContract = int.Parse(dgvContractsOpenedAll.SelectedRows[0].Cells[0].Value.ToString());
-            ViewMoreOfContract(idContract, true);
+            if (dgvContractsOpenedAll.SelectedRows.Count > 0)
+            {
+                int idContract = int.Parse(dgvContractsOpenedAll.SelectedRows[0].Cells[0].Value.ToString());
+                ViewMoreOfContract(idContract, true);
+            }
         }
 
         private void tsbtnConProsrokView_Click(object sender, EventArgs e)
         {
-            int idContract = int.Parse(dgvContractsOpenedProsrok.SelectedRows[0].Cells[0].Value.ToString());
-            ViewMoreOfContract(idContract, true);
+            if (dgvContractsOpenedProsrok.SelectedRows.Count > 0)
+            {
+                int idContract = int.Parse(dgvContractsOpenedProsrok.SelectedRows[0].Cells[0].Value.ToString());
+                ViewMoreOfContract(idContract, true);
+            }
         }
 
         private void tsbtnConClosedView_Click(object sender, EventArgs e)
         {
-            int idContract = int.Parse(dgvContractsClosed.SelectedRows[0].Cells[0].Value.ToString());
-            ViewMoreOfContract(idContract, false);
+            if (dgvContractsClosed.SelectedRows.Count > 0)
+            {
+                int idContract = int.Parse(dgvContractsClosed.SelectedRows[0].Cells[0].Value.ToString());
+                ViewMoreOfContract(idContract, false);
+            }
+        }
+
+        private void tsbtnConOpAllNew_Click(object sender, EventArgs e)
+        {
+            ContractAddEditForm addContract = new ContractAddEditForm();
+            addContract.ShowDialog();
         }
     }
 

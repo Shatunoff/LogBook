@@ -50,6 +50,7 @@ namespace LogBook
             tbOOEmail.Text = contMore.thisOrganization.Email;
             tbOOPhone.Text = contMore.thisOrganization.Phone;
             tbOOAdress.Text = contMore.thisOrganization.Adress;
+            tbHostOrganization.Text = contMore.thisContract.HostOrganization;
 
             // Выданные предметы
             dgvNotReturnableItemsInContract.DataSource = contMore.thisItems.NotReturnableItems;

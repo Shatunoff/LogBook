@@ -43,6 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNotReturnableInContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNotReturnableInContractForm.Designer.cs">
+      <DependentUpon>AddNotReturnableInContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContractForms\ContractAddEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractForms\ContractAddEditForm.Designer.cs">
+      <DependentUpon>ContractAddEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContractForms\ContractMoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -50,6 +62,7 @@
       <DependentUpon>ContractMoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DBEssences\Ate.cs" />
+    <Compile Include="DBEssences\ContractAddEdit.cs" />
     <Compile Include="DBEssences\ContractMore.cs" />
     <Compile Include="DBEssences\Export.cs" />
     <Compile Include="DBEssences\Memberships.cs" />
@@ -116,6 +129,12 @@
     <Compile Include="ContractForms\ResponsiblesForm.Designer.cs">
       <DependentUpon>ResponsiblesForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNotReturnableInContractForm.resx">
+      <DependentUpon>AddNotReturnableInContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContractForms\ContractAddEditForm.resx">
+      <DependentUpon>ContractAddEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContractForms\ContractMoreForm.resx">
       <DependentUpon>ContractMoreForm.cs</DependentUpon>
     </EmbeddedResource>

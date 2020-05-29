@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -72,6 +72,8 @@
             this.tbContractStatus = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.tbHostOrganization = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -81,6 +83,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.tbHostOrganization);
             this.groupBox1.Controls.Add(this.tbContractStatus);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label8);
@@ -97,7 +101,7 @@
             this.groupBox1.Controls.Add(this.tbContractCode);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 204);
+            this.groupBox1.Size = new System.Drawing.Size(292, 274);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Информация о договоре";
@@ -112,7 +116,7 @@
             this.groupBox2.Controls.Add(this.dgvReturnableItemsInContract);
             this.groupBox2.Location = new System.Drawing.Point(310, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(590, 204);
+            this.groupBox2.Size = new System.Drawing.Size(590, 274);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Информация о выданных предметах";
@@ -137,7 +141,7 @@
             this.groupBox3.Controls.Add(this.tbOOLongName);
             this.groupBox3.Controls.Add(this.tbOOShortName);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(12, 222);
+            this.groupBox3.Location = new System.Drawing.Point(12, 292);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(888, 151);
             this.groupBox3.TabIndex = 2;
@@ -165,7 +169,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 178);
+            this.label2.Location = new System.Drawing.Point(6, 249);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 13);
             this.label2.TabIndex = 3;
@@ -174,7 +178,7 @@
             // tbActualReturnDate
             // 
             this.tbActualReturnDate.BackColor = System.Drawing.SystemColors.Window;
-            this.tbActualReturnDate.Location = new System.Drawing.Point(161, 175);
+            this.tbActualReturnDate.Location = new System.Drawing.Point(161, 246);
             this.tbActualReturnDate.Name = "tbActualReturnDate";
             this.tbActualReturnDate.ReadOnly = true;
             this.tbActualReturnDate.Size = new System.Drawing.Size(120, 20);
@@ -238,7 +242,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 74);
+            this.label6.Location = new System.Drawing.Point(6, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 13);
             this.label6.TabIndex = 11;
@@ -247,7 +251,7 @@
             // tbDateOfSigning
             // 
             this.tbDateOfSigning.BackColor = System.Drawing.SystemColors.Window;
-            this.tbDateOfSigning.Location = new System.Drawing.Point(161, 71);
+            this.tbDateOfSigning.Location = new System.Drawing.Point(161, 142);
             this.tbDateOfSigning.Name = "tbDateOfSigning";
             this.tbDateOfSigning.ReadOnly = true;
             this.tbDateOfSigning.Size = new System.Drawing.Size(120, 20);
@@ -256,7 +260,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 100);
+            this.label7.Location = new System.Drawing.Point(6, 171);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 13;
@@ -265,7 +269,7 @@
             // tbDateOfIssue
             // 
             this.tbDateOfIssue.BackColor = System.Drawing.SystemColors.Window;
-            this.tbDateOfIssue.Location = new System.Drawing.Point(161, 97);
+            this.tbDateOfIssue.Location = new System.Drawing.Point(161, 168);
             this.tbDateOfIssue.Name = "tbDateOfIssue";
             this.tbDateOfIssue.ReadOnly = true;
             this.tbDateOfIssue.Size = new System.Drawing.Size(120, 20);
@@ -274,7 +278,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 126);
+            this.label8.Location = new System.Drawing.Point(6, 197);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 13);
             this.label8.TabIndex = 15;
@@ -283,7 +287,7 @@
             // tbDateOfReturn
             // 
             this.tbDateOfReturn.BackColor = System.Drawing.SystemColors.Window;
-            this.tbDateOfReturn.Location = new System.Drawing.Point(161, 123);
+            this.tbDateOfReturn.Location = new System.Drawing.Point(161, 194);
             this.tbDateOfReturn.Name = "tbDateOfReturn";
             this.tbDateOfReturn.ReadOnly = true;
             this.tbDateOfReturn.Size = new System.Drawing.Size(120, 20);
@@ -408,23 +412,23 @@
             this.dgvReturnableItemsInContract.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReturnableItemsInContract.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvReturnableItemsInContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvReturnableItemsInContract.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvReturnableItemsInContract.Location = new System.Drawing.Point(6, 45);
             this.dgvReturnableItemsInContract.MultiSelect = false;
             this.dgvReturnableItemsInContract.Name = "dgvReturnableItemsInContract";
             this.dgvReturnableItemsInContract.RowHeadersVisible = false;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvReturnableItemsInContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReturnableItemsInContract.Size = new System.Drawing.Size(286, 153);
+            this.dgvReturnableItemsInContract.Size = new System.Drawing.Size(286, 221);
             this.dgvReturnableItemsInContract.TabIndex = 0;
             // 
             // dgvNotReturnableItemsInContract
@@ -436,28 +440,28 @@
             this.dgvNotReturnableItemsInContract.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNotReturnableItemsInContract.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvNotReturnableItemsInContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNotReturnableItemsInContract.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvNotReturnableItemsInContract.Location = new System.Drawing.Point(298, 45);
             this.dgvNotReturnableItemsInContract.MultiSelect = false;
             this.dgvNotReturnableItemsInContract.Name = "dgvNotReturnableItemsInContract";
             this.dgvNotReturnableItemsInContract.RowHeadersVisible = false;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNotReturnableItemsInContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNotReturnableItemsInContract.Size = new System.Drawing.Size(286, 153);
+            this.dgvNotReturnableItemsInContract.Size = new System.Drawing.Size(286, 221);
             this.dgvNotReturnableItemsInContract.TabIndex = 1;
             // 
             // btnContractEdit
             // 
-            this.btnContractEdit.Location = new System.Drawing.Point(268, 379);
+            this.btnContractEdit.Location = new System.Drawing.Point(268, 449);
             this.btnContractEdit.Name = "btnContractEdit";
             this.btnContractEdit.Size = new System.Drawing.Size(146, 23);
             this.btnContractEdit.TabIndex = 16;
@@ -485,7 +489,7 @@
             // 
             // btnOOMore
             // 
-            this.btnOOMore.Location = new System.Drawing.Point(12, 379);
+            this.btnOOMore.Location = new System.Drawing.Point(12, 449);
             this.btnOOMore.Name = "btnOOMore";
             this.btnOOMore.Size = new System.Drawing.Size(250, 23);
             this.btnOOMore.TabIndex = 20;
@@ -496,7 +500,7 @@
             // tbContractStatus
             // 
             this.tbContractStatus.BackColor = System.Drawing.SystemColors.Window;
-            this.tbContractStatus.Location = new System.Drawing.Point(161, 149);
+            this.tbContractStatus.Location = new System.Drawing.Point(161, 220);
             this.tbContractStatus.Name = "tbContractStatus";
             this.tbContractStatus.ReadOnly = true;
             this.tbContractStatus.Size = new System.Drawing.Size(120, 20);
@@ -505,7 +509,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 152);
+            this.label17.Location = new System.Drawing.Point(6, 223);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(94, 13);
             this.label17.TabIndex = 17;
@@ -514,7 +518,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(825, 379);
+            this.btnClose.Location = new System.Drawing.Point(825, 449);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 21;
@@ -522,12 +526,31 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // tbHostOrganization
+            // 
+            this.tbHostOrganization.BackColor = System.Drawing.SystemColors.Window;
+            this.tbHostOrganization.Location = new System.Drawing.Point(6, 90);
+            this.tbHostOrganization.Multiline = true;
+            this.tbHostOrganization.Name = "tbHostOrganization";
+            this.tbHostOrganization.ReadOnly = true;
+            this.tbHostOrganization.Size = new System.Drawing.Size(275, 46);
+            this.tbHostOrganization.TabIndex = 18;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 74);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(153, 13);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "Принимающая организация:";
+            // 
             // ContractMoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(912, 414);
+            this.ClientSize = new System.Drawing.Size(912, 484);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOOMore);
             this.Controls.Add(this.btnContractEdit);
@@ -596,5 +619,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnOOMore;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.TextBox tbHostOrganization;
+        private System.Windows.Forms.Label label18;
     }
 }
