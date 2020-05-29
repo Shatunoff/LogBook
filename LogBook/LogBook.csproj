@@ -43,7 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContractForms\ContractMoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractForms\ContractMoreForm.Designer.cs">
+      <DependentUpon>ContractMoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBEssences\Ate.cs" />
+    <Compile Include="DBEssences\ContractMore.cs" />
     <Compile Include="DBEssences\Export.cs" />
     <Compile Include="DBEssences\Memberships.cs" />
     <Compile Include="DBEssences\OrgAddEdit.cs" />
@@ -109,6 +116,9 @@
     <Compile Include="ContractForms\ResponsiblesForm.Designer.cs">
       <DependentUpon>ResponsiblesForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ContractForms\ContractMoreForm.resx">
+      <DependentUpon>ContractMoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContractForms\NotReturnableItemsForm.resx">
       <DependentUpon>NotReturnableItemsForm.cs</DependentUpon>
     </EmbeddedResource>

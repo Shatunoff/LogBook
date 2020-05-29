@@ -408,6 +408,30 @@ namespace LogBook
         {
             exportToCSV((DataTable)dgvContractsOpenedAll.DataSource);
         }
+
+        private void ViewMoreOfContract(int idContract, bool contractOpened)
+        {
+            ContractMoreForm contMore = new ContractMoreForm(idContract, contractOpened);
+            contMore.ShowDialog();
+        }
+
+        private void tsbtnConOpAllView_Click(object sender, EventArgs e)
+        {
+            int idContract = int.Parse(dgvContractsOpenedAll.SelectedRows[0].Cells[0].Value.ToString());
+            ViewMoreOfContract(idContract, true);
+        }
+
+        private void tsbtnConProsrokView_Click(object sender, EventArgs e)
+        {
+            int idContract = int.Parse(dgvContractsOpenedProsrok.SelectedRows[0].Cells[0].Value.ToString());
+            ViewMoreOfContract(idContract, true);
+        }
+
+        private void tsbtnConClosedView_Click(object sender, EventArgs e)
+        {
+            int idContract = int.Parse(dgvContractsClosed.SelectedRows[0].Cells[0].Value.ToString());
+            ViewMoreOfContract(idContract, false);
+        }
     }
 
     public static class ExtensionMethods

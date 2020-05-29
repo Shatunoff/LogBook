@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
@@ -59,37 +59,21 @@
             this.tpMainContractsOpenedAll = new System.Windows.Forms.TabPage();
             this.dgvContractsOpenedAll = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnConOpAllView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConOpAllRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConOpAllNew = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnConOpAllEdit = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnConOpAllDel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConOpAllExport = new System.Windows.Forms.ToolStripButton();
             this.tpMainContractsOpenedProsrok = new System.Windows.Forms.TabPage();
             this.dgvContractsOpenedProsrok = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnConProsrokView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConProsrokRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConProsrokNew = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnConProsrokEdit = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnConProsrokDel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConProsrokExport = new System.Windows.Forms.ToolStripButton();
             this.tpMainContractsClosed = new System.Windows.Forms.TabPage();
             this.dgvContractsClosed = new System.Windows.Forms.DataGridView();
             this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnConClosedView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConClosedRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConClosedDel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnConClosedExport = new System.Windows.Forms.ToolStripButton();
             this.panelContractsForFilter = new System.Windows.Forms.Panel();
             this.gbContractsFilter = new System.Windows.Forms.GroupBox();
             this.btnContractsFilterReset = new System.Windows.Forms.Button();
@@ -118,15 +102,9 @@
             this.tpMainOrg = new System.Windows.Forms.TabPage();
             this.dgvOrg = new System.Windows.Forms.DataGridView();
             this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.tsbtnOrgView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnOrgRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnOrgAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnOrgEdit = new System.Windows.Forms.ToolStripButton();
-            this.tsbtnOrgRemove = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsbtnOrgExport = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboOrgFilterMemberships = new System.Windows.Forms.ComboBox();
@@ -141,6 +119,28 @@
             this.tbOrgFilterOOName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbOrgFilterOOCode = new System.Windows.Forms.TextBox();
+            this.tsbtnConOpAllView = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConOpAllRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConOpAllNew = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConOpAllEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConOpAllDel = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConOpAllExport = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConProsrokView = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConProsrokRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConProsrokNew = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConProsrokEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConProsrokDel = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConProsrokExport = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConClosedView = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConClosedRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConClosedDel = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConClosedExport = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnOrgView = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnOrgRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnOrgAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnOrgEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnOrgRemove = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnOrgExport = new System.Windows.Forms.ToolStripButton();
             this.mainMenu.SuspendLayout();
             this.tctrlMain.SuspendLayout();
             this.tpMainContracts.SuspendLayout();
@@ -354,8 +354,8 @@
             this.dgvContractsOpenedAll.MultiSelect = false;
             this.dgvContractsOpenedAll.Name = "dgvContractsOpenedAll";
             this.dgvContractsOpenedAll.RowHeadersVisible = false;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvContractsOpenedAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedAll.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsOpenedAll.TabIndex = 0;
@@ -378,69 +378,20 @@
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // tsbtnConOpAllView
-            // 
-            this.tsbtnConOpAllView.Image = global::LogBook.Properties.Resources.zoom;
-            this.tsbtnConOpAllView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConOpAllView.Name = "tsbtnConOpAllView";
-            this.tsbtnConOpAllView.Size = new System.Drawing.Size(84, 22);
-            this.tsbtnConOpAllView.Text = "Просмотр";
-            // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnConOpAllRefresh
-            // 
-            this.tsbtnConOpAllRefresh.Image = global::LogBook.Properties.Resources.refresh;
-            this.tsbtnConOpAllRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConOpAllRefresh.Name = "tsbtnConOpAllRefresh";
-            this.tsbtnConOpAllRefresh.Size = new System.Drawing.Size(189, 22);
-            this.tsbtnConOpAllRefresh.Text = "Обновить / Сбросить фильтр";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsbtnConOpAllNew
-            // 
-            this.tsbtnConOpAllNew.Image = global::LogBook.Properties.Resources.tool_new_file;
-            this.tsbtnConOpAllNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConOpAllNew.Name = "tsbtnConOpAllNew";
-            this.tsbtnConOpAllNew.Size = new System.Drawing.Size(113, 22);
-            this.tsbtnConOpAllNew.Text = "Новый договор";
-            // 
-            // tsbtnConOpAllEdit
-            // 
-            this.tsbtnConOpAllEdit.Image = global::LogBook.Properties.Resources.tool_edit;
-            this.tsbtnConOpAllEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConOpAllEdit.Name = "tsbtnConOpAllEdit";
-            this.tsbtnConOpAllEdit.Size = new System.Drawing.Size(67, 22);
-            this.tsbtnConOpAllEdit.Text = "Правка";
-            // 
-            // tsbtnConOpAllDel
-            // 
-            this.tsbtnConOpAllDel.Image = global::LogBook.Properties.Resources.tool_delete;
-            this.tsbtnConOpAllDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConOpAllDel.Name = "tsbtnConOpAllDel";
-            this.tsbtnConOpAllDel.Size = new System.Drawing.Size(71, 22);
-            this.tsbtnConOpAllDel.Text = "Удалить";
-            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnConOpAllExport
-            // 
-            this.tsbtnConOpAllExport.Image = global::LogBook.Properties.Resources.icon_xls;
-            this.tsbtnConOpAllExport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConOpAllExport.Name = "tsbtnConOpAllExport";
-            this.tsbtnConOpAllExport.Size = new System.Drawing.Size(72, 22);
-            this.tsbtnConOpAllExport.Text = "Экспорт";
-            this.tsbtnConOpAllExport.Click += new System.EventHandler(this.tsbtnConOpAllExport_Click);
             // 
             // tpMainContractsOpenedProsrok
             // 
@@ -461,22 +412,22 @@
             this.dgvContractsOpenedProsrok.AllowUserToResizeRows = false;
             this.dgvContractsOpenedProsrok.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsOpenedProsrok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvContractsOpenedProsrok.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsOpenedProsrok.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsOpenedProsrok.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsOpenedProsrok.MultiSelect = false;
             this.dgvContractsOpenedProsrok.Name = "dgvContractsOpenedProsrok";
             this.dgvContractsOpenedProsrok.RowHeadersVisible = false;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvContractsOpenedProsrok.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsOpenedProsrok.TabIndex = 0;
@@ -499,69 +450,20 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tsbtnConProsrokView
-            // 
-            this.tsbtnConProsrokView.Image = global::LogBook.Properties.Resources.zoom;
-            this.tsbtnConProsrokView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConProsrokView.Name = "tsbtnConProsrokView";
-            this.tsbtnConProsrokView.Size = new System.Drawing.Size(84, 22);
-            this.tsbtnConProsrokView.Text = "Просмотр";
-            // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
             this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnConProsrokRefresh
-            // 
-            this.tsbtnConProsrokRefresh.Image = global::LogBook.Properties.Resources.refresh;
-            this.tsbtnConProsrokRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConProsrokRefresh.Name = "tsbtnConProsrokRefresh";
-            this.tsbtnConProsrokRefresh.Size = new System.Drawing.Size(189, 22);
-            this.tsbtnConProsrokRefresh.Text = "Обновить / Сбросить фильтр";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsbtnConProsrokNew
-            // 
-            this.tsbtnConProsrokNew.Image = global::LogBook.Properties.Resources.tool_new_file;
-            this.tsbtnConProsrokNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConProsrokNew.Name = "tsbtnConProsrokNew";
-            this.tsbtnConProsrokNew.Size = new System.Drawing.Size(113, 22);
-            this.tsbtnConProsrokNew.Text = "Новый договор";
-            // 
-            // tsbtnConProsrokEdit
-            // 
-            this.tsbtnConProsrokEdit.Image = global::LogBook.Properties.Resources.tool_edit;
-            this.tsbtnConProsrokEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConProsrokEdit.Name = "tsbtnConProsrokEdit";
-            this.tsbtnConProsrokEdit.Size = new System.Drawing.Size(67, 22);
-            this.tsbtnConProsrokEdit.Text = "Правка";
-            // 
-            // tsbtnConProsrokDel
-            // 
-            this.tsbtnConProsrokDel.Image = global::LogBook.Properties.Resources.tool_delete;
-            this.tsbtnConProsrokDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConProsrokDel.Name = "tsbtnConProsrokDel";
-            this.tsbtnConProsrokDel.Size = new System.Drawing.Size(71, 22);
-            this.tsbtnConProsrokDel.Text = "Удалить";
-            // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
             this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnConProsrokExport
-            // 
-            this.tsbtnConProsrokExport.Image = global::LogBook.Properties.Resources.icon_xls;
-            this.tsbtnConProsrokExport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConProsrokExport.Name = "tsbtnConProsrokExport";
-            this.tsbtnConProsrokExport.Size = new System.Drawing.Size(72, 22);
-            this.tsbtnConProsrokExport.Text = "Экспорт";
-            this.tsbtnConProsrokExport.Click += new System.EventHandler(this.tsbtnConProsrokExport_Click);
             // 
             // tpMainContractsClosed
             // 
@@ -582,22 +484,22 @@
             this.dgvContractsClosed.AllowUserToResizeRows = false;
             this.dgvContractsClosed.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsClosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvContractsClosed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsClosed.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsClosed.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsClosed.MultiSelect = false;
             this.dgvContractsClosed.Name = "dgvContractsClosed";
             this.dgvContractsClosed.RowHeadersVisible = false;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvContractsClosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsClosed.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsClosed.TabIndex = 0;
@@ -618,53 +520,20 @@
             this.toolStrip3.TabIndex = 3;
             this.toolStrip3.Text = "toolStrip3";
             // 
-            // tsbtnConClosedView
-            // 
-            this.tsbtnConClosedView.Image = global::LogBook.Properties.Resources.zoom;
-            this.tsbtnConClosedView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConClosedView.Name = "tsbtnConClosedView";
-            this.tsbtnConClosedView.Size = new System.Drawing.Size(84, 22);
-            this.tsbtnConClosedView.Text = "Просмотр";
-            // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
             this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnConClosedRefresh
-            // 
-            this.tsbtnConClosedRefresh.Image = global::LogBook.Properties.Resources.refresh;
-            this.tsbtnConClosedRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConClosedRefresh.Name = "tsbtnConClosedRefresh";
-            this.tsbtnConClosedRefresh.Size = new System.Drawing.Size(189, 22);
-            this.tsbtnConClosedRefresh.Text = "Обновить / Сбросить фильтр";
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
             this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsbtnConClosedDel
-            // 
-            this.tsbtnConClosedDel.Image = global::LogBook.Properties.Resources.tool_delete;
-            this.tsbtnConClosedDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConClosedDel.Name = "tsbtnConClosedDel";
-            this.tsbtnConClosedDel.Size = new System.Drawing.Size(71, 22);
-            this.tsbtnConClosedDel.Text = "Удалить";
-            // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
             this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnConClosedExport
-            // 
-            this.tsbtnConClosedExport.Image = global::LogBook.Properties.Resources.icon_xls;
-            this.tsbtnConClosedExport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnConClosedExport.Name = "tsbtnConClosedExport";
-            this.tsbtnConClosedExport.Size = new System.Drawing.Size(72, 22);
-            this.tsbtnConClosedExport.Text = "Экспорт";
-            this.tsbtnConClosedExport.Click += new System.EventHandler(this.tsbtnConClosedExport_Click);
             // 
             // panelContractsForFilter
             // 
@@ -968,74 +837,20 @@
             this.toolStrip4.TabIndex = 4;
             this.toolStrip4.Text = "toolStrip4";
             // 
-            // tsbtnOrgView
-            // 
-            this.tsbtnOrgView.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgView.Image")));
-            this.tsbtnOrgView.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnOrgView.Name = "tsbtnOrgView";
-            this.tsbtnOrgView.Size = new System.Drawing.Size(84, 22);
-            this.tsbtnOrgView.Text = "Просмотр";
-            this.tsbtnOrgView.Click += new System.EventHandler(this.tsbtnOrgView_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnOrgRefresh
-            // 
-            this.tsbtnOrgRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgRefresh.Image")));
-            this.tsbtnOrgRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnOrgRefresh.Name = "tsbtnOrgRefresh";
-            this.tsbtnOrgRefresh.Size = new System.Drawing.Size(189, 22);
-            this.tsbtnOrgRefresh.Text = "Обновить / Сбросить фильтр";
-            this.tsbtnOrgRefresh.Click += new System.EventHandler(this.tsbtnOrgRefresh_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsbtnOrgAdd
-            // 
-            this.tsbtnOrgAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgAdd.Image")));
-            this.tsbtnOrgAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnOrgAdd.Name = "tsbtnOrgAdd";
-            this.tsbtnOrgAdd.Size = new System.Drawing.Size(79, 22);
-            this.tsbtnOrgAdd.Text = "Добавить";
-            this.tsbtnOrgAdd.Click += new System.EventHandler(this.tsbtnOrgAdd_Click);
-            // 
-            // tsbtnOrgEdit
-            // 
-            this.tsbtnOrgEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgEdit.Image")));
-            this.tsbtnOrgEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnOrgEdit.Name = "tsbtnOrgEdit";
-            this.tsbtnOrgEdit.Size = new System.Drawing.Size(81, 22);
-            this.tsbtnOrgEdit.Text = "Изменить";
-            this.tsbtnOrgEdit.Click += new System.EventHandler(this.tsbtnOrgEdit_Click);
-            // 
-            // tsbtnOrgRemove
-            // 
-            this.tsbtnOrgRemove.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgRemove.Image")));
-            this.tsbtnOrgRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnOrgRemove.Name = "tsbtnOrgRemove";
-            this.tsbtnOrgRemove.Size = new System.Drawing.Size(71, 22);
-            this.tsbtnOrgRemove.Text = "Удалить";
-            this.tsbtnOrgRemove.Click += new System.EventHandler(this.tsbtnOrgRemove_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsbtnOrgExport
-            // 
-            this.tsbtnOrgExport.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgExport.Image")));
-            this.tsbtnOrgExport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbtnOrgExport.Name = "tsbtnOrgExport";
-            this.tsbtnOrgExport.Size = new System.Drawing.Size(72, 22);
-            this.tsbtnOrgExport.Text = "Экспорт";
-            this.tsbtnOrgExport.Click += new System.EventHandler(this.tsbtnOrgExport_Click);
             // 
             // panel1
             // 
@@ -1174,6 +989,194 @@
             this.tbOrgFilterOOCode.Name = "tbOrgFilterOOCode";
             this.tbOrgFilterOOCode.Size = new System.Drawing.Size(208, 20);
             this.tbOrgFilterOOCode.TabIndex = 2;
+            // 
+            // tsbtnConOpAllView
+            // 
+            this.tsbtnConOpAllView.Image = global::LogBook.Properties.Resources.zoom;
+            this.tsbtnConOpAllView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpAllView.Name = "tsbtnConOpAllView";
+            this.tsbtnConOpAllView.Size = new System.Drawing.Size(84, 22);
+            this.tsbtnConOpAllView.Text = "Просмотр";
+            this.tsbtnConOpAllView.Click += new System.EventHandler(this.tsbtnConOpAllView_Click);
+            // 
+            // tsbtnConOpAllRefresh
+            // 
+            this.tsbtnConOpAllRefresh.Image = global::LogBook.Properties.Resources.refresh;
+            this.tsbtnConOpAllRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpAllRefresh.Name = "tsbtnConOpAllRefresh";
+            this.tsbtnConOpAllRefresh.Size = new System.Drawing.Size(189, 22);
+            this.tsbtnConOpAllRefresh.Text = "Обновить / Сбросить фильтр";
+            // 
+            // tsbtnConOpAllNew
+            // 
+            this.tsbtnConOpAllNew.Image = global::LogBook.Properties.Resources.tool_new_file;
+            this.tsbtnConOpAllNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpAllNew.Name = "tsbtnConOpAllNew";
+            this.tsbtnConOpAllNew.Size = new System.Drawing.Size(113, 22);
+            this.tsbtnConOpAllNew.Text = "Новый договор";
+            // 
+            // tsbtnConOpAllEdit
+            // 
+            this.tsbtnConOpAllEdit.Image = global::LogBook.Properties.Resources.tool_edit;
+            this.tsbtnConOpAllEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpAllEdit.Name = "tsbtnConOpAllEdit";
+            this.tsbtnConOpAllEdit.Size = new System.Drawing.Size(67, 22);
+            this.tsbtnConOpAllEdit.Text = "Правка";
+            // 
+            // tsbtnConOpAllDel
+            // 
+            this.tsbtnConOpAllDel.Image = global::LogBook.Properties.Resources.tool_delete;
+            this.tsbtnConOpAllDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpAllDel.Name = "tsbtnConOpAllDel";
+            this.tsbtnConOpAllDel.Size = new System.Drawing.Size(71, 22);
+            this.tsbtnConOpAllDel.Text = "Удалить";
+            // 
+            // tsbtnConOpAllExport
+            // 
+            this.tsbtnConOpAllExport.Image = global::LogBook.Properties.Resources.icon_xls;
+            this.tsbtnConOpAllExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpAllExport.Name = "tsbtnConOpAllExport";
+            this.tsbtnConOpAllExport.Size = new System.Drawing.Size(72, 22);
+            this.tsbtnConOpAllExport.Text = "Экспорт";
+            this.tsbtnConOpAllExport.Click += new System.EventHandler(this.tsbtnConOpAllExport_Click);
+            // 
+            // tsbtnConProsrokView
+            // 
+            this.tsbtnConProsrokView.Image = global::LogBook.Properties.Resources.zoom;
+            this.tsbtnConProsrokView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConProsrokView.Name = "tsbtnConProsrokView";
+            this.tsbtnConProsrokView.Size = new System.Drawing.Size(84, 22);
+            this.tsbtnConProsrokView.Text = "Просмотр";
+            this.tsbtnConProsrokView.Click += new System.EventHandler(this.tsbtnConProsrokView_Click);
+            // 
+            // tsbtnConProsrokRefresh
+            // 
+            this.tsbtnConProsrokRefresh.Image = global::LogBook.Properties.Resources.refresh;
+            this.tsbtnConProsrokRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConProsrokRefresh.Name = "tsbtnConProsrokRefresh";
+            this.tsbtnConProsrokRefresh.Size = new System.Drawing.Size(189, 22);
+            this.tsbtnConProsrokRefresh.Text = "Обновить / Сбросить фильтр";
+            // 
+            // tsbtnConProsrokNew
+            // 
+            this.tsbtnConProsrokNew.Image = global::LogBook.Properties.Resources.tool_new_file;
+            this.tsbtnConProsrokNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConProsrokNew.Name = "tsbtnConProsrokNew";
+            this.tsbtnConProsrokNew.Size = new System.Drawing.Size(113, 22);
+            this.tsbtnConProsrokNew.Text = "Новый договор";
+            // 
+            // tsbtnConProsrokEdit
+            // 
+            this.tsbtnConProsrokEdit.Image = global::LogBook.Properties.Resources.tool_edit;
+            this.tsbtnConProsrokEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConProsrokEdit.Name = "tsbtnConProsrokEdit";
+            this.tsbtnConProsrokEdit.Size = new System.Drawing.Size(67, 22);
+            this.tsbtnConProsrokEdit.Text = "Правка";
+            // 
+            // tsbtnConProsrokDel
+            // 
+            this.tsbtnConProsrokDel.Image = global::LogBook.Properties.Resources.tool_delete;
+            this.tsbtnConProsrokDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConProsrokDel.Name = "tsbtnConProsrokDel";
+            this.tsbtnConProsrokDel.Size = new System.Drawing.Size(71, 22);
+            this.tsbtnConProsrokDel.Text = "Удалить";
+            // 
+            // tsbtnConProsrokExport
+            // 
+            this.tsbtnConProsrokExport.Image = global::LogBook.Properties.Resources.icon_xls;
+            this.tsbtnConProsrokExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConProsrokExport.Name = "tsbtnConProsrokExport";
+            this.tsbtnConProsrokExport.Size = new System.Drawing.Size(72, 22);
+            this.tsbtnConProsrokExport.Text = "Экспорт";
+            this.tsbtnConProsrokExport.Click += new System.EventHandler(this.tsbtnConProsrokExport_Click);
+            // 
+            // tsbtnConClosedView
+            // 
+            this.tsbtnConClosedView.Image = global::LogBook.Properties.Resources.zoom;
+            this.tsbtnConClosedView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConClosedView.Name = "tsbtnConClosedView";
+            this.tsbtnConClosedView.Size = new System.Drawing.Size(84, 22);
+            this.tsbtnConClosedView.Text = "Просмотр";
+            this.tsbtnConClosedView.Click += new System.EventHandler(this.tsbtnConClosedView_Click);
+            // 
+            // tsbtnConClosedRefresh
+            // 
+            this.tsbtnConClosedRefresh.Image = global::LogBook.Properties.Resources.refresh;
+            this.tsbtnConClosedRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConClosedRefresh.Name = "tsbtnConClosedRefresh";
+            this.tsbtnConClosedRefresh.Size = new System.Drawing.Size(189, 22);
+            this.tsbtnConClosedRefresh.Text = "Обновить / Сбросить фильтр";
+            // 
+            // tsbtnConClosedDel
+            // 
+            this.tsbtnConClosedDel.Image = global::LogBook.Properties.Resources.tool_delete;
+            this.tsbtnConClosedDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConClosedDel.Name = "tsbtnConClosedDel";
+            this.tsbtnConClosedDel.Size = new System.Drawing.Size(71, 22);
+            this.tsbtnConClosedDel.Text = "Удалить";
+            // 
+            // tsbtnConClosedExport
+            // 
+            this.tsbtnConClosedExport.Image = global::LogBook.Properties.Resources.icon_xls;
+            this.tsbtnConClosedExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConClosedExport.Name = "tsbtnConClosedExport";
+            this.tsbtnConClosedExport.Size = new System.Drawing.Size(72, 22);
+            this.tsbtnConClosedExport.Text = "Экспорт";
+            this.tsbtnConClosedExport.Click += new System.EventHandler(this.tsbtnConClosedExport_Click);
+            // 
+            // tsbtnOrgView
+            // 
+            this.tsbtnOrgView.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgView.Image")));
+            this.tsbtnOrgView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOrgView.Name = "tsbtnOrgView";
+            this.tsbtnOrgView.Size = new System.Drawing.Size(84, 22);
+            this.tsbtnOrgView.Text = "Просмотр";
+            this.tsbtnOrgView.Click += new System.EventHandler(this.tsbtnOrgView_Click);
+            // 
+            // tsbtnOrgRefresh
+            // 
+            this.tsbtnOrgRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgRefresh.Image")));
+            this.tsbtnOrgRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOrgRefresh.Name = "tsbtnOrgRefresh";
+            this.tsbtnOrgRefresh.Size = new System.Drawing.Size(189, 22);
+            this.tsbtnOrgRefresh.Text = "Обновить / Сбросить фильтр";
+            this.tsbtnOrgRefresh.Click += new System.EventHandler(this.tsbtnOrgRefresh_Click);
+            // 
+            // tsbtnOrgAdd
+            // 
+            this.tsbtnOrgAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgAdd.Image")));
+            this.tsbtnOrgAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOrgAdd.Name = "tsbtnOrgAdd";
+            this.tsbtnOrgAdd.Size = new System.Drawing.Size(79, 22);
+            this.tsbtnOrgAdd.Text = "Добавить";
+            this.tsbtnOrgAdd.Click += new System.EventHandler(this.tsbtnOrgAdd_Click);
+            // 
+            // tsbtnOrgEdit
+            // 
+            this.tsbtnOrgEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgEdit.Image")));
+            this.tsbtnOrgEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOrgEdit.Name = "tsbtnOrgEdit";
+            this.tsbtnOrgEdit.Size = new System.Drawing.Size(81, 22);
+            this.tsbtnOrgEdit.Text = "Изменить";
+            this.tsbtnOrgEdit.Click += new System.EventHandler(this.tsbtnOrgEdit_Click);
+            // 
+            // tsbtnOrgRemove
+            // 
+            this.tsbtnOrgRemove.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgRemove.Image")));
+            this.tsbtnOrgRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOrgRemove.Name = "tsbtnOrgRemove";
+            this.tsbtnOrgRemove.Size = new System.Drawing.Size(71, 22);
+            this.tsbtnOrgRemove.Text = "Удалить";
+            this.tsbtnOrgRemove.Click += new System.EventHandler(this.tsbtnOrgRemove_Click);
+            // 
+            // tsbtnOrgExport
+            // 
+            this.tsbtnOrgExport.Image = ((System.Drawing.Image)(resources.GetObject("tsbtnOrgExport.Image")));
+            this.tsbtnOrgExport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnOrgExport.Name = "tsbtnOrgExport";
+            this.tsbtnOrgExport.Size = new System.Drawing.Size(72, 22);
+            this.tsbtnOrgExport.Text = "Экспорт";
+            this.tsbtnOrgExport.Click += new System.EventHandler(this.tsbtnOrgExport_Click);
             // 
             // MainForm
             // 
