@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace LogBook
 {
@@ -17,6 +18,10 @@ namespace LogBook
         public MainForm()
         {
             InitializeComponent();
+            dgvContractsOpenedAll.DoubleBuffered(true);
+            dgvContractsOpenedProsrok.DoubleBuffered(true);
+            dgvContractsClosed.DoubleBuffered(true);
+            dgvOrg.DoubleBuffered(true);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -377,11 +382,41 @@ namespace LogBook
 
         private void tsbtnOrgExport_Click(object sender, EventArgs e)
         {
+            exportToCSV((DataTable)dgvOrg.DataSource);
+        }
+
+        private void exportToCSV(DataTable dt)
+        {
             SaveFileDialog save = new SaveFileDialog();
             save.Filter = "CSV-Файлы |*.csv";
-            save.Title = "Экспорт таблицы организаций";
+            save.Title = "Экспорт таблицы";
             if (save.ShowDialog() == DialogResult.OK)
-                Export.ToCSV((DataTable)dgvOrg.DataSource, save.FileName);
+                Export.ToCSV(dt, save.FileName);
+        }
+
+        private void tsbtnConClosedExport_Click(object sender, EventArgs e)
+        {
+            exportToCSV((DataTable)dgvContractsClosed.DataSource);
+        }
+
+        private void tsbtnConProsrokExport_Click(object sender, EventArgs e)
+        {
+            exportToCSV((DataTable)dgvContractsOpenedProsrok.DataSource);
+        }
+
+        private void tsbtnConOpAllExport_Click(object sender, EventArgs e)
+        {
+            exportToCSV((DataTable)dgvContractsOpenedAll.DataSource);
+        }
+    }
+
+    public static class ExtensionMethods
+    {
+        public static void DoubleBuffered(this DataGridView dgv, bool setting)
+        {
+            Type dgvType = dgv.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, setting, null);
         }
     }
 }
