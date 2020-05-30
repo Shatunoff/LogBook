@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.mmBase = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,6 +137,9 @@
             this.tbOrgFilterOOName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbOrgFilterOOCode = new System.Windows.Forms.TextBox();
+            this.tsbtnConOpAllRemove = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConOpProsrok = new System.Windows.Forms.ToolStripButton();
+            this.tsbtnConClosedRemove = new System.Windows.Forms.ToolStripButton();
             this.mainMenu.SuspendLayout();
             this.tctrlMain.SuspendLayout();
             this.tpMainContracts.SuspendLayout();
@@ -352,8 +355,8 @@
             this.dgvContractsOpenedAll.MultiSelect = false;
             this.dgvContractsOpenedAll.Name = "dgvContractsOpenedAll";
             this.dgvContractsOpenedAll.RowHeadersVisible = false;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle38;
             this.dgvContractsOpenedAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedAll.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsOpenedAll.TabIndex = 0;
@@ -367,6 +370,7 @@
             this.toolStripSeparator6,
             this.tsbtnConOpAllNew,
             this.tsbtnConOpAllEdit,
+            this.tsbtnConOpAllRemove,
             this.toolStripSeparator5,
             this.tsbtnConOpAllExport});
             this.toolsContractsOpAll.Location = new System.Drawing.Point(3, 3);
@@ -396,6 +400,7 @@
             this.tsbtnConOpAllRefresh.Name = "tsbtnConOpAllRefresh";
             this.tsbtnConOpAllRefresh.Size = new System.Drawing.Size(189, 22);
             this.tsbtnConOpAllRefresh.Text = "Обновить / Сбросить фильтр";
+            this.tsbtnConOpAllRefresh.Click += new System.EventHandler(this.tsbtnConOpAllRefresh_Click);
             // 
             // toolStripSeparator6
             // 
@@ -452,22 +457,22 @@
             this.dgvContractsOpenedProsrok.AllowUserToResizeRows = false;
             this.dgvContractsOpenedProsrok.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsOpenedProsrok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle39;
             this.dgvContractsOpenedProsrok.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsOpenedProsrok.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsOpenedProsrok.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsOpenedProsrok.MultiSelect = false;
             this.dgvContractsOpenedProsrok.Name = "dgvContractsOpenedProsrok";
             this.dgvContractsOpenedProsrok.RowHeadersVisible = false;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dgvContractsOpenedProsrok.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsOpenedProsrok.TabIndex = 0;
@@ -481,6 +486,7 @@
             this.toolStripSeparator8,
             this.tsbtnConProsrokNew,
             this.tsbtnConProsrokEdit,
+            this.tsbtnConOpProsrok,
             this.toolStripSeparator10,
             this.tsbtnConProsrokExport});
             this.toolsContractsOpProsrok.Location = new System.Drawing.Point(3, 3);
@@ -510,6 +516,7 @@
             this.tsbtnConProsrokRefresh.Name = "tsbtnConProsrokRefresh";
             this.tsbtnConProsrokRefresh.Size = new System.Drawing.Size(189, 22);
             this.tsbtnConProsrokRefresh.Text = "Обновить / Сбросить фильтр";
+            this.tsbtnConProsrokRefresh.Click += new System.EventHandler(this.tsbtnConProsrokRefresh_Click);
             // 
             // toolStripSeparator8
             // 
@@ -566,22 +573,22 @@
             this.dgvContractsClosed.AllowUserToResizeRows = false;
             this.dgvContractsClosed.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsClosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle36;
             this.dgvContractsClosed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsClosed.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsClosed.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsClosed.MultiSelect = false;
             this.dgvContractsClosed.Name = "dgvContractsClosed";
             this.dgvContractsClosed.RowHeadersVisible = false;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle37;
             this.dgvContractsClosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsClosed.Size = new System.Drawing.Size(720, 372);
             this.dgvContractsClosed.TabIndex = 0;
@@ -592,6 +599,7 @@
             this.tsbtnConClosedView,
             this.toolStripSeparator13,
             this.tsbtnConClosedRefresh,
+            this.tsbtnConClosedRemove,
             this.toolStripSeparator11,
             this.tsbtnConClosedExport});
             this.toolsContractsClosed.Location = new System.Drawing.Point(3, 3);
@@ -621,6 +629,7 @@
             this.tsbtnConClosedRefresh.Name = "tsbtnConClosedRefresh";
             this.tsbtnConClosedRefresh.Size = new System.Drawing.Size(189, 22);
             this.tsbtnConClosedRefresh.Text = "Обновить / Сбросить фильтр";
+            this.tsbtnConClosedRefresh.Click += new System.EventHandler(this.tsbtnConClosedRefresh_Click);
             // 
             // toolStripSeparator11
             // 
@@ -900,22 +909,22 @@
             this.dgvOrg.AllowUserToResizeRows = false;
             this.dgvOrg.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvOrg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrg.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.DefaultCellStyle = dataGridViewCellStyle41;
             this.dgvOrg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrg.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvOrg.Location = new System.Drawing.Point(3, 28);
             this.dgvOrg.MultiSelect = false;
             this.dgvOrg.Name = "dgvOrg";
             this.dgvOrg.RowHeadersVisible = false;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrg.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.RowsDefaultCellStyle = dataGridViewCellStyle42;
             this.dgvOrg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrg.Size = new System.Drawing.Size(734, 404);
             this.dgvOrg.TabIndex = 3;
@@ -1145,6 +1154,33 @@
             this.tbOrgFilterOOCode.Size = new System.Drawing.Size(208, 20);
             this.tbOrgFilterOOCode.TabIndex = 2;
             // 
+            // tsbtnConOpAllRemove
+            // 
+            this.tsbtnConOpAllRemove.Image = global::LogBook.Properties.Resources.tool_delete;
+            this.tsbtnConOpAllRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpAllRemove.Name = "tsbtnConOpAllRemove";
+            this.tsbtnConOpAllRemove.Size = new System.Drawing.Size(71, 22);
+            this.tsbtnConOpAllRemove.Text = "Удалить";
+            this.tsbtnConOpAllRemove.Click += new System.EventHandler(this.tsbtnConOpAllRemove_Click);
+            // 
+            // tsbtnConOpProsrok
+            // 
+            this.tsbtnConOpProsrok.Image = global::LogBook.Properties.Resources.tool_delete;
+            this.tsbtnConOpProsrok.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConOpProsrok.Name = "tsbtnConOpProsrok";
+            this.tsbtnConOpProsrok.Size = new System.Drawing.Size(71, 22);
+            this.tsbtnConOpProsrok.Text = "Удалить";
+            this.tsbtnConOpProsrok.Click += new System.EventHandler(this.tsbtnConOpProsrok_Click);
+            // 
+            // tsbtnConClosedRemove
+            // 
+            this.tsbtnConClosedRemove.Image = global::LogBook.Properties.Resources.tool_delete;
+            this.tsbtnConClosedRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnConClosedRemove.Name = "tsbtnConClosedRemove";
+            this.tsbtnConClosedRemove.Size = new System.Drawing.Size(71, 22);
+            this.tsbtnConClosedRemove.Text = "Удалить";
+            this.tsbtnConClosedRemove.Click += new System.EventHandler(this.tsbtnConClosedRemove_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1297,6 +1333,9 @@
         private System.Windows.Forms.ToolStripButton tsbtnConClosedView;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripButton tsbtnConOpAllRemove;
+        private System.Windows.Forms.ToolStripButton tsbtnConOpProsrok;
+        private System.Windows.Forms.ToolStripButton tsbtnConClosedRemove;
     }
 }
 

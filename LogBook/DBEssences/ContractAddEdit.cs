@@ -175,5 +175,20 @@ namespace LogBook
                 connection.Close();
             }
         }
+
+        public static void RemoveContract(int idContract)
+        {
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand("dbo.RemoveContract", connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "@Id", Value = idContract });
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
     }
 }

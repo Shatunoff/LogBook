@@ -450,6 +450,56 @@ namespace LogBook
                 Refresh_ContractsOpenedDataGridView();
             }
         }
+
+        private void RemoveContract(int id)
+        {
+            if (MessageBox.Show("Вы уверены, что хотите удалить данную организацию? Все договоры с ее участием также будут удалены!", "Подтверждение удаления",
+                    MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                ContractAddEdit.RemoveContract(id);
+                Refresh_ContractsDataGridView();
+            }
+
+        }
+
+        private void tsbtnConOpAllRemove_Click(object sender, EventArgs e)
+        {
+            if (dgvContractsOpenedAll.SelectedRows.Count > 0)
+            {
+                RemoveContract(int.Parse(dgvContractsOpenedAll.SelectedRows[0].Cells[0].Value.ToString()));
+            }
+        }
+
+        private void tsbtnConOpProsrok_Click(object sender, EventArgs e)
+        {
+            if (dgvContractsOpenedProsrok.SelectedRows.Count > 0)
+            {
+                RemoveContract(int.Parse(dgvContractsOpenedProsrok.SelectedRows[0].Cells[0].Value.ToString()));
+            }
+        }
+
+        private void tsbtnConClosedRemove_Click(object sender, EventArgs e)
+        {
+            if (dgvContractsClosed.SelectedRows.Count > 0)
+            {
+                RemoveContract(int.Parse(dgvContractsClosed.SelectedRows[0].Cells[0].Value.ToString()));
+            }
+        }
+
+        private void tsbtnConOpAllRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh_ContractsOpenedDataGridView();
+        }
+
+        private void tsbtnConProsrokRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh_ContractsOpenedProsrokDataGridView();
+        }
+
+        private void tsbtnConClosedRefresh_Click(object sender, EventArgs e)
+        {
+            Refresh_ContractsClosedDataGridView();
+        }
     }
 
     public static class ExtensionMethods
