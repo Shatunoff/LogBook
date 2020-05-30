@@ -15,11 +15,13 @@ namespace LogBook
     {
         ContractFormType thisFormType { get; set; }
         int ContractId { get; set; }
+        public ContractMore contMore { get; private set; }
         ContractAddEdit addedit { get; set; } = new ContractAddEdit();
 
         public ContractAddEditForm(int contractID = -1)
         {
             InitializeComponent();
+            Oformitel();
             if (contractID < 0)
             {
                 thisFormType = ContractFormType.Adding;
@@ -29,10 +31,10 @@ namespace LogBook
             {
                 thisFormType = ContractFormType.Editing;
                 ContractId = contractID;
+                contMore = new ContractMore(contractID);
+
                 FillEditingForm();
             }
-
-            Oformitel();
         }
 
         // Конструктор для вызова из подробностей об ОО
@@ -98,14 +100,28 @@ namespace LogBook
         {
             this.Text = "Изменить договор";
 
+            tbContractCode.Text = contMore.thisContract.ContractCode;
+            dtpDateOfSigning.Value = contMore.thisContract.DateOfSigning;
+            dtpDateOfIssue.Value = contMore.thisContract.DateOfIssue;
+            dtpDateOfReturn.Value = contMore.thisContract.DateOfReturn;
+            tbIdOO.Text = contMore.thisContract.IdOO.ToString();
+            tbOOName.Text = contMore.thisOrganization.ooShortName;
+            tbHostOrganization.Text = contMore.thisContract.HostOrganization;
+            comboResponsible.SelectedValue = ContractAddEdit.GetCurrentResponsible(ContractId);
+
             btnOK.Text = "Сохранить изменения";
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (tbContractCode.Text.Length == 0 || tbIdOO.Text.Length == 0 || tbHostOrganization.Text.Length == 0 ||
+                comboResponsible.Text.Length == 0 ||
                 DateTime.Parse(dtpDateOfReturn.Value.ToShortDateString()) < DateTime.Parse(dtpDateOfIssue.Value.ToShortDateString()) ||
                 DateTime.Parse(dtpDateOfIssue.Value.ToShortDateString()) < DateTime.Parse(dtpDateOfSigning.Value.ToShortDateString()))
+            {
+                MessageBox.Show("Одно или несколько обязательных полей не были заполнены или были заполнены некорректно.", "Недостаточно данных");
+            }
+            else
             {
                 if (thisFormType == ContractFormType.Adding)
                 {
@@ -117,10 +133,6 @@ namespace LogBook
                 }
                 DialogResult = DialogResult.OK;
                 this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Одно или несколько обязательных полей не были заполнены или были заполнены некорректно.", "Недостаточно данных");
             }
         }
 

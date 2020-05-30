@@ -500,6 +500,36 @@ namespace LogBook
         {
             Refresh_ContractsClosedDataGridView();
         }
+
+        private void tsbtnConOpAllEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvContractsOpenedAll.SelectedRows.Count > 0)
+            {
+                ContractAddEditForm edit = new ContractAddEditForm(int.Parse(dgvContractsOpenedAll.SelectedRows[0].Cells[0].Value.ToString()));
+                if (edit.ShowDialog() == DialogResult.OK)
+                    Refresh_ContractsOpenedDataGridView();
+            }
+        }
+
+        private void dgvContractsOpenedAll_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tsbtnConOpAllView.PerformClick();
+        }
+
+        private void dgvContractsOpenedProsrok_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tsbtnConProsrokView.PerformClick();
+        }
+
+        private void dgvContractsClosed_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tsbtnConClosedView.PerformClick();
+        }
+
+        private void dgvOrg_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tsbtnOrgView.PerformClick();
+        }
     }
 
     public static class ExtensionMethods
