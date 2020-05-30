@@ -35,6 +35,7 @@ namespace LogBook
             Oformitel();
         }
 
+        // Конструктор для вызова из подробностей об ОО
         public ContractAddEditForm(int IdOO, string OOShortName)
         {
             InitializeComponent();
@@ -95,27 +96,38 @@ namespace LogBook
 
         public void FillEditingForm()
         {
+            this.Text = "Изменить договор";
 
+            btnOK.Text = "Сохранить изменения";
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (thisFormType == ContractFormType.Adding)
+            if (tbContractCode.Text.Length == 0 || tbIdOO.Text.Length == 0 || tbHostOrganization.Text.Length == 0 ||
+                DateTime.Parse(dtpDateOfReturn.Value.ToShortDateString()) < DateTime.Parse(dtpDateOfIssue.Value.ToShortDateString()) ||
+                DateTime.Parse(dtpDateOfIssue.Value.ToShortDateString()) < DateTime.Parse(dtpDateOfSigning.Value.ToShortDateString()))
             {
-                AddContract();
+                if (thisFormType == ContractFormType.Adding)
+                {
+                    AddContract();
+                }
+                else
+                {
+                    Edit();
+                }
+                DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
-                Edit();
+                MessageBox.Show("Одно или несколько обязательных полей не были заполнены или были заполнены некорректно.", "Недостаточно данных");
             }
-            DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void AddContract()
         {
-            //try
-            //{
+            try
+            {
                 int id = 0;
                 ContractAddEdit.AddContract(tbContractCode.Text, int.Parse(tbIdOO.Text), dtpDateOfSigning.Value, dtpDateOfIssue.Value, dtpDateOfReturn.Value,
                     (int)comboResponsible.SelectedValue, tbHostOrganization.Text, out id);
@@ -137,12 +149,12 @@ namespace LogBook
                         ContractAddEdit.AddNotReturnableItemsInContract(int.Parse(dgvNotReturnableItemsInContract.Rows[i].Cells["Id"].Value.ToString()), int.Parse(dgvNotReturnableItemsInContract.Rows[i].Cells["Count"].Value.ToString()), id);
                     }
                 }
-            //}
-            //catch(Exception e)
-            //{
-            //    MessageBox.Show(e.Message);
-            //}
-        }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+}
 
         private void Edit()
         {

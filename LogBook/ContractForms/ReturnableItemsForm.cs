@@ -20,6 +20,10 @@ namespace LogBook
             dgvReturnableItems.DataSource = ri.dataTable;
             dgvReturnableItems.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvReturnableItems.Columns[0].Visible = false;
+            dgvReturnableItems.Columns[4].Visible = false;
+            dgvReturnableItems.Columns[1].HeaderText = "Наименование";
+            dgvReturnableItems.Columns[2].HeaderText = "Инвентарный номер";
+            dgvReturnableItems.Columns[3].HeaderText = "Выдан";
             btnClose.NotifyDefault(true);
             dgvReturnableItems.Focus();
         }
