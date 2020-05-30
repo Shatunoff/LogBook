@@ -73,6 +73,7 @@ namespace LogBook
             dgvNotReturnableItemsInContract.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
 
             btnCloseContract.Visible = false;
+            btnCloseContract.Enabled = false;
             btnOK.Text = "Добавить договор";
         }
 
@@ -83,9 +84,16 @@ namespace LogBook
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (thisFormType == ContractFormType.Adding) AddContract();
-            else Edit();
-
+            if (thisFormType == ContractFormType.Adding)
+            {
+                AddContract();
+            }
+            else
+            {
+                Edit();
+            }
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void AddContract()
@@ -225,6 +233,18 @@ namespace LogBook
             if (dgvNotReturnableItemsInContract.SelectedRows.Count > 0)
             {
                 dgvNotReturnableItemsInContract.Rows.RemoveAt(dgvNotReturnableItemsInContract.SelectedRows[0].Index);
+            }
+        }
+
+        private void btnSelectOO_Click(object sender, EventArgs e)
+        {
+            SelectOrgForContractForm selectOO = null;
+            if (tbIdOO.Text.Length > 0) selectOO = new SelectOrgForContractForm(int.Parse(tbIdOO.Text));
+            else selectOO = new SelectOrgForContractForm();
+            if (selectOO.ShowDialog() == DialogResult.OK)
+            {
+                tbIdOO.Text = selectOO.OrgId.ToString();
+                tbOOName.Text = selectOO.OrgShortName;
             }
         }
     }

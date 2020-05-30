@@ -131,15 +131,12 @@ namespace LogBook
                 cmd.Parameters.AddWithValue("@DateOfSigning", dateOfSigning);
                 cmd.Parameters.AddWithValue("@DateOfIssue", dateOfIssue);
                 cmd.Parameters.AddWithValue("@DateOfReturn", dateOfReturn);
-                //cmd.Parameters.Add(new SqlParameter { ParameterName = "@DateOfSigning", Value = dateOfSigning.ToString("yyyy-mm-dd") });
-                //cmd.Parameters.Add(new SqlParameter { ParameterName = "@DateOfIssue", Value = dateOfIssue.ToString("yyyy-mm-dd") });
-                //cmd.Parameters.Add(new SqlParameter { ParameterName = "@DateOfReturn", Value = dateOfReturn.ToString("yyyy-mm-dd") });
                 cmd.Parameters.Add(new SqlParameter { ParameterName = "@IdResponsible", Value = idResponsible });
                 cmd.Parameters.Add(new SqlParameter { ParameterName = "@HostOrganization", Value = hostOrg });
 
                 cmd.ExecuteNonQuery();
 
-                SqlCommand getId = new SqlCommand($"SELECT dbo.GetCurrentContractId {contractCode}", connection);
+                SqlCommand getId = new SqlCommand($"SELECT dbo.GetCurrentContractId ('{contractCode}')", connection);
                 idContract = (int)getId.ExecuteScalar();
 
                 connection.Close();

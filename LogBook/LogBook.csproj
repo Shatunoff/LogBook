@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddNotReturnableInContractForm.cs">
+    <Compile Include="ContractForms\AddNotReturnableInContractForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNotReturnableInContractForm.Designer.cs">
+    <Compile Include="ContractForms\AddNotReturnableInContractForm.Designer.cs">
       <DependentUpon>AddNotReturnableInContractForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ContractForms\ContractAddEditForm.cs">
@@ -69,6 +69,7 @@
     <Compile Include="DBEssences\OrgAddEdit.cs" />
     <Compile Include="DBEssences\Organizations.cs" />
     <Compile Include="DBEssences\OrgMore.cs" />
+    <Compile Include="DBEssences\SelectOrgForContract.cs" />
     <Compile Include="OrgForms\OrgAddEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,7 +130,13 @@
     <Compile Include="ContractForms\ResponsiblesForm.Designer.cs">
       <DependentUpon>ResponsiblesForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddNotReturnableInContractForm.resx">
+    <Compile Include="ContractForms\SelectOrgForContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractForms\SelectOrgForContractForm.Designer.cs">
+      <DependentUpon>SelectOrgForContractForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ContractForms\AddNotReturnableInContractForm.resx">
       <DependentUpon>AddNotReturnableInContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContractForms\ContractAddEditForm.resx">
@@ -146,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContractForms\ReturnableItemsForm.resx">
       <DependentUpon>ReturnableItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContractForms\SelectOrgForContractForm.resx">
+      <DependentUpon>SelectOrgForContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DBConnectionSettingForm.resx">
       <DependentUpon>DBConnectionSettingForm.cs</DependentUpon>

@@ -445,7 +445,10 @@ namespace LogBook
         private void tsbtnConOpAllNew_Click(object sender, EventArgs e)
         {
             ContractAddEditForm addContract = new ContractAddEditForm();
-            addContract.ShowDialog();
+            if(addContract.ShowDialog() == DialogResult.OK)
+            {
+                Refresh_ContractsOpenedDataGridView();
+            }
         }
     }
 
