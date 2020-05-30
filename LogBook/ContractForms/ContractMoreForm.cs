@@ -15,12 +15,16 @@ namespace LogBook
         public bool ContractOpened { get; private set; }
         public ContractMore contMore { get; private set; }
 
-        public ContractMoreForm(int IdContract, bool ContractOpened = true)
+        public ContractMoreForm(int IdContract, bool ContractOpened = true, bool state = true)
         {
             InitializeComponent();
             this.IdContract = IdContract;
             this.ContractOpened = ContractOpened;
-            
+            if (!state)
+            {
+                btnOOMore.Enabled = false;
+                btnOOMore.Visible = false;
+            }
             FillForm();
         }
 
@@ -70,7 +74,7 @@ namespace LogBook
 
         private void btnOOMore_Click(object sender, EventArgs e)
         {
-            OrgMoreForm orgMore = new OrgMoreForm(contMore.thisContract.IdOO);
+            OrgMoreForm orgMore = new OrgMoreForm(contMore.thisContract.IdOO, false);
             if (orgMore.ShowDialog() == DialogResult.OK)
                 FillForm();
         }

@@ -88,7 +88,7 @@ namespace LogBook
                 dgvOrg.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvOrg.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 dgvOrg.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgvOrg.Columns[1].MinimumWidth = 200;
+                dgvOrg.Columns[1].MinimumWidth = 150;
                 dgvOrg.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvOrg.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 dgvOrg.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;

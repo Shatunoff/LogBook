@@ -14,11 +14,16 @@ namespace LogBook
         OrgMore orgMore;
         int idOO;
 
-        public OrgMoreForm(int idOO)
+        public OrgMoreForm(int idOO, bool state = true)
         {
             InitializeComponent();
             this.idOO = idOO;
             orgMore = new OrgMore(idOO);
+            if (!state)
+            {
+                tsbtnContractMore.Enabled = false;
+                tsbtnContractNew.Enabled = false;
+            }
         }
 
         private void OrgMoreForm_Load(object sender, EventArgs e)
@@ -39,7 +44,11 @@ namespace LogBook
             this.Text = orgMore.Organization.ooShortName + " — " + "Информация об образовательной организации";
 
             dgvContracts.DataSource = orgMore.ContractsOfOrganization;
-            if(dgvContracts.Columns.Count > 0) dgvContracts.Columns[0].Visible = false;
+            if (dgvContracts.Columns.Count > 0)
+            {
+                dgvContracts.Columns[0].Visible = false;
+                dgvContracts.Columns[1].Visible = false;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -61,6 +70,19 @@ namespace LogBook
                 orgMore = new OrgMore(int.Parse(edit.tbOOCode.Text));
                 OrgMoreForm_Load(sender, e);
             }
+        }
+
+        private void tsbtnContractMore_Click(object sender, EventArgs e)
+        {
+            ContractMoreForm moreContract = new ContractMoreForm(int.Parse(dgvContracts.SelectedRows[0].Cells[0].Value.ToString()), bool.Parse(dgvContracts.SelectedRows[0].Cells[7].Value.ToString()), false);
+            moreContract.ShowDialog();
+        }
+
+        private void tsbtnContractNew_Click(object sender, EventArgs e)
+        {
+            ContractAddEditForm newContract = new ContractAddEditForm(idOO, tbShortName.Text);
+            if (newContract.ShowDialog() == DialogResult.OK)
+                orgMore = new OrgMore(idOO);
         }
     }
 }

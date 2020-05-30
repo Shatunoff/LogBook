@@ -32,6 +32,22 @@ namespace LogBook
                 FillEditingForm();
             }
 
+            Oformitel();
+        }
+
+        public ContractAddEditForm(int IdOO, string OOShortName)
+        {
+            InitializeComponent();
+            thisFormType = ContractFormType.Adding;
+            FillAddingForm();
+            Oformitel();
+            tbIdOO.Text = IdOO.ToString();
+            tbOOName.Text = OOShortName;
+            btnSelectOO.Enabled = false;
+        }
+
+        public void Oformitel()
+        {
             dgvReturnableItems.DataSource = addedit.ReturnableItems;
             dgvReturnableItems.Columns[0].Visible = false;
             dgvReturnableItems.Columns[1].HeaderText = "Наименование";
@@ -246,6 +262,26 @@ namespace LogBook
                 tbIdOO.Text = selectOO.OrgId.ToString();
                 tbOOName.Text = selectOO.OrgShortName;
             }
+        }
+
+        private void tbIdOO_DoubleClick(object sender, EventArgs e)
+        {
+            btnSelectOO.PerformClick();
+        }
+
+        private void dgvReturnableItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnAddReturnableItemInContract.PerformClick();
+        }
+
+        private void dgvNotReturnableItems_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnAddNotReturnableItemInContract.PerformClick();
+        }
+
+        private void dgvNotReturnableItemsInContract_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEditCountNotReturnableItemInContract.PerformClick();
         }
     }
 }

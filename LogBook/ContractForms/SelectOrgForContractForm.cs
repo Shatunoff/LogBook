@@ -14,35 +14,42 @@ namespace LogBook
         public int OrgId { get; set; }
         public string OrgShortName { get; private set; }
 
-        Organizations organizations { get; set; }
         OrgAddEdit orgAddEdit { get; set; }
 
         public SelectOrgForContractForm()
         {
-            InitializeComponent();
-            organizations = new Organizations();
-            orgAddEdit = new OrgAddEdit();
-
-            comboATEs.DataSource = new BindingSource(orgAddEdit.ATEs, null);
-            comboATEs.DisplayMember = "Value";
-            comboATEs.ValueMember = "Key";
-            
-
+            LoadForTwoModes();
         }
 
         public SelectOrgForContractForm(int idOO)
         {
+            try
+            {
+                LoadForTwoModes();
+                OrgId = idOO;
+
+                comboATEs.SelectedValue = OrgAddEdit.GetCurrentAte(idOO);
+                tbSearchQuery.Text = idOO.ToString();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+        public void LoadForTwoModes()
+        {
             InitializeComponent();
-            OrgId = idOO;
-
             orgAddEdit = new OrgAddEdit();
-
             comboATEs.DataSource = new BindingSource(orgAddEdit.ATEs, null);
             comboATEs.DisplayMember = "Value";
             comboATEs.ValueMember = "Key";
-            comboATEs.SelectedValue = OrgAddEdit.GetCurrentAte(idOO);
-            tbSearchQuery.Text = idOO.ToString();
-            btnFind.PerformClick();
+
+            if (dgvOrgShort.Columns.Count > 0)
+            {
+                dgvOrgShort.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgvOrgShort.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -62,28 +69,48 @@ namespace LogBook
             this.Close();
         }
 
-        private void getOrgsFromAte()
-        {
-            if (comboATEs.Items.Count > 0)
-                dgvOrgShort.DataSource = SelectOrgForContract.getAllOrgFromATE(Convert.ToInt32(comboATEs.SelectedValue));
-        }
-
         private void comboATEs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            getOrgsFromAte();
+            
         }
 
         private void btnFind_Click(object sender, EventArgs e)
         {
-            if (tbSearchQuery.Text.Length > 0)
-                dgvOrgShort.DataSource = SelectOrgForContract.getSearchResult((int)comboATEs.SelectedValue, tbSearchQuery.Text);
-            else
-                getOrgsFromAte();
+            try
+            {
+                if (tbSearchQuery.Text.Length > 0)
+                    dgvOrgShort.DataSource = SelectOrgForContract.getSearchResult((int)comboATEs.SelectedValue, tbSearchQuery.Text);
+                else
+                    dgvOrgShort.DataSource = SelectOrgForContract.getAllOrgFromATE((int)comboATEs.SelectedValue);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tbSearchQuery_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) btnFind.PerformClick();
+        }
+
+        private void comboATEs_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idAte;
+                if (int.TryParse(comboATEs.SelectedValue.ToString(), out idAte))
+                    dgvOrgShort.DataSource = SelectOrgForContract.getAllOrgFromATE(idAte);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvOrgShort_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvOrgShort.SelectedRows.Count > 0) btnOK.PerformClick();
         }
     }
 }

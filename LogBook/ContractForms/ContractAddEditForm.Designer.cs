@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tbOOName = new System.Windows.Forms.TextBox();
             this.btnSelectOO = new System.Windows.Forms.Button();
             this.tbIdOO = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -73,7 +74,6 @@
             this.btnAddReturnableItemInContract = new System.Windows.Forms.Button();
             this.btnCloseContract = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.tbOOName = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,6 +109,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Договор";
             // 
+            // tbOOName
+            // 
+            this.tbOOName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbOOName.Location = new System.Drawing.Point(461, 19);
+            this.tbOOName.Name = "tbOOName";
+            this.tbOOName.ReadOnly = true;
+            this.tbOOName.Size = new System.Drawing.Size(161, 20);
+            this.tbOOName.TabIndex = 41;
+            this.tbOOName.DoubleClick += new System.EventHandler(this.tbIdOO_DoubleClick);
+            // 
             // btnSelectOO
             // 
             this.btnSelectOO.Location = new System.Drawing.Point(628, 17);
@@ -127,6 +137,7 @@
             this.tbIdOO.ReadOnly = true;
             this.tbIdOO.Size = new System.Drawing.Size(50, 20);
             this.tbIdOO.TabIndex = 40;
+            this.tbIdOO.DoubleClick += new System.EventHandler(this.tbIdOO_DoubleClick);
             // 
             // label7
             // 
@@ -313,25 +324,26 @@
             this.dgvNotReturnableItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNotReturnableItems.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvNotReturnableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotReturnableItems.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotReturnableItems.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNotReturnableItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvNotReturnableItems.Location = new System.Drawing.Point(362, 46);
             this.dgvNotReturnableItems.MultiSelect = false;
             this.dgvNotReturnableItems.Name = "dgvNotReturnableItems";
             this.dgvNotReturnableItems.RowHeadersVisible = false;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotReturnableItems.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotReturnableItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNotReturnableItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotReturnableItems.Size = new System.Drawing.Size(320, 120);
             this.dgvNotReturnableItems.StandardTab = true;
             this.dgvNotReturnableItems.TabIndex = 5;
+            this.dgvNotReturnableItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotReturnableItems_CellDoubleClick);
             // 
             // dgvNotReturnableItemsInContract
             // 
@@ -342,25 +354,26 @@
             this.dgvNotReturnableItemsInContract.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNotReturnableItemsInContract.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvNotReturnableItemsInContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNotReturnableItemsInContract.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvNotReturnableItemsInContract.Location = new System.Drawing.Point(6, 20);
             this.dgvNotReturnableItemsInContract.MultiSelect = false;
             this.dgvNotReturnableItemsInContract.Name = "dgvNotReturnableItemsInContract";
             this.dgvNotReturnableItemsInContract.RowHeadersVisible = false;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNotReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNotReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNotReturnableItemsInContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotReturnableItemsInContract.Size = new System.Drawing.Size(350, 146);
             this.dgvNotReturnableItemsInContract.StandardTab = true;
             this.dgvNotReturnableItemsInContract.TabIndex = 0;
+            this.dgvNotReturnableItemsInContract.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotReturnableItemsInContract_CellDoubleClick);
             // 
             // btnEditCountNotReturnableItemInContract
             // 
@@ -445,25 +458,26 @@
             this.dgvReturnableItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReturnableItems.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvReturnableItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnableItems.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnableItems.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvReturnableItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvReturnableItems.Location = new System.Drawing.Point(362, 45);
             this.dgvReturnableItems.MultiSelect = false;
             this.dgvReturnableItems.Name = "dgvReturnableItems";
             this.dgvReturnableItems.RowHeadersVisible = false;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnableItems.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnableItems.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvReturnableItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReturnableItems.Size = new System.Drawing.Size(320, 121);
             this.dgvReturnableItems.StandardTab = true;
             this.dgvReturnableItems.TabIndex = 4;
+            this.dgvReturnableItems.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReturnableItems_CellDoubleClick);
             // 
             // dgvReturnableItemsInContract
             // 
@@ -475,21 +489,21 @@
             this.dgvReturnableItemsInContract.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReturnableItemsInContract.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvReturnableItemsInContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnableItemsInContract.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvReturnableItemsInContract.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvReturnableItemsInContract.Location = new System.Drawing.Point(6, 19);
             this.dgvReturnableItemsInContract.MultiSelect = false;
             this.dgvReturnableItemsInContract.Name = "dgvReturnableItemsInContract";
             this.dgvReturnableItemsInContract.RowHeadersVisible = false;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnableItemsInContract.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvReturnableItemsInContract.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReturnableItemsInContract.Size = new System.Drawing.Size(350, 147);
             this.dgvReturnableItemsInContract.StandardTab = true;
@@ -533,15 +547,6 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Отмена";
             this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // tbOOName
-            // 
-            this.tbOOName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbOOName.Location = new System.Drawing.Point(461, 19);
-            this.tbOOName.Name = "tbOOName";
-            this.tbOOName.ReadOnly = true;
-            this.tbOOName.Size = new System.Drawing.Size(161, 20);
-            this.tbOOName.TabIndex = 41;
             // 
             // ContractAddEditForm
             // 
