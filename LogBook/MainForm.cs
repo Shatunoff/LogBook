@@ -530,6 +530,26 @@ namespace LogBook
         {
             tsbtnOrgView.PerformClick();
         }
+
+        private void dgvOrg_DataSourceChanged(object sender, EventArgs e)
+        {
+            tslOrgCount.Text = dgvOrg.Rows.Count.ToString();
+        }
+
+        private void dgvContractsOpenedAll_DataSourceChanged(object sender, EventArgs e)
+        {
+            tslConOpAllCount.Text = dgvContractsOpenedAll.Rows.Count.ToString();
+        }
+
+        private void dgvContractsOpenedProsrok_DataSourceChanged(object sender, EventArgs e)
+        {
+            tslConOpProsrokCount.Text = dgvContractsOpenedProsrok.Rows.Count.ToString();
+        }
+
+        private void dgvContractsClosed_DataSourceChanged(object sender, EventArgs e)
+        {
+            tslConClosedCount.Text = dgvContractsClosed.Rows.Count.ToString();
+        }
     }
 
     public static class ExtensionMethods
