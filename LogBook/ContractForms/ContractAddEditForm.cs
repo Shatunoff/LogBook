@@ -16,23 +16,26 @@ namespace LogBook
         ContractFormType thisFormType { get; set; }
         int ContractId { get; set; }
         public ContractMore contMore { get; private set; }
-        ContractAddEdit addedit { get; set; } = new ContractAddEdit();
+        ContractAddEdit addedit { get; set; }
 
         public ContractAddEditForm(int contractID = -1)
         {
             InitializeComponent();
-            Oformitel();
+
             if (contractID < 0)
             {
                 thisFormType = ContractFormType.Adding;
+                addedit = new ContractAddEdit();
+                Oformitel();
                 FillAddingForm();
             }
             else
             {
                 thisFormType = ContractFormType.Editing;
                 ContractId = contractID;
+                addedit = new ContractAddEdit(contractID);
                 contMore = new ContractMore(contractID);
-
+                Oformitel();
                 FillEditingForm();
             }
         }
@@ -107,7 +110,15 @@ namespace LogBook
             tbIdOO.Text = contMore.thisContract.IdOO.ToString();
             tbOOName.Text = contMore.thisOrganization.ooShortName;
             tbHostOrganization.Text = contMore.thisContract.HostOrganization;
+
             comboResponsible.SelectedValue = ContractAddEdit.GetCurrentResponsible(ContractId);
+            dgvReturnableItemsInContract.DataSource = addedit.ReturnableItemsInContract;
+            dgvReturnableItemsInContract.Columns[0].Visible = false;
+            dgvReturnableItemsInContract.Columns[1].Visible = false;
+            dgvNotReturnableItemsInContract.DataSource = addedit.NotReturnableItemsInContract;
+            dgvNotReturnableItemsInContract.Columns[0].Visible = false;
+            dgvNotReturnableItemsInContract.Columns[1].Visible = false;
+            dgvNotReturnableItemsInContract.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             btnOK.Text = "Сохранить изменения";
         }
@@ -170,7 +181,15 @@ namespace LogBook
 
         private void Edit()
         {
-
+            try
+            {
+                ContractAddEdit.EditContract(ContractId, tbContractCode.Text, int.Parse(tbIdOO.Text), dtpDateOfSigning.Value, dtpDateOfIssue.Value, dtpDateOfReturn.Value,
+                    (int)comboResponsible.SelectedValue, tbHostOrganization.Text);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void btnSearchInReturnableItems_Click(object sender, EventArgs e)
@@ -217,40 +236,78 @@ namespace LogBook
         {
             if (dgvReturnableItemsInContract.SelectedRows.Count > 0)
             {
-                dgvReturnableItemsInContract.Rows.RemoveAt(dgvReturnableItemsInContract.SelectedRows[0].Index);
+                if (thisFormType == ContractFormType.Adding)
+                    dgvReturnableItemsInContract.Rows.RemoveAt(dgvReturnableItemsInContract.SelectedRows[0].Index);
+                if (thisFormType == ContractFormType.Editing)
+                {
+                    addedit.RemoveReturnableItemFromOpenedContract(dgvReturnableItemsInContract.SelectedRows[0].Index);
+                    addedit.RefreshReturnableItems();
+                    dgvReturnableItems.DataSource = addedit.ReturnableItems;
+                }
             }
         }
 
         private void btnAddReturnableItemInContract_Click(object sender, EventArgs e)
         {
-            bool accept = true;
-            for (int i = 0; i < dgvReturnableItemsInContract.Rows.Count; i++)
+            if (thisFormType == ContractFormType.Adding)
             {
-                if (dgvReturnableItemsInContract.Rows[i].Cells[2].Value.ToString() == dgvReturnableItems.SelectedRows[0].Cells[2].Value.ToString())
-                    accept = false;
+                bool accept = true;
+                for (int i = 0; i < dgvReturnableItemsInContract.Rows.Count; i++)
+                {
+                    if (dgvReturnableItemsInContract.Rows[i].Cells[2].Value.ToString() == dgvReturnableItems.SelectedRows[0].Cells[2].Value.ToString())
+                        accept = false;
+                }
+                if (accept)
+                {
+                        dgvReturnableItemsInContract.Rows.Add(dgvReturnableItems.SelectedRows[0].Cells[0].Value.ToString(),
+                            dgvReturnableItems.SelectedRows[0].Cells[1].Value.ToString(), dgvReturnableItems.SelectedRows[0].Cells[2].Value.ToString());
+                }
             }
-            if (accept)
+            if (thisFormType == ContractFormType.Editing)
             {
-                dgvReturnableItemsInContract.Rows.Add(dgvReturnableItems.SelectedRows[0].Cells[0].Value.ToString(), 
+                addedit.AddReturnableItemInOpenedContract(int.Parse(dgvReturnableItems.SelectedRows[0].Cells[0].Value.ToString()),
                     dgvReturnableItems.SelectedRows[0].Cells[1].Value.ToString(), dgvReturnableItems.SelectedRows[0].Cells[2].Value.ToString());
+                addedit.RefreshReturnableItems();
+                dgvReturnableItems.DataSource = addedit.ReturnableItems;
             }
         }
 
         private void btnAddNotReturnableItemInContract_Click(object sender, EventArgs e)
         {
             bool accept = true;
-            for (int i = 0; i < dgvNotReturnableItemsInContract.Rows.Count; i++)
+
+            if (thisFormType == ContractFormType.Adding)
             {
-                if (dgvNotReturnableItemsInContract.Rows[i].Cells[0].Value.ToString() == dgvNotReturnableItems.SelectedRows[0].Cells[0].Value.ToString())
-                    accept = false;
-            }
-            if (accept)
-            {
-                AddNotReturnableInContractForm addNotReturnableForm = new AddNotReturnableInContractForm();
-                if (addNotReturnableForm.ShowDialog() == DialogResult.OK)
+                for (int i = 0; i < dgvNotReturnableItemsInContract.Rows.Count; i++)
                 {
-                    dgvNotReturnableItemsInContract.Rows.Add(dgvNotReturnableItems.SelectedRows[0].Cells[0].Value.ToString(),
-                           dgvNotReturnableItems.SelectedRows[0].Cells[1].Value.ToString(), addNotReturnableForm.Count);
+                    if (dgvNotReturnableItemsInContract.Rows[i].Cells[0].Value.ToString() == dgvNotReturnableItems.SelectedRows[0].Cells[0].Value.ToString())
+                        accept = false;
+                }
+                if (accept)
+                {
+                    AddNotReturnableInContractForm addNotReturnableForm = new AddNotReturnableInContractForm();
+                    if (addNotReturnableForm.ShowDialog() == DialogResult.OK)
+                    {
+                        dgvNotReturnableItemsInContract.Rows.Add(dgvNotReturnableItems.SelectedRows[0].Cells[0].Value.ToString(),
+                            dgvNotReturnableItems.SelectedRows[0].Cells[1].Value.ToString(), addNotReturnableForm.Count);
+                    }
+                }
+            }
+            if (thisFormType == ContractFormType.Editing)
+            {
+                for (int i = 0; i < dgvNotReturnableItemsInContract.Rows.Count; i++)
+                {
+                    if (dgvNotReturnableItemsInContract.Rows[i].Cells[1].Value.ToString() == dgvNotReturnableItems.SelectedRows[0].Cells[0].Value.ToString())
+                        accept = false;
+                }
+                if (accept)
+                {
+                    AddNotReturnableInContractForm addNotReturnableForm = new AddNotReturnableInContractForm();
+                    if (addNotReturnableForm.ShowDialog() == DialogResult.OK)
+                    {
+                        addedit.AddNotReturnableItemInOpenedContract(int.Parse(dgvNotReturnableItems.SelectedRows[0].Cells[0].Value.ToString()),
+                            dgvNotReturnableItems.SelectedRows[0].Cells[1].Value.ToString(), addNotReturnableForm.Count);
+                    }
                 }
             }
         }
@@ -260,10 +317,18 @@ namespace LogBook
             if (dgvNotReturnableItemsInContract.SelectedRows.Count > 0)
             {
                 AddNotReturnableInContractForm editCount = new AddNotReturnableInContractForm();
-                editCount.Count = int.Parse(dgvNotReturnableItemsInContract.SelectedRows[0].Cells[2].Value.ToString());
+                if (thisFormType == ContractFormType.Adding)
+                    editCount.Count = int.Parse(dgvNotReturnableItemsInContract.SelectedRows[0].Cells[2].Value.ToString());
+                if (thisFormType == ContractFormType.Editing)
+                    editCount.Count = int.Parse(dgvNotReturnableItemsInContract.SelectedRows[0].Cells[3].Value.ToString());
                 if (editCount.ShowDialog() == DialogResult.OK)
                 {
-                    dgvNotReturnableItemsInContract.SelectedRows[0].Cells[2].Value = editCount.Count;
+                    if (thisFormType == ContractFormType.Adding)
+                        dgvNotReturnableItemsInContract.SelectedRows[0].Cells[2].Value = editCount.Count;
+                    if (thisFormType == ContractFormType.Editing)
+                    {
+                        addedit.EditNotReturnableItemInOpenedContract(dgvNotReturnableItemsInContract.SelectedRows[0].Index, editCount.Count);
+                    }
                 }
             }
         }
@@ -272,7 +337,12 @@ namespace LogBook
         {
             if (dgvNotReturnableItemsInContract.SelectedRows.Count > 0)
             {
-                dgvNotReturnableItemsInContract.Rows.RemoveAt(dgvNotReturnableItemsInContract.SelectedRows[0].Index);
+                if (thisFormType == ContractFormType.Adding)
+                    dgvNotReturnableItemsInContract.Rows.RemoveAt(dgvNotReturnableItemsInContract.SelectedRows[0].Index);
+                if (thisFormType == ContractFormType.Editing)
+                {
+                    addedit.RemoveNotReturnableItemFromOpenedContract(dgvNotReturnableItemsInContract.SelectedRows[0].Index);
+                }
             }
         }
 
@@ -306,6 +376,24 @@ namespace LogBook
         private void dgvNotReturnableItemsInContract_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             btnEditCountNotReturnableItemInContract.PerformClick();
+        }
+
+        private void btnCloseContract_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Закрытый договор нельзя открыть обратно. Вы уверены в своем действии?", "Требуется подтверждение", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                try
+                {
+                    ContractAddEdit.CloseContract(ContractId);
+                    DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

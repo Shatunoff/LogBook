@@ -507,7 +507,7 @@ namespace LogBook
             {
                 ContractAddEditForm edit = new ContractAddEditForm(int.Parse(dgvContractsOpenedAll.SelectedRows[0].Cells[0].Value.ToString()));
                 if (edit.ShowDialog() == DialogResult.OK)
-                    Refresh_ContractsOpenedDataGridView();
+                    Refresh_ContractsDataGridView();
             }
         }
 

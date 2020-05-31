@@ -537,6 +537,7 @@
             this.btnCloseContract.TabIndex = 3;
             this.btnCloseContract.Text = "Закрыть договор";
             this.btnCloseContract.UseVisualStyleBackColor = true;
+            this.btnCloseContract.Click += new System.EventHandler(this.btnCloseContract_Click);
             // 
             // btnClose
             // 
