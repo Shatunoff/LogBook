@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.mmBase = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,8 +135,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnOrgFilterReset = new System.Windows.Forms.Button();
             this.btnOrgFilterApply = new System.Windows.Forms.Button();
-            this.checkOrgFilterIsPPE11 = new System.Windows.Forms.CheckBox();
-            this.checkOrgFilterIsPPE9 = new System.Windows.Forms.CheckBox();
             this.comboOrgFilterATE = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -388,8 +386,8 @@
             this.dgvContractsOpenedAll.MultiSelect = false;
             this.dgvContractsOpenedAll.Name = "dgvContractsOpenedAll";
             this.dgvContractsOpenedAll.RowHeadersVisible = false;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle31;
             this.dgvContractsOpenedAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedAll.Size = new System.Drawing.Size(720, 350);
             this.dgvContractsOpenedAll.TabIndex = 0;
@@ -503,22 +501,22 @@
             this.dgvContractsOpenedProsrok.AllowUserToResizeRows = false;
             this.dgvContractsOpenedProsrok.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsOpenedProsrok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle32;
             this.dgvContractsOpenedProsrok.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsOpenedProsrok.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsOpenedProsrok.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsOpenedProsrok.MultiSelect = false;
             this.dgvContractsOpenedProsrok.Name = "dgvContractsOpenedProsrok";
             this.dgvContractsOpenedProsrok.RowHeadersVisible = false;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvContractsOpenedProsrok.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 350);
             this.dgvContractsOpenedProsrok.TabIndex = 0;
@@ -631,22 +629,22 @@
             this.dgvContractsClosed.AllowUserToResizeRows = false;
             this.dgvContractsClosed.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsClosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle34;
             this.dgvContractsClosed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsClosed.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsClosed.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsClosed.MultiSelect = false;
             this.dgvContractsClosed.Name = "dgvContractsClosed";
             this.dgvContractsClosed.RowHeadersVisible = false;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle35;
             this.dgvContractsClosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsClosed.Size = new System.Drawing.Size(720, 350);
             this.dgvContractsClosed.TabIndex = 0;
@@ -985,22 +983,22 @@
             this.dgvOrg.AllowUserToResizeRows = false;
             this.dgvOrg.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvOrg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrg.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.DefaultCellStyle = dataGridViewCellStyle29;
             this.dgvOrg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrg.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvOrg.Location = new System.Drawing.Point(3, 28);
             this.dgvOrg.MultiSelect = false;
             this.dgvOrg.Name = "dgvOrg";
             this.dgvOrg.RowHeadersVisible = false;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrg.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.RowsDefaultCellStyle = dataGridViewCellStyle30;
             this.dgvOrg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrg.Size = new System.Drawing.Size(734, 382);
             this.dgvOrg.TabIndex = 3;
@@ -1110,8 +1108,6 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btnOrgFilterReset);
             this.groupBox1.Controls.Add(this.btnOrgFilterApply);
-            this.groupBox1.Controls.Add(this.checkOrgFilterIsPPE11);
-            this.groupBox1.Controls.Add(this.checkOrgFilterIsPPE9);
             this.groupBox1.Controls.Add(this.comboOrgFilterATE);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label17);
@@ -1146,41 +1142,23 @@
             // 
             // btnOrgFilterReset
             // 
-            this.btnOrgFilterReset.Location = new System.Drawing.Point(113, 223);
+            this.btnOrgFilterReset.Location = new System.Drawing.Point(113, 177);
             this.btnOrgFilterReset.Name = "btnOrgFilterReset";
             this.btnOrgFilterReset.Size = new System.Drawing.Size(102, 23);
             this.btnOrgFilterReset.TabIndex = 23;
             this.btnOrgFilterReset.Text = "Сбросить";
             this.btnOrgFilterReset.UseVisualStyleBackColor = true;
+            this.btnOrgFilterReset.Click += new System.EventHandler(this.btnOrgFilterReset_Click);
             // 
             // btnOrgFilterApply
             // 
-            this.btnOrgFilterApply.Location = new System.Drawing.Point(6, 223);
+            this.btnOrgFilterApply.Location = new System.Drawing.Point(6, 177);
             this.btnOrgFilterApply.Name = "btnOrgFilterApply";
             this.btnOrgFilterApply.Size = new System.Drawing.Size(101, 23);
             this.btnOrgFilterApply.TabIndex = 22;
             this.btnOrgFilterApply.Text = "Применить";
             this.btnOrgFilterApply.UseVisualStyleBackColor = true;
-            // 
-            // checkOrgFilterIsPPE11
-            // 
-            this.checkOrgFilterIsPPE11.AutoSize = true;
-            this.checkOrgFilterIsPPE11.Location = new System.Drawing.Point(6, 200);
-            this.checkOrgFilterIsPPE11.Name = "checkOrgFilterIsPPE11";
-            this.checkOrgFilterIsPPE11.Size = new System.Drawing.Size(163, 17);
-            this.checkOrgFilterIsPPE11.TabIndex = 21;
-            this.checkOrgFilterIsPPE11.Text = "Является ППЭ (11 классы)";
-            this.checkOrgFilterIsPPE11.UseVisualStyleBackColor = true;
-            // 
-            // checkOrgFilterIsPPE9
-            // 
-            this.checkOrgFilterIsPPE9.AutoSize = true;
-            this.checkOrgFilterIsPPE9.Location = new System.Drawing.Point(6, 177);
-            this.checkOrgFilterIsPPE9.Name = "checkOrgFilterIsPPE9";
-            this.checkOrgFilterIsPPE9.Size = new System.Drawing.Size(157, 17);
-            this.checkOrgFilterIsPPE9.TabIndex = 16;
-            this.checkOrgFilterIsPPE9.Text = "Является ППЭ (9 классы)";
-            this.checkOrgFilterIsPPE9.UseVisualStyleBackColor = true;
+            this.btnOrgFilterApply.Click += new System.EventHandler(this.btnOrgFilterApply_Click);
             // 
             // comboOrgFilterATE
             // 
@@ -1442,8 +1420,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnOrgFilterReset;
         private System.Windows.Forms.Button btnOrgFilterApply;
-        private System.Windows.Forms.CheckBox checkOrgFilterIsPPE11;
-        private System.Windows.Forms.CheckBox checkOrgFilterIsPPE9;
         private System.Windows.Forms.ComboBox comboOrgFilterATE;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;

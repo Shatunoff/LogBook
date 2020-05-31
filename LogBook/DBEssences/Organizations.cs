@@ -79,5 +79,27 @@ namespace LogBook
                 for (int i = 0; i < dt.Rows.Count; i++) listATEs.Add(dt.Rows[i][0].ToString());
             }
         }
+
+        public void FilterOrgs(string name, string idOO, string ateName, string membership)
+        {
+            string filterName = name == null ? string.Empty : name;
+            string filterIdOO = idOO == null ? string.Empty : idOO;
+            string filterAteName = ateName == null ? string.Empty : ateName;
+            string filterMembership = membership == null ? string.Empty : membership;
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
+            {
+                connection.Open();
+
+                dtAllOrg = new DataTable();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM dbo.OOSvod " +
+                    $"WHERE [Район, городской округ] LIKE '%{filterAteName}%' AND [Принадлежность] LIKE '%{filterMembership}%' " +
+                    $"AND [Код ОО] LIKE '%{filterIdOO}%' AND [Краткое наименование] LIKE '%{filterName}%'", connection);
+
+                dtAllOrg.Load(cmd.ExecuteReader());
+
+                connection.Close();
+            }
+        }
     }
 }

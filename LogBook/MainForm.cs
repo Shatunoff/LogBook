@@ -550,6 +550,29 @@ namespace LogBook
         {
             tslConClosedCount.Text = dgvContractsClosed.Rows.Count.ToString();
         }
+
+        private void btnOrgFilterApply_Click(object sender, EventArgs e)
+        {
+            string ooCode = null;
+            int idOO;
+            if (int.TryParse(tbOrgFilterOOCode.Text, out idOO))
+                ooCode = idOO.ToString();
+            string ooName = tbOrgFilterOOName.Text;
+            string ateName = comboOrgFilterATE.Text;
+            string membership = comboOrgFilterMemberships.Text;
+
+            dbOrg.FilterOrgs(ooName, ooCode, ateName, membership);
+            dgvOrg.DataSource = dbOrg.dtAllOrg;
+        }
+
+        private void btnOrgFilterReset_Click(object sender, EventArgs e)
+        {
+            tbOrgFilterOOCode.Clear();
+            tbOrgFilterOOName.Clear();
+            comboOrgFilterATE.SelectedIndex = 0;
+            comboOrgFilterMemberships.SelectedIndex = 0;
+            tsbtnOrgRefresh.PerformClick();
+        }
     }
 
     public static class ExtensionMethods
