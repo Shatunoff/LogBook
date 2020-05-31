@@ -81,7 +81,9 @@ namespace LogBook
 
         private void btnContractEdit_Click(object sender, EventArgs e)
         {
-
+            ContractAddEditForm edit = new ContractAddEditForm(IdContract);
+            if (edit.ShowDialog() == DialogResult.OK)
+                FillForm();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
