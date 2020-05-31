@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.mmBase = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,16 +141,16 @@
             this.tbOrgFilterOOName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbOrgFilterOOCode = new System.Windows.Forms.TextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusConOpAll = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslConOpAllCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.statusConOpProsrok = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslConOpProsrokCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip3 = new System.Windows.Forms.StatusStrip();
+            this.statusConClosed = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslConClosedCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip4 = new System.Windows.Forms.StatusStrip();
+            this.statusOrg = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tslOrgCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainMenu.SuspendLayout();
@@ -173,10 +173,10 @@
             this.toolsOrg.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.statusStrip2.SuspendLayout();
-            this.statusStrip3.SuspendLayout();
-            this.statusStrip4.SuspendLayout();
+            this.statusConOpAll.SuspendLayout();
+            this.statusConOpProsrok.SuspendLayout();
+            this.statusConClosed.SuspendLayout();
+            this.statusOrg.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -363,7 +363,7 @@
             // tpMainContractsOpenedAll
             // 
             this.tpMainContractsOpenedAll.Controls.Add(this.dgvContractsOpenedAll);
-            this.tpMainContractsOpenedAll.Controls.Add(this.statusStrip1);
+            this.tpMainContractsOpenedAll.Controls.Add(this.statusConOpAll);
             this.tpMainContractsOpenedAll.Controls.Add(this.toolsContractsOpAll);
             this.tpMainContractsOpenedAll.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsOpenedAll.Name = "tpMainContractsOpenedAll";
@@ -386,8 +386,8 @@
             this.dgvContractsOpenedAll.MultiSelect = false;
             this.dgvContractsOpenedAll.Name = "dgvContractsOpenedAll";
             this.dgvContractsOpenedAll.RowHeadersVisible = false;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedAll.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvContractsOpenedAll.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedAll.Size = new System.Drawing.Size(720, 350);
             this.dgvContractsOpenedAll.TabIndex = 0;
@@ -484,7 +484,7 @@
             // tpMainContractsOpenedProsrok
             // 
             this.tpMainContractsOpenedProsrok.Controls.Add(this.dgvContractsOpenedProsrok);
-            this.tpMainContractsOpenedProsrok.Controls.Add(this.statusStrip2);
+            this.tpMainContractsOpenedProsrok.Controls.Add(this.statusConOpProsrok);
             this.tpMainContractsOpenedProsrok.Controls.Add(this.toolsContractsOpProsrok);
             this.tpMainContractsOpenedProsrok.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsOpenedProsrok.Name = "tpMainContractsOpenedProsrok";
@@ -501,22 +501,22 @@
             this.dgvContractsOpenedProsrok.AllowUserToResizeRows = false;
             this.dgvContractsOpenedProsrok.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsOpenedProsrok.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvContractsOpenedProsrok.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsOpenedProsrok.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsOpenedProsrok.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsOpenedProsrok.MultiSelect = false;
             this.dgvContractsOpenedProsrok.Name = "dgvContractsOpenedProsrok";
             this.dgvContractsOpenedProsrok.RowHeadersVisible = false;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsOpenedProsrok.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvContractsOpenedProsrok.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsOpenedProsrok.Size = new System.Drawing.Size(720, 350);
             this.dgvContractsOpenedProsrok.TabIndex = 0;
@@ -612,7 +612,7 @@
             // tpMainContractsClosed
             // 
             this.tpMainContractsClosed.Controls.Add(this.dgvContractsClosed);
-            this.tpMainContractsClosed.Controls.Add(this.statusStrip3);
+            this.tpMainContractsClosed.Controls.Add(this.statusConClosed);
             this.tpMainContractsClosed.Controls.Add(this.toolsContractsClosed);
             this.tpMainContractsClosed.Location = new System.Drawing.Point(4, 22);
             this.tpMainContractsClosed.Name = "tpMainContractsClosed";
@@ -629,22 +629,22 @@
             this.dgvContractsClosed.AllowUserToResizeRows = false;
             this.dgvContractsClosed.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvContractsClosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvContractsClosed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvContractsClosed.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvContractsClosed.Location = new System.Drawing.Point(3, 28);
             this.dgvContractsClosed.MultiSelect = false;
             this.dgvContractsClosed.Name = "dgvContractsClosed";
             this.dgvContractsClosed.RowHeadersVisible = false;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvContractsClosed.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvContractsClosed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContractsClosed.Size = new System.Drawing.Size(720, 350);
             this.dgvContractsClosed.TabIndex = 0;
@@ -769,6 +769,7 @@
             this.btnContractsFilterReset.TabIndex = 23;
             this.btnContractsFilterReset.Text = "Сбросить";
             this.btnContractsFilterReset.UseVisualStyleBackColor = true;
+            this.btnContractsFilterReset.Click += new System.EventHandler(this.btnContractsFilterReset_Click);
             // 
             // btnContractsFilterApply
             // 
@@ -789,6 +790,7 @@
             this.checkContractsFilterDateOfReturn.TabIndex = 21;
             this.checkContractsFilterDateOfReturn.Text = "Дата возврата:";
             this.checkContractsFilterDateOfReturn.UseVisualStyleBackColor = true;
+            this.checkContractsFilterDateOfReturn.CheckStateChanged += new System.EventHandler(this.checkContractsFilterDateOfReturn_CheckStateChanged);
             // 
             // dtpContractsFilterReturnDO
             // 
@@ -833,6 +835,7 @@
             this.checkContractsFilterDateOfIssue.TabIndex = 16;
             this.checkContractsFilterDateOfIssue.Text = "Дата выдачи:";
             this.checkContractsFilterDateOfIssue.UseVisualStyleBackColor = true;
+            this.checkContractsFilterDateOfIssue.CheckStateChanged += new System.EventHandler(this.checkContractsFilterDateOfIssue_CheckStateChanged);
             // 
             // dtpContractsFilterIssueDO
             // 
@@ -877,6 +880,7 @@
             this.checkContractsFilterDateOfSigning.TabIndex = 11;
             this.checkContractsFilterDateOfSigning.Text = "Дата подписания:";
             this.checkContractsFilterDateOfSigning.UseVisualStyleBackColor = true;
+            this.checkContractsFilterDateOfSigning.CheckStateChanged += new System.EventHandler(this.checkContractsFilterDateOfSigning_CheckStateChanged);
             // 
             // dtpContractsFilterSingingDO
             // 
@@ -965,7 +969,7 @@
             // tpMainOrg
             // 
             this.tpMainOrg.Controls.Add(this.dgvOrg);
-            this.tpMainOrg.Controls.Add(this.statusStrip4);
+            this.tpMainOrg.Controls.Add(this.statusOrg);
             this.tpMainOrg.Controls.Add(this.toolsOrg);
             this.tpMainOrg.Controls.Add(this.panel1);
             this.tpMainOrg.Location = new System.Drawing.Point(4, 22);
@@ -983,22 +987,22 @@
             this.dgvOrg.AllowUserToResizeRows = false;
             this.dgvOrg.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvOrg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrg.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOrg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOrg.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvOrg.Location = new System.Drawing.Point(3, 28);
             this.dgvOrg.MultiSelect = false;
             this.dgvOrg.Name = "dgvOrg";
             this.dgvOrg.RowHeadersVisible = false;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrg.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrg.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvOrg.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrg.Size = new System.Drawing.Size(734, 382);
             this.dgvOrg.TabIndex = 3;
@@ -1210,16 +1214,17 @@
             this.tbOrgFilterOOCode.Size = new System.Drawing.Size(208, 20);
             this.tbOrgFilterOOCode.TabIndex = 2;
             // 
-            // statusStrip1
+            // statusConOpAll
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusConOpAll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tslConOpAllCount});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 378);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(720, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusConOpAll.Location = new System.Drawing.Point(3, 378);
+            this.statusConOpAll.Name = "statusConOpAll";
+            this.statusConOpAll.Size = new System.Drawing.Size(720, 22);
+            this.statusConOpAll.SizingGrip = false;
+            this.statusConOpAll.TabIndex = 4;
+            this.statusConOpAll.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
@@ -1233,16 +1238,17 @@
             this.tslConOpAllCount.Size = new System.Drawing.Size(13, 17);
             this.tslConOpAllCount.Text = "0";
             // 
-            // statusStrip2
+            // statusConOpProsrok
             // 
-            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusConOpProsrok.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
             this.tslConOpProsrokCount});
-            this.statusStrip2.Location = new System.Drawing.Point(3, 378);
-            this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(720, 22);
-            this.statusStrip2.TabIndex = 5;
-            this.statusStrip2.Text = "statusStrip2";
+            this.statusConOpProsrok.Location = new System.Drawing.Point(3, 378);
+            this.statusConOpProsrok.Name = "statusConOpProsrok";
+            this.statusConOpProsrok.Size = new System.Drawing.Size(720, 22);
+            this.statusConOpProsrok.SizingGrip = false;
+            this.statusConOpProsrok.TabIndex = 5;
+            this.statusConOpProsrok.Text = "statusStrip2";
             // 
             // toolStripStatusLabel2
             // 
@@ -1256,16 +1262,17 @@
             this.tslConOpProsrokCount.Size = new System.Drawing.Size(13, 17);
             this.tslConOpProsrokCount.Text = "0";
             // 
-            // statusStrip3
+            // statusConClosed
             // 
-            this.statusStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusConClosed.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel3,
             this.tslConClosedCount});
-            this.statusStrip3.Location = new System.Drawing.Point(3, 378);
-            this.statusStrip3.Name = "statusStrip3";
-            this.statusStrip3.Size = new System.Drawing.Size(720, 22);
-            this.statusStrip3.TabIndex = 5;
-            this.statusStrip3.Text = "statusStrip3";
+            this.statusConClosed.Location = new System.Drawing.Point(3, 378);
+            this.statusConClosed.Name = "statusConClosed";
+            this.statusConClosed.Size = new System.Drawing.Size(720, 22);
+            this.statusConClosed.SizingGrip = false;
+            this.statusConClosed.TabIndex = 5;
+            this.statusConClosed.Text = "statusStrip3";
             // 
             // toolStripStatusLabel3
             // 
@@ -1279,16 +1286,17 @@
             this.tslConClosedCount.Size = new System.Drawing.Size(13, 17);
             this.tslConClosedCount.Text = "0";
             // 
-            // statusStrip4
+            // statusOrg
             // 
-            this.statusStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusOrg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel4,
             this.tslOrgCount});
-            this.statusStrip4.Location = new System.Drawing.Point(3, 410);
-            this.statusStrip4.Name = "statusStrip4";
-            this.statusStrip4.Size = new System.Drawing.Size(734, 22);
-            this.statusStrip4.TabIndex = 5;
-            this.statusStrip4.Text = "statusStrip4";
+            this.statusOrg.Location = new System.Drawing.Point(3, 410);
+            this.statusOrg.Name = "statusOrg";
+            this.statusOrg.Size = new System.Drawing.Size(734, 22);
+            this.statusOrg.SizingGrip = false;
+            this.statusOrg.TabIndex = 5;
+            this.statusOrg.Text = "statusStrip4";
             // 
             // toolStripStatusLabel4
             // 
@@ -1346,14 +1354,14 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.statusStrip2.ResumeLayout(false);
-            this.statusStrip2.PerformLayout();
-            this.statusStrip3.ResumeLayout(false);
-            this.statusStrip3.PerformLayout();
-            this.statusStrip4.ResumeLayout(false);
-            this.statusStrip4.PerformLayout();
+            this.statusConOpAll.ResumeLayout(false);
+            this.statusConOpAll.PerformLayout();
+            this.statusConOpProsrok.ResumeLayout(false);
+            this.statusConOpProsrok.PerformLayout();
+            this.statusConClosed.ResumeLayout(false);
+            this.statusConClosed.PerformLayout();
+            this.statusOrg.ResumeLayout(false);
+            this.statusOrg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1466,16 +1474,16 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private System.Windows.Forms.ToolStripMenuItem статистикаПоПредметамToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusConOpAll;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tslConOpAllCount;
-        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.StatusStrip statusConOpProsrok;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel tslConOpProsrokCount;
-        private System.Windows.Forms.StatusStrip statusStrip3;
+        private System.Windows.Forms.StatusStrip statusConClosed;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel tslConClosedCount;
-        private System.Windows.Forms.StatusStrip statusStrip4;
+        private System.Windows.Forms.StatusStrip statusOrg;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel tslOrgCount;
     }

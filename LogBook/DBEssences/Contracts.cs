@@ -47,53 +47,6 @@ namespace LogBook
             }
         }
 
-        public void GetOpenedAllDataTable(string ContractNumber, int IdOO, string ResponsibleName, DateTime DateOfSigningOT, DateTime DateOfSigningDO, 
-            DateTime DateOfIssueOT, DateTime DateOfIssueDO, DateTime DateOfReturnOT, DateTime DateOfReturnDO)
-        {
-            DataTable dt = dtOpenedAll.Clone();
-            dt.Rows.Clear();
-
-            if (dtOpenedAll.Rows.Count > 0)
-            {
-                for (int i = 0; i < dtOpenedAll.Rows.Count; i++)
-                {
-                    string contractCode = dtOpenedAll.Rows[i][1].ToString();
-                    int ooCode = int.Parse(dtOpenedAll.Rows[i][2].ToString());
-                    string responName = dtOpenedAll.Rows[i][6].ToString();
-                    DateTime dateOfSigning = DateTime.Parse(dtOpenedAll.Rows[i][4].ToString());
-                    DateTime dateOfIssue = DateTime.Parse(dtOpenedAll.Rows[i][5].ToString());
-                    DateTime dateOfReturn = DateTime.Parse(dtOpenedAll.Rows[i][8].ToString());
-
-                    if (contractCode.ToLower().Contains(ContractNumber.ToLower()) &&
-                        responName.ToLower().Contains(ResponsibleName.ToLower()) &&
-                        (dateOfSigning >= DateOfSigningOT && dateOfSigning <= DateOfSigningDO) &&
-                        (dateOfIssue >= DateOfIssueOT && dateOfIssue <= DateOfIssueDO) &&
-                        (dateOfReturn >= DateOfReturnOT && dateOfReturn <= DateOfReturnDO))
-                    {
-                        if (IdOO > 0)
-                        {
-                            if (IdOO == ooCode)
-                            {
-                                DataRow row = dt.NewRow();
-                                for (int j = 0; j < dtOpenedAll.Columns.Count; j++)
-                                    row[j] = dtOpenedAll.Rows[i][j];
-                                dt.Rows.Add(row);
-                            }
-                        }
-                        else
-                        {
-                            DataRow row = dt.NewRow();
-                            for (int j = 0; j < dtOpenedAll.Columns.Count; j++)
-                                row[j] = dtOpenedAll.Rows[i][j];
-                            dt.Rows.Add(row);
-                        }
-                    }
-                }
-            }
-            dtOpenedAll = new DataTable();
-            dtOpenedAll = dt;
-        }
-
         // Представление "Открытые договоры (просрок)"
         public void GetOpenedProsrokDataTable()
         {
@@ -136,6 +89,63 @@ namespace LogBook
 
                 connection.Close();
                 for (int i = 0; i < dt.Rows.Count; i++) listResponsibles.Add(dt.Rows[i][0].ToString());
+            }
+        }
+
+        public void FilterContracts(string contractNum, string idOO, string responsible, DateTime dateOfSigningOT, DateTime dateOfSigningDO,
+            DateTime dateOfIssueOT, DateTime dateOfIssueDO, DateTime dateOfReturnOT, DateTime dateOfReturnDO)
+        {
+            string filterContractNum = contractNum == null ? string.Empty : contractNum;
+            string filterIdOO = idOO == null ? string.Empty : idOO;
+            string filterResponsible = responsible == null ? string.Empty : responsible;
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
+            {
+                connection.Open();
+
+                dtOpenedAll = new DataTable();
+                SqlCommand cmd = new SqlCommand($"SELECT * FROM dbo.ContractsOpenedAll " +
+                    $"WHERE [Номер договора] LIKE '%{filterContractNum}%' AND [Ответственный за выдачу] LIKE '%{filterResponsible}%' " +
+                    $"AND [Код ОО] LIKE '%{filterIdOO}%' AND ([Дата заключения] >= @DateOfSigningOT AND [Дата заключения] <= @DateOfSigningDO) AND" +
+                    $"([Дата выдачи] >= @DateOfIssueOT AND [Дата выдачи] <= @DateOfIssueDO) AND" +
+                    $"([Дата возврата] >= @DateOfReturnOT AND [Дата возврата] <= @DateOfReturnDO)", connection);
+                cmd.Parameters.AddWithValue("@DateOfSigningOT", dateOfSigningOT);
+                cmd.Parameters.AddWithValue("@DateOfSigningDO", dateOfSigningDO);
+                cmd.Parameters.AddWithValue("@DateOfIssueOT", dateOfIssueOT);
+                cmd.Parameters.AddWithValue("@DateOfIssueDO", dateOfIssueDO);
+                cmd.Parameters.AddWithValue("@DateOfReturnOT", dateOfReturnOT);
+                cmd.Parameters.AddWithValue("@DateOfReturnDO", dateOfReturnDO);
+                dtOpenedAll.Load(cmd.ExecuteReader());
+
+                dtOpenedProsrok = new DataTable();
+                cmd = new SqlCommand($"SELECT * FROM dbo.ContractsOpenedProsrok " +
+                    $"WHERE [Номер договора] LIKE '%{filterContractNum}%' AND [Ответственный за выдачу] LIKE '%{filterResponsible}%' " +
+                    $"AND [Код ОО] LIKE '%{filterIdOO}%' AND ([Дата заключения] >= @DateOfSigningOT AND [Дата заключения] <= @DateOfSigningDO) AND" +
+                    $"([Дата выдачи] >= @DateOfIssueOT AND [Дата выдачи] <= @DateOfIssueDO) AND" +
+                    $"([Дата возврата] >= @DateOfReturnOT AND [Дата возврата] <= @DateOfReturnDO)", connection);
+                cmd.Parameters.AddWithValue("@DateOfSigningOT", dateOfSigningOT);
+                cmd.Parameters.AddWithValue("@DateOfSigningDO", dateOfSigningDO);
+                cmd.Parameters.AddWithValue("@DateOfIssueOT", dateOfIssueOT);
+                cmd.Parameters.AddWithValue("@DateOfIssueDO", dateOfIssueDO);
+                cmd.Parameters.AddWithValue("@DateOfReturnOT", dateOfReturnOT);
+                cmd.Parameters.AddWithValue("@DateOfReturnDO", dateOfReturnDO);
+                dtOpenedProsrok.Load(cmd.ExecuteReader());
+
+                dtClosedAll = new DataTable();
+                cmd = new SqlCommand($"SELECT * FROM dbo.ContractsClosed " +
+                    $"WHERE [Номер договора] LIKE '%{filterContractNum}%' AND [Ответственный за выдачу] LIKE '%{filterResponsible}%' " +
+                    $"AND [Код ОО] LIKE '%{filterIdOO}%' AND ([Дата заключения] >= @DateOfSigningOT AND [Дата заключения] <= @DateOfSigningDO) AND" +
+                    $"([Дата выдачи] >= @DateOfIssueOT AND [Дата выдачи] <= @DateOfIssueDO) AND" +
+                    $"([Дата возврата по договору] >= @DateOfReturnOT AND [Дата возврата по договору] <= @DateOfReturnDO)", connection);
+                cmd.Parameters.AddWithValue("@DateOfSigningOT", dateOfSigningOT);
+                cmd.Parameters.AddWithValue("@DateOfSigningDO", dateOfSigningDO);
+                cmd.Parameters.AddWithValue("@DateOfIssueOT", dateOfIssueOT);
+                cmd.Parameters.AddWithValue("@DateOfIssueDO", dateOfIssueDO);
+                cmd.Parameters.AddWithValue("@DateOfReturnOT", dateOfReturnOT);
+                cmd.Parameters.AddWithValue("@DateOfReturnDO", dateOfReturnDO);
+                dtClosedAll.Load(cmd.ExecuteReader());
+
+                connection.Close();
             }
         }
     }

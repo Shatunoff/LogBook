@@ -274,63 +274,52 @@ namespace LogBook
 
         private void btnContractsFilterApply_Click(object sender, EventArgs e)
         {
-            if ((checkContractsFilterDateOfSigning.Checked && dtpContractsFilterSingingOT.Value > dtpContractsFilterSingingDO.Value) || 
-                (checkContractsFilterDateOfIssue.Checked && dtpContractsFilterIssueOT.Value > dtpContractsFilterIssueDO.Value) ||
-                (checkContractsFilterDateOfReturn.Checked && dtpContractsFilterReturnOT.Value > dtpContractsFilterReturnDO.Value))
-            {
-                MessageBox.Show("Диапазон дат указан неверно!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            string contractCode = tbContractsFilterNumber.Text;
+            string ooCode = null;
+            int idOO;
+            if (int.TryParse(tbContractsFilterCodeOO.Text, out idOO))
+                ooCode = idOO.ToString();
+            string responsible = comboContractsFilterResponsible.Text;
 
             DateTime dtSigningOT, dtSigningDO, dtIssueOT, dtIssueDO, dtReturnOT, dtReturnDO;
-            string contractNumber = tbContractsFilterNumber.TextLength > 0 ? tbContractsFilterNumber.Text : String.Empty;
-            int ooCode = 0;
-
-            if (tbContractsFilterCodeOO.TextLength > 0)
-            {
-                int code;
-                if (int.TryParse(tbContractsFilterCodeOO.Text, out code))
-                    ooCode = code;
-            }
-
-            string responsible = comboContractsFilterResponsible.Text.Length > 0 ? comboContractsFilterResponsible.Text : String.Empty;
 
             if (checkContractsFilterDateOfSigning.Checked)
             {
-                dtSigningOT = DateTime.Parse(dtpContractsFilterSingingOT.Value.ToShortDateString());
-                dtSigningDO = DateTime.Parse(dtpContractsFilterSingingDO.Value.ToShortDateString());
+                dtSigningOT = dtpContractsFilterSingingOT.Value;
+                dtSigningDO = dtpContractsFilterSingingDO.Value;
             }
             else
             {
-                dtSigningOT = DateTime.Parse(DateTime.MinValue.ToShortDateString());
-                dtSigningDO = DateTime.Parse(DateTime.MaxValue.ToShortDateString());
+                dtSigningOT = DateTime.Parse("01.01.1800");
+                dtSigningDO = DateTime.Parse("01.01.9800");
             }
 
             if (checkContractsFilterDateOfIssue.Checked)
             {
-                dtIssueOT = DateTime.Parse(dtpContractsFilterIssueOT.Value.ToShortDateString());
-                dtIssueDO = DateTime.Parse(dtpContractsFilterIssueDO.Value.ToShortDateString());
+                dtIssueOT = dtpContractsFilterIssueOT.Value;
+                dtIssueDO = dtpContractsFilterIssueDO.Value;
             }
             else
             {
-                dtIssueOT = DateTime.Parse(DateTime.MinValue.ToShortDateString());
-                dtIssueDO = DateTime.Parse(DateTime.MaxValue.ToShortDateString());
+                dtIssueOT = DateTime.Parse("01.01.1800");
+                dtIssueDO = DateTime.Parse("01.01.9800");
             }
 
             if (checkContractsFilterDateOfReturn.Checked)
             {
-                dtReturnOT = DateTime.Parse(dtpContractsFilterReturnOT.Value.ToShortDateString());
-                dtReturnDO = DateTime.Parse(dtpContractsFilterReturnDO.Value.ToShortDateString());
+                dtReturnOT = dtpContractsFilterReturnOT.Value;
+                dtReturnDO = dtpContractsFilterReturnDO.Value;
             }
             else
             {
-                dtReturnOT = DateTime.Parse(DateTime.MinValue.ToShortDateString());
-                dtReturnDO = DateTime.Parse(DateTime.MaxValue.ToShortDateString());
+                dtReturnOT = DateTime.Parse("01.01.1800");
+                dtReturnDO = DateTime.Parse("01.01.9800");
             }
 
-            dbContracts?.GetOpenedAllDataTable(contractNumber, ooCode, responsible, dtSigningOT, dtSigningDO, dtIssueOT, dtIssueDO, dtReturnOT, dtReturnDO);
-
-            btnContractsFilterReset.Enabled = true;
+            dbContracts.FilterContracts(contractCode, ooCode, responsible, dtSigningOT, dtSigningDO, dtIssueOT, dtIssueDO, dtReturnOT, dtReturnDO);
+            dgvContractsOpenedAll.DataSource = dbContracts.dtOpenedAll;
+            dgvContractsOpenedProsrok.DataSource = dbContracts.dtOpenedProsrok;
+            dgvContractsClosed.DataSource = dbContracts.dtClosedAll;
         }
 
         private void tsbtnOrgView_Click(object sender, EventArgs e)
@@ -572,6 +561,60 @@ namespace LogBook
             comboOrgFilterATE.SelectedIndex = 0;
             comboOrgFilterMemberships.SelectedIndex = 0;
             tsbtnOrgRefresh.PerformClick();
+        }
+
+        private void checkContractsFilterDateOfSigning_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkContractsFilterDateOfSigning.Checked)
+            {
+                dtpContractsFilterSingingOT.Enabled = true;
+                dtpContractsFilterSingingDO.Enabled = true;
+            }
+            else
+            {
+                dtpContractsFilterSingingOT.Enabled = false;
+                dtpContractsFilterSingingDO.Enabled = false;
+            }
+
+        }
+
+        private void checkContractsFilterDateOfIssue_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkContractsFilterDateOfIssue.Checked)
+            {
+                dtpContractsFilterIssueOT.Enabled = true;
+                dtpContractsFilterIssueDO.Enabled = true;
+            }
+            else
+            {
+                dtpContractsFilterIssueOT.Enabled = false;
+                dtpContractsFilterIssueDO.Enabled = false;
+            }
+        }
+
+        private void checkContractsFilterDateOfReturn_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkContractsFilterDateOfReturn.Checked)
+            {
+                dtpContractsFilterReturnOT.Enabled = true;
+                dtpContractsFilterReturnDO.Enabled = true;
+            }
+            else
+            {
+                dtpContractsFilterReturnOT.Enabled = false;
+                dtpContractsFilterReturnDO.Enabled = false;
+            }
+        }
+
+        private void btnContractsFilterReset_Click(object sender, EventArgs e)
+        {
+            tbContractsFilterCodeOO.Clear();
+            tbContractsFilterNumber.Clear();
+            comboContractsFilterResponsible.SelectedIndex = 0;
+            checkContractsFilterDateOfSigning.Checked = false;
+            checkContractsFilterDateOfIssue.Checked = false;
+            checkContractsFilterDateOfReturn.Checked = false;
+            Refresh_ContractsDataGridView();
         }
     }
 

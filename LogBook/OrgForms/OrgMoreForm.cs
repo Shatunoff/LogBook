@@ -84,5 +84,10 @@ namespace LogBook
             if (newContract.ShowDialog() == DialogResult.OK)
                 orgMore = new OrgMore(idOO);
         }
+
+        private void dgvContracts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tsbtnContractMore.PerformClick();
+        }
     }
 }

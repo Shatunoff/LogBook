@@ -45,6 +45,7 @@ namespace LogBook
         {
             InitializeComponent();
             thisFormType = ContractFormType.Adding;
+            addedit = new ContractAddEdit();
             FillAddingForm();
             Oformitel();
             tbIdOO.Text = IdOO.ToString();
