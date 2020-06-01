@@ -616,6 +616,12 @@ namespace LogBook
             checkContractsFilterDateOfReturn.Checked = false;
             Refresh_ContractsDataGridView();
         }
+
+        private void статистикаПоПредметамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemStatisticForm stat = new ItemStatisticForm();
+            stat.ShowDialog();
+        }
     }
 
     public static class ExtensionMethods

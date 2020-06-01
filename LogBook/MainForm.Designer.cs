@@ -60,6 +60,9 @@
             this.tctrlMainContracts = new System.Windows.Forms.TabControl();
             this.tpMainContractsOpenedAll = new System.Windows.Forms.TabPage();
             this.dgvContractsOpenedAll = new System.Windows.Forms.DataGridView();
+            this.statusConOpAll = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tslConOpAllCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolsContractsOpAll = new System.Windows.Forms.ToolStrip();
             this.tsbtnConOpAllView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
@@ -72,6 +75,9 @@
             this.tsbtnConOpAllExport = new System.Windows.Forms.ToolStripButton();
             this.tpMainContractsOpenedProsrok = new System.Windows.Forms.TabPage();
             this.dgvContractsOpenedProsrok = new System.Windows.Forms.DataGridView();
+            this.statusConOpProsrok = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tslConOpProsrokCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolsContractsOpProsrok = new System.Windows.Forms.ToolStrip();
             this.tsbtnConProsrokView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
@@ -84,6 +90,9 @@
             this.tsbtnConProsrokExport = new System.Windows.Forms.ToolStripButton();
             this.tpMainContractsClosed = new System.Windows.Forms.TabPage();
             this.dgvContractsClosed = new System.Windows.Forms.DataGridView();
+            this.statusConClosed = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tslConClosedCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolsContractsClosed = new System.Windows.Forms.ToolStrip();
             this.tsbtnConClosedView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
@@ -119,6 +128,9 @@
             this.tbContractsFilterCodeOO = new System.Windows.Forms.TextBox();
             this.tpMainOrg = new System.Windows.Forms.TabPage();
             this.dgvOrg = new System.Windows.Forms.DataGridView();
+            this.statusOrg = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tslOrgCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolsOrg = new System.Windows.Forms.ToolStrip();
             this.tsbtnOrgView = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -141,42 +153,30 @@
             this.tbOrgFilterOOName = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.tbOrgFilterOOCode = new System.Windows.Forms.TextBox();
-            this.statusConOpAll = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tslConOpAllCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusConOpProsrok = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tslConOpProsrokCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusConClosed = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tslConClosedCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusOrg = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tslOrgCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.mainMenu.SuspendLayout();
             this.tctrlMain.SuspendLayout();
             this.tpMainContracts.SuspendLayout();
             this.tctrlMainContracts.SuspendLayout();
             this.tpMainContractsOpenedAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsOpenedAll)).BeginInit();
+            this.statusConOpAll.SuspendLayout();
             this.toolsContractsOpAll.SuspendLayout();
             this.tpMainContractsOpenedProsrok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsOpenedProsrok)).BeginInit();
+            this.statusConOpProsrok.SuspendLayout();
             this.toolsContractsOpProsrok.SuspendLayout();
             this.tpMainContractsClosed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsClosed)).BeginInit();
+            this.statusConClosed.SuspendLayout();
             this.toolsContractsClosed.SuspendLayout();
             this.panelContractsForFilter.SuspendLayout();
             this.gbContractsFilter.SuspendLayout();
             this.tpMainOrg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).BeginInit();
+            this.statusOrg.SuspendLayout();
             this.toolsOrg.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.statusConOpAll.SuspendLayout();
-            this.statusConOpProsrok.SuspendLayout();
-            this.statusConClosed.SuspendLayout();
-            this.statusOrg.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -287,6 +287,7 @@
             this.статистикаПоПредметамToolStripMenuItem.Name = "статистикаПоПредметамToolStripMenuItem";
             this.статистикаПоПредметамToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.статистикаПоПредметамToolStripMenuItem.Text = "Статистика по предметам";
+            this.статистикаПоПредметамToolStripMenuItem.Click += new System.EventHandler(this.статистикаПоПредметамToolStripMenuItem_Click);
             // 
             // mmOrg
             // 
@@ -393,6 +394,30 @@
             this.dgvContractsOpenedAll.TabIndex = 0;
             this.dgvContractsOpenedAll.DataSourceChanged += new System.EventHandler(this.dgvContractsOpenedAll_DataSourceChanged);
             this.dgvContractsOpenedAll.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContractsOpenedAll_CellDoubleClick);
+            // 
+            // statusConOpAll
+            // 
+            this.statusConOpAll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.tslConOpAllCount});
+            this.statusConOpAll.Location = new System.Drawing.Point(3, 378);
+            this.statusConOpAll.Name = "statusConOpAll";
+            this.statusConOpAll.Size = new System.Drawing.Size(720, 22);
+            this.statusConOpAll.SizingGrip = false;
+            this.statusConOpAll.TabIndex = 4;
+            this.statusConOpAll.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(102, 17);
+            this.toolStripStatusLabel1.Text = "Всего договоров:";
+            // 
+            // tslConOpAllCount
+            // 
+            this.tslConOpAllCount.Name = "tslConOpAllCount";
+            this.tslConOpAllCount.Size = new System.Drawing.Size(13, 17);
+            this.tslConOpAllCount.Text = "0";
             // 
             // toolsContractsOpAll
             // 
@@ -523,6 +548,30 @@
             this.dgvContractsOpenedProsrok.DataSourceChanged += new System.EventHandler(this.dgvContractsOpenedProsrok_DataSourceChanged);
             this.dgvContractsOpenedProsrok.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContractsOpenedProsrok_CellDoubleClick);
             // 
+            // statusConOpProsrok
+            // 
+            this.statusConOpProsrok.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel2,
+            this.tslConOpProsrokCount});
+            this.statusConOpProsrok.Location = new System.Drawing.Point(3, 378);
+            this.statusConOpProsrok.Name = "statusConOpProsrok";
+            this.statusConOpProsrok.Size = new System.Drawing.Size(720, 22);
+            this.statusConOpProsrok.SizingGrip = false;
+            this.statusConOpProsrok.TabIndex = 5;
+            this.statusConOpProsrok.Text = "statusStrip2";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(102, 17);
+            this.toolStripStatusLabel2.Text = "Всего договоров:";
+            // 
+            // tslConOpProsrokCount
+            // 
+            this.tslConOpProsrokCount.Name = "tslConOpProsrokCount";
+            this.tslConOpProsrokCount.Size = new System.Drawing.Size(13, 17);
+            this.tslConOpProsrokCount.Text = "0";
+            // 
             // toolsContractsOpProsrok
             // 
             this.toolsContractsOpProsrok.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -650,6 +699,30 @@
             this.dgvContractsClosed.TabIndex = 0;
             this.dgvContractsClosed.DataSourceChanged += new System.EventHandler(this.dgvContractsClosed_DataSourceChanged);
             this.dgvContractsClosed.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContractsClosed_CellDoubleClick);
+            // 
+            // statusConClosed
+            // 
+            this.statusConClosed.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel3,
+            this.tslConClosedCount});
+            this.statusConClosed.Location = new System.Drawing.Point(3, 378);
+            this.statusConClosed.Name = "statusConClosed";
+            this.statusConClosed.Size = new System.Drawing.Size(720, 22);
+            this.statusConClosed.SizingGrip = false;
+            this.statusConClosed.TabIndex = 5;
+            this.statusConClosed.Text = "statusStrip3";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(102, 17);
+            this.toolStripStatusLabel3.Text = "Всего договоров:";
+            // 
+            // tslConClosedCount
+            // 
+            this.tslConClosedCount.Name = "tslConClosedCount";
+            this.tslConClosedCount.Size = new System.Drawing.Size(13, 17);
+            this.tslConClosedCount.Text = "0";
             // 
             // toolsContractsClosed
             // 
@@ -1009,6 +1082,30 @@
             this.dgvOrg.DataSourceChanged += new System.EventHandler(this.dgvOrg_DataSourceChanged);
             this.dgvOrg.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrg_CellDoubleClick);
             // 
+            // statusOrg
+            // 
+            this.statusOrg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel4,
+            this.tslOrgCount});
+            this.statusOrg.Location = new System.Drawing.Point(3, 410);
+            this.statusOrg.Name = "statusOrg";
+            this.statusOrg.Size = new System.Drawing.Size(734, 22);
+            this.statusOrg.SizingGrip = false;
+            this.statusOrg.TabIndex = 5;
+            this.statusOrg.Text = "statusStrip4";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(115, 17);
+            this.toolStripStatusLabel4.Text = "Всего организаций:";
+            // 
+            // tslOrgCount
+            // 
+            this.tslOrgCount.Name = "tslOrgCount";
+            this.tslOrgCount.Size = new System.Drawing.Size(13, 17);
+            this.tslOrgCount.Text = "0";
+            // 
             // toolsOrg
             // 
             this.toolsOrg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1214,102 +1311,6 @@
             this.tbOrgFilterOOCode.Size = new System.Drawing.Size(208, 20);
             this.tbOrgFilterOOCode.TabIndex = 2;
             // 
-            // statusConOpAll
-            // 
-            this.statusConOpAll.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.tslConOpAllCount});
-            this.statusConOpAll.Location = new System.Drawing.Point(3, 378);
-            this.statusConOpAll.Name = "statusConOpAll";
-            this.statusConOpAll.Size = new System.Drawing.Size(720, 22);
-            this.statusConOpAll.SizingGrip = false;
-            this.statusConOpAll.TabIndex = 4;
-            this.statusConOpAll.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(102, 17);
-            this.toolStripStatusLabel1.Text = "Всего договоров:";
-            // 
-            // tslConOpAllCount
-            // 
-            this.tslConOpAllCount.Name = "tslConOpAllCount";
-            this.tslConOpAllCount.Size = new System.Drawing.Size(13, 17);
-            this.tslConOpAllCount.Text = "0";
-            // 
-            // statusConOpProsrok
-            // 
-            this.statusConOpProsrok.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel2,
-            this.tslConOpProsrokCount});
-            this.statusConOpProsrok.Location = new System.Drawing.Point(3, 378);
-            this.statusConOpProsrok.Name = "statusConOpProsrok";
-            this.statusConOpProsrok.Size = new System.Drawing.Size(720, 22);
-            this.statusConOpProsrok.SizingGrip = false;
-            this.statusConOpProsrok.TabIndex = 5;
-            this.statusConOpProsrok.Text = "statusStrip2";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(102, 17);
-            this.toolStripStatusLabel2.Text = "Всего договоров:";
-            // 
-            // tslConOpProsrokCount
-            // 
-            this.tslConOpProsrokCount.Name = "tslConOpProsrokCount";
-            this.tslConOpProsrokCount.Size = new System.Drawing.Size(13, 17);
-            this.tslConOpProsrokCount.Text = "0";
-            // 
-            // statusConClosed
-            // 
-            this.statusConClosed.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel3,
-            this.tslConClosedCount});
-            this.statusConClosed.Location = new System.Drawing.Point(3, 378);
-            this.statusConClosed.Name = "statusConClosed";
-            this.statusConClosed.Size = new System.Drawing.Size(720, 22);
-            this.statusConClosed.SizingGrip = false;
-            this.statusConClosed.TabIndex = 5;
-            this.statusConClosed.Text = "statusStrip3";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(102, 17);
-            this.toolStripStatusLabel3.Text = "Всего договоров:";
-            // 
-            // tslConClosedCount
-            // 
-            this.tslConClosedCount.Name = "tslConClosedCount";
-            this.tslConClosedCount.Size = new System.Drawing.Size(13, 17);
-            this.tslConClosedCount.Text = "0";
-            // 
-            // statusOrg
-            // 
-            this.statusOrg.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel4,
-            this.tslOrgCount});
-            this.statusOrg.Location = new System.Drawing.Point(3, 410);
-            this.statusOrg.Name = "statusOrg";
-            this.statusOrg.Size = new System.Drawing.Size(734, 22);
-            this.statusOrg.SizingGrip = false;
-            this.statusOrg.TabIndex = 5;
-            this.statusOrg.Text = "statusStrip4";
-            // 
-            // toolStripStatusLabel4
-            // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(115, 17);
-            this.toolStripStatusLabel4.Text = "Всего организаций:";
-            // 
-            // tslOrgCount
-            // 
-            this.tslOrgCount.Name = "tslOrgCount";
-            this.tslOrgCount.Size = new System.Drawing.Size(13, 17);
-            this.tslOrgCount.Text = "0";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1331,16 +1332,22 @@
             this.tpMainContractsOpenedAll.ResumeLayout(false);
             this.tpMainContractsOpenedAll.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsOpenedAll)).EndInit();
+            this.statusConOpAll.ResumeLayout(false);
+            this.statusConOpAll.PerformLayout();
             this.toolsContractsOpAll.ResumeLayout(false);
             this.toolsContractsOpAll.PerformLayout();
             this.tpMainContractsOpenedProsrok.ResumeLayout(false);
             this.tpMainContractsOpenedProsrok.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsOpenedProsrok)).EndInit();
+            this.statusConOpProsrok.ResumeLayout(false);
+            this.statusConOpProsrok.PerformLayout();
             this.toolsContractsOpProsrok.ResumeLayout(false);
             this.toolsContractsOpProsrok.PerformLayout();
             this.tpMainContractsClosed.ResumeLayout(false);
             this.tpMainContractsClosed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContractsClosed)).EndInit();
+            this.statusConClosed.ResumeLayout(false);
+            this.statusConClosed.PerformLayout();
             this.toolsContractsClosed.ResumeLayout(false);
             this.toolsContractsClosed.PerformLayout();
             this.panelContractsForFilter.ResumeLayout(false);
@@ -1349,19 +1356,13 @@
             this.tpMainOrg.ResumeLayout(false);
             this.tpMainOrg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrg)).EndInit();
+            this.statusOrg.ResumeLayout(false);
+            this.statusOrg.PerformLayout();
             this.toolsOrg.ResumeLayout(false);
             this.toolsOrg.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.statusConOpAll.ResumeLayout(false);
-            this.statusConOpAll.PerformLayout();
-            this.statusConOpProsrok.ResumeLayout(false);
-            this.statusConOpProsrok.PerformLayout();
-            this.statusConClosed.ResumeLayout(false);
-            this.statusConClosed.PerformLayout();
-            this.statusOrg.ResumeLayout(false);
-            this.statusOrg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

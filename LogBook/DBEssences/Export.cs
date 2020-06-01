@@ -19,6 +19,12 @@ namespace LogBook
                 fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
                 sw = new StreamWriter(fs, Encoding.Default);
                 
+                for (int x = 0; x < dt.Columns.Count; x++)
+                {
+                    sw.Write(dt.Columns[x].ColumnName.ToString() + ";");
+                }
+                sw.Write("\n");
+
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     string[] arr = new string[dt.Columns.Count];

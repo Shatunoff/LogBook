@@ -157,7 +157,7 @@ namespace LogBook
                     (int)comboResponsible.SelectedValue, tbHostOrganization.Text, out id);
 
                 // Добавление возвращаемых предметов в договор
-                if (dgvNotReturnableItemsInContract.Rows.Count > 0)
+                if (dgvReturnableItemsInContract.Rows.Count > 0)
                 {
                     for (int i = 0; i < dgvReturnableItemsInContract.Rows.Count; i++)
                     {

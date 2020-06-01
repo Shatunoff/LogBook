@@ -68,11 +68,18 @@
     <Compile Include="DBEssences\ContractAddEdit.cs" />
     <Compile Include="DBEssences\ContractMore.cs" />
     <Compile Include="DBEssences\Export.cs" />
+    <Compile Include="DBEssences\ItemStatistic.cs" />
     <Compile Include="DBEssences\Memberships.cs" />
     <Compile Include="DBEssences\OrgAddEdit.cs" />
     <Compile Include="DBEssences\Organizations.cs" />
     <Compile Include="DBEssences\OrgMore.cs" />
     <Compile Include="DBEssences\SelectOrgForContract.cs" />
+    <Compile Include="ContractForms\ItemStatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractForms\ItemStatisticForm.Designer.cs">
+      <DependentUpon>ItemStatisticForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrgForms\OrgAddEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContractForms\ContractMoreForm.resx">
       <DependentUpon>ContractMoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContractForms\ItemStatisticForm.resx">
+      <DependentUpon>ItemStatisticForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContractForms\NotReturnableItemsForm.resx">
       <DependentUpon>NotReturnableItemsForm.cs</DependentUpon>
