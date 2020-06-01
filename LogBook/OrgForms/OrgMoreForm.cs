@@ -89,5 +89,14 @@ namespace LogBook
         {
             tsbtnContractMore.PerformClick();
         }
+
+        private void tsbtnExportContractsInOrg_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "CSV-Файлы |*.csv";
+            save.Title = "Экспорт таблицы";
+            if (save.ShowDialog() == DialogResult.OK)
+                Export.ToCSV((DataTable)dgvContracts.DataSource, save.FileName);
+        }
     }
 }

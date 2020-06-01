@@ -60,6 +60,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.tsbtnExportContractsInOrg = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContracts)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -104,7 +105,8 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtnContractMore,
-            this.tsbtnContractNew});
+            this.tsbtnContractNew,
+            this.tsbtnExportContractsInOrg});
             this.toolStrip1.Location = new System.Drawing.Point(3, 16);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(700, 25);
@@ -397,6 +399,15 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Телефон(ы):";
             // 
+            // tsbtnExportContractsInOrg
+            // 
+            this.tsbtnExportContractsInOrg.Image = global::LogBook.Properties.Resources.icon_xls;
+            this.tsbtnExportContractsInOrg.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbtnExportContractsInOrg.Name = "tsbtnExportContractsInOrg";
+            this.tsbtnExportContractsInOrg.Size = new System.Drawing.Size(72, 22);
+            this.tsbtnExportContractsInOrg.Text = "Экспорт";
+            this.tsbtnExportContractsInOrg.Click += new System.EventHandler(this.tsbtnExportContractsInOrg_Click);
+            // 
             // OrgMoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,5 +473,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dgvContracts;
         private System.Windows.Forms.Button btnEditInfo;
+        private System.Windows.Forms.ToolStripButton tsbtnExportContractsInOrg;
     }
 }
